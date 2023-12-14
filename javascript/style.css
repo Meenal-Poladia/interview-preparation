@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+}
+
+/*
+.form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+
+.form-style {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.button-style {
+    font-size: 15px;
+    padding: 5px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.input-style {
+    min-width: 200px;
+}
+
+.label-style {
+    min-width: 100px;
+}
+*/
+
+/* Problem 11: Black Jack Game
+.player-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.button-style {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.visibility-hidden {
+    visibility: hidden;
+}
+
+.display-none {
+    display: none;
+}
+
+.new-game-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+ */
+/* Problem 12: Ludo */
+.game-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 50vh;
+}
+
+.button-status {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

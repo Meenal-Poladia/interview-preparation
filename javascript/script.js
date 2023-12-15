@@ -766,12 +766,26 @@ console.log(result);
 
 /* Problem 32: Create a function that filters out negative numbers
 
+Solution 1:
 const numbers = [-10 , 10, 10, 10, 10, 10, -10];
 
 const numbers = [-10 , 10, 10, 10, 10, 10, -10];
 
 const result = numbers.filter(number => number > 0)
 console.log(result);
+
+Solution 2:
+const numbers = [-10 , 10, 10, 10, 10, 10, -10, -1, -9, -4];
+const negativeNumbers = [];
+const positiveNumbers = [];
+
+for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] < 0) negativeNumbers.push(numbers[i]);
+    else positiveNumbers.push(numbers[i]);
+}
+
+console.log('Positive', positiveNumbers);
+console.log('Negative', negativeNumbers);
 
  */
 
@@ -826,6 +840,32 @@ for (const [key, value] of dataMap.entries()) {
         conclusion = `${key} has ${value} number of crimes`;
     }
 }
+console.log(conclusion);
+
+Solution 2:
+let map = new Map();
+let maximumCrimeValues = 0;
+let conclusion;
+
+for (let i = 0; i < data.length; i++) {
+    if (map.get(`${data[i].street}, ${data[i].intersection}`)) {
+        const value = Number(map.get(`${data[i].street}, ${data[i].intersection}`));
+        map.set(`${data[i].street}, ${data[i].intersection}`, `${value + Number(`${data[i].numberOfCrimes}`)}`);
+
+    }
+    else {
+        map.set(`${data[i].street}, ${data[i].intersection}`, `${data[i].numberOfCrimes}`);
+    }
+}
+console.log(map);
+
+map.forEach( (value, key) => {
+    if (maximumCrimeValues < value)  {
+        maximumCrimeValues = value;
+        conclusion = `Crime values are high in ${key} with ${value} crimes`;
+    }
+})
+
 console.log(conclusion);
 
 */

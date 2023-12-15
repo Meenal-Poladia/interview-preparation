@@ -869,3 +869,54 @@ map.forEach( (value, key) => {
 console.log(conclusion);
 
 */
+
+/* Problem 34: Solve
+
+let x = 10; x += 1;
+
+console.log('x =', 11);
+
+ */
+
+/* Problem 35: Solve
+
+let x = 5 + “String”;
+let y = “String” + 20 + 5;
+
+console.log('x =', 5String);
+console.log('y =', String250);
+
+ */
+
+/* Problem 35: Sum of several arrays
+
+const array = [[3, 2], [1], [4, 12]];
+
+const flattenedArray = array.toString().split(',');
+
+const result = flattenedArray.reduce((previousValue, currentValue, acc) => {
+    return +previousValue + +currentValue
+}, 0);
+
+console.log(result);
+
+
+
+ */
+
+/* Problem 36: You will be given 2 parameters: a low and high number. Your goal is to print all numbers between low
+and high, and for each of these numbers print whether or not the number is divisible by 3. If the number is divisible
+by 3, print the word "div3" directly after the number.
+
+const numbersDivisibleBy3 = [];
+
+const printNumbers = (number1, number2) => {
+    for (let i = number1; i <= number2 ; i++) {
+        if (i % 3 === 0) numbersDivisibleBy3.push(i);
+    }
+    console.log(numbersDivisibleBy3);
+}
+
+printNumbers(2, 10);
+
+ */

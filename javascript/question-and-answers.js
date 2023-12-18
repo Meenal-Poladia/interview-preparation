@@ -22,6 +22,31 @@
     using NodeJs allowing developers to create full-stack applications using a single language.
 
 
-    
+    Which are the types of operators in javascript?
+    1. Arithmetic Operators
+    2. Comparison (Relational) Operators
+    3. Bitwise Operators
+    4. Logical Operators
+    5. Assignment Operators
+    6. Special Operators
+
+
+    Which are the datatype in Javascript?
+    1. Primitive data type - Bunns
+        ■	String - represents sequence of characters e.g. "hello"
+        ■	Number - represents numeric values e.g. 100
+        ■	Boolean  - represents boolean value either false or true
+        ■	Undefined - represents undefined value
+        ■	Null - represents null i.e. no value at all
+    2. Non-primitive (reference) data type
+        ■	Object - represents instance through which we can access members
+        ■	Array - represents group of similar values
+        ■	RegExp - represents regular expression
+
+
+    Difference between undefined and null?
+
+
+
 
  */

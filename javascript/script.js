@@ -920,3 +920,58 @@ const printNumbers = (number1, number2) => {
 printNumbers(2, 10);
 
  */
+
+/* Problem 37: Write a function called oddball_sum which takes in a list of numbers and returns the sum of all the odd
+elements. Try to solve with and without reduce function.
+
+const numbersDivisibleBy3 = [];
+const oddNumberArray = [];
+let result = 0;
+
+const oddballSum = (numbers) => {
+    for (let number of numbers) {
+        if (number % 2 !== 0) {
+            result += number
+        }
+    }
+    return result
+}
+const sum = oddballSum([1, 2, 3, 4, 5]);
+console.log(sum);
+
+ */
+
+/* Problem 38: Bubble Sort: Bubble Sort is based on the idea of repeatedly comparing pairs of adjacent elements and
+then swapping their positions if they are in the wrong order. Bubble sort is a stable, in-place sort algorithm.
+How it works:
+In an unsorted array of n elements, start with the first two elements and sort them in ascending order. (Compare the
+element to check which one is greater).
+Compare the second and third element to check which one is greater, and sort them in ascending order.
+Compare the third and fourth element to check which one is greater, and sort them in ascending order.
+
+Repeat steps 1–n until no more swaps are required.
+
+Solution 1:
+const input = [6, 5, 3, 3, 2, 1, 8, 28, 45, 100, 334, 7, 2, 4, 9, 11, 10, 15];
+let inputLength = input.length;
+let count = 0;
+
+const runForLoop = () => {
+    for (let i = 0; i < input.length - 2 - count; i++) {
+        for (let j = i + 1; j < input.length - count; j++) {
+            const firstNumber = input[i];
+            const secondNumber = input[j];
+            console.log(firstNumber, secondNumber);
+            if (firstNumber > secondNumber) {
+                input[i] = secondNumber;
+                input[j] = firstNumber;
+            }
+        }
+    }
+    count++
+    console.log(input);
+}
+
+runForLoop();
+
+ */

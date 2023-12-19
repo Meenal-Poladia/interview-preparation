@@ -45,7 +45,27 @@
 
 
     Difference between undefined and null?
+    Null and undefined are primitive data type values. They both are falsy values.
 
+    Undefined means the default value of a variables that are declared but not assigned a value. Function parameters
+    that are not provided with a value default to undefined. The typeOf undefined is undefined.
+
+    Null is often explicitly assigned to variables or object properties to signify that they intentionally have no
+    value. The typeOf undefined is object.
+
+    If we don’t assign any value to variable javascript automatically assigns it undefined value and if we assign
+    a variable as null it means that we are setting the variable empty.
+
+
+    What is type conversion and type coercion?
+    Type conversion is when we manually convert a variable from one data type to another. eg: To manually convert
+    strings to numbers, use the Number() constructor
+
+    Type coercion happens whenever an operator is dealing with two values that are of different types.
+    In this javascript will automatically convert the data type of another variable to another for comparison. Type
+    coercion depends on the operator being used.
+    + coerces to string
+    > and - and *  and / coerces to number
 
 
 

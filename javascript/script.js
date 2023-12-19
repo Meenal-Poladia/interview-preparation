@@ -1136,3 +1136,18 @@ function countCharacterOccurrences(str) {
 
  */
 
+/* Problem 51: Implement a function to remove duplicates from an array.
+
+function removeDuplicates(arr) {
+  return Array.from(new Set(arr));
+}
+
+ */
+
+/* Problem 52: Write a function that sorts an array of numbers in ascending order.
+
+function ascendingSort(numbers) {
+  return numbers.sort((a, b) => a – b);
+}
+
+ */

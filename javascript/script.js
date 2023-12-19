@@ -220,6 +220,11 @@ for (let i = 0, j = word.length - 1; i < j ; i++, j--) {
     }
 }
 console.log(isPalindrome);
+
+Solution 2:
+function isPalindrome(str) {
+  return str === str.split(”).reverse().join(”);
+}
 */
 
 /* Problem 12: Black Jack Game || Pig Game
@@ -1008,4 +1013,31 @@ for (const string of createArray) {
 output.join(' ');
 // emocleW ot siht tpircsavaJ !ediuG
 
+ */
+
+/* Problem 41: Write a JavaScript function to check if a given number is prime.
+
+function isPrime(num) {
+  if (num <= 1) return false;
+
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) return false;
+  }
+  return true;
+}
+
+ */
+
+/* Problem 42: Write a JavaScript program to convert a string to title case (capitalize the first letter of each word).
+const inputString = "hello world, this is an example";
+
+const toTitleCase = (string) => {
+    return string
+        .split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+}
+
+const titleCaseString = toTitleCase(inputString);
+console.log(titleCaseString, Hello World, this Is An Example);
  */

@@ -1115,4 +1115,24 @@ const getUniqueElements = (arr) => {
 }
  */
 
+/* Problem 50: Implement a function to find the factorial of a given number.
+
+function factorial(number) {
+  if (number === 0 || number === 1) return 1;
+  return number * factorial(number – 1);
+}
+
+ */
+
+/* Problem 51: Given a string, write a function to count the occurrences of each character in the string.
+
+function countCharacterOccurrences(str) {
+  const charCount = {};
+  for (let char of str) {
+    charCount[char] = (charCount[char] || 0) + 1;
+  }
+  return charCount;
+}
+
+ */
 

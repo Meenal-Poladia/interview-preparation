@@ -1082,4 +1082,37 @@ const flattenArray = (nestedArray) => {
 
 */
 
+/* Problem 47: Implement a function to reverse a string without using the built-in reverse() method.
+
+const input = 'olleh';
+const reversedInputArray = [];
+let reversed;
+
+const inputArray = input.split('');
+for (let i = inputArray.length - 1; i >=0 ; i--) {
+    reversedInputArray.push(inputArray[i]);
+}
+reversed = reversedInputArray.join('');
+console.log(reversed, 'hello');
+
+ */
+
+/* Problem 48: Given an array of numbers, write a function to find the largest and smallest numbers in the array.
+
+const findMinMax = (arr) => {
+  const min = Math.min(…arr);
+  const max = Math.max(…arr);
+  return [min, max];
+}
+
+ */
+
+/* Problem 49: Write a function that takes an array of integers as input and returns a new array with only the unique
+elements.
+
+const getUniqueElements = (arr) => {
+  return Array.from(new Set(arr));
+}
+ */
+
 

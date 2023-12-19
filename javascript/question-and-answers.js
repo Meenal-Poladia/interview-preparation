@@ -148,3 +148,70 @@ Multiline comment in javascript
     the script after the parser has completed.
 
  */
+
+/* Question 12: Equality Operators
+
+    == is called loose equality operator
+    === is called strict equality operator
+
+    == returns true if the value on both the sides of the operand have the same value.
+    === returns true if the values on both the sides of the operand are of the same data type and the value.
+ */
+
+/* Question 13: Some ES6 features
+    1. Let and const keyword to declare variables
+    2. Arrow functions
+    3. Template literals
+    4. Destructuring array or objects
+    5. Promises
+    6. Spread Operator
+ */
+
+/* Question 14:
+
+ */
+
+
+// Difference between for of and for in loop
+// How do you check if a variable is an object?
+// -> typeOf(value) === 'object' && value !== null && !Array.isArray(value)
+
+//What is hoisting
+
+//What is Temporal Dead Zone
+
+// What is the difference between map and forEach loop
+
+// Difference between slice and splice
+
+// What is destructuring?
+
+// Difference between spread and rest operator
+
+// What is IIFE
+
+//What is Higher Order Function
+
+// What is callback hell
+
+// Difference between Arrow function and Regular function
+
+// Explain call(), apply() and bind()
+
+// Promises in JS
+
+// Async /Await
+
+// Event loop
+
+// Event bubbling
+
+// What is currying in JS
+
+// Difference between e.preventDefault() and e.stopPropagation()
+
+// Throttling and debouncing
+
+// Shallow copy and deep copy
+
+//

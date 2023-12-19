@@ -610,7 +610,7 @@ const lastNumber = 10;
 const fibonnaciSequence = [];
 
 // Output: [0, 1, 1, 2, 3];
-if(fibonnaciSequence.length === 0) fibonnaciSequence.push(0);
+if(fibonnaciSequence.length < 0) fibonnaciSequence.push(0);
 if(fibonnaciSequence.length === 1) fibonnaciSequence.push(1);
 
 for (let i = 2; i < lastNumber; i++) {
@@ -973,5 +973,39 @@ const runForLoop = () => {
 }
 
 runForLoop();
+
+ */
+
+/* Problem 39: String Rotation
+Find out if a string is a rotation of another string. E.g. ABCD is a rotation of BCDA but not ACBD.
+
+const input = 'ABCD';
+const output = 'BCDA';
+
+const identifyString = (string) => {
+    const checkLength = string.length === input.length;
+    if (!checkLength) return;
+    const addInput = input + input;
+    return addInput.indexOf(string) > -1;
+}
+
+const result = identifyString(output);
+console.log(true); Output is the rotation of input;
+
+ */
+
+/* Problem 40: Given a string reverse each word in the sentence
+
+const input = 'Welcome to this Javascript Guide!';
+const output = [];
+
+const createArray = input.split(" ");
+
+for (const string of createArray) {
+    output.push(string.toString().split('').reverse().join(''))
+}
+
+output.join(' ');
+// emocleW ot siht tpircsavaJ !ediuG
 
  */

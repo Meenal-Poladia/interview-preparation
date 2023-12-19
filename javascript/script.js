@@ -1041,3 +1041,45 @@ const toTitleCase = (string) => {
 const titleCaseString = toTitleCase(inputString);
 console.log(titleCaseString, Hello World, this Is An Example);
  */
+
+/* Problem 43: Implement a debounce function in JavaScript that limits the frequency of a function’s execution when
+it’s called repeatedly within a specified time frame.
+
+function debounce(func, delay) {
+  let timer;
+  return function() {
+    clearTimeout(timer);
+    timer = setTimeout(func, delay);
+  };
+}
+
+*/
+
+/* Problem 44: Implement a deep clone function in JavaScript that creates a copy of a nested object or array without
+any reference to the original.
+
+function deepClone(obj) {
+  return JSON.parse(JSON.stringify(obj));
+}
+
+*/
+
+/* Problem 45: Implement a function that takes two sorted arrays and merges them into a single sorted array without
+using any built-in sorting functions.
+
+function mergeSortedArrays(arr1, arr2) {
+  return […arr1, …arr2].sort((a, b) => a – b);
+}
+
+ */
+
+/* Problem 46: Implement a function that flattens a nested array in JavaScript, converting it into a single-level
+array.
+
+const flattenArray = (nestedArray) => {
+  return nestedArray.flat(Infinity);
+};
+
+*/
+
+

@@ -196,6 +196,97 @@ Multiline comment in javascript
 
  */
 
+/* Question 16: Engine and runtime
+    JS needs a runtime to execute inside of. When it is running in the browser the browser becomes its runtime and when
+    it is running in Node, the Node becomes its runtime. Inside this runtime is an engine which executes the compiled/
+    interpreted JS code. Chrome's JS engine is called as V8. It is the same one as Node. Other browsers use different
+    engines. There are 3 main components of an engine:
+
+    1. Call Stack and Heap
+    The call stack holds the current execution context (EC). The EC are placed on top of each other with the most
+    recent EC at the top of the stack. The heap is used for storing objects and acts as a memory store for the
+    running program.
+
+    2. Web API's
+    The web API's are provided by the browser for manipulating the DOM. The web API's are different for Node.
+
+    3. Callback Queue - Non Blocking Event Loop
+    The Callback Queue holds the callbacks for events and asynchronous activities. These events and activities are
+    held separately and executed once the main thread becomes free. It is non blocking in the sense that it lets the
+    main thread finish its execution and then looks into the Callback Queue to check if any callbacks are waiting for
+    execution.
+
+ */
+
+/* Question 17: Compilation, Interpretation and Just In Time compilation
+    1. Compilation
+    Compilation is the process of translating the entire source code of a program into machine code or an intermediate
+    code (e.g., bytecode) all at once.
+    The resulting compiled code is a standalone executable file.
+
+    2. Interpretation
+    Interpretation involves executing a program directly without a prior translation of the entire source code.
+    An interpreter reads and executes the source code line by line or statement by statement.
+
+    3. Just-In-Time (JIT) Compilation
+    Entire code is converted into machine code at once, then executed immediately.
+
+ */
+
+/* Question 18: Execution Context
+    The JS EC(Execution Context) is the area that is created when the JS program starts execution. Every EC goes
+    through a creation phase where it looks for variables for hoisting.
+
+    At first the global execution context is created which encompasses the whole file. Then as new functions are called
+    each function creates its own EC which gets placed on top of the call stack.
+
+    As the functions continue their execution, new ECs get put on top of the stack. When a function completes its
+    execution the EC is popped from the stack and control returns to the previous item in the stack.
+
+    In this way, control eventually returns to the global EC (which is the first EC) that was created.
+
+    The global EC is never popped from the stack as long as the program is running. It is only removed when the program
+    stops. Eg. when the browser window is closed.
+
+    An EC contains
+
+    1. Variable Environment
+    It holds the variables declared in this context, functions and arguments
+
+    2. Scope chain
+    It contains references to the methods that have called upon the present EC.
+
+    3. this keyword
+    Special keyword
+
+    Note: arrow functions do not have this and arguments
+
+ */
+
+/* Question 19: Hoisting
+    Hoisting makes some types of variables accessible/usable in the code before they are actually declared.
+
+    Behaviours of various constructs on hoisting:
+
+    1. Function declarations
+    Hoisted: Yes
+    Initial Value: Actual Function
+    Scope: Block (Strict Mode - otherwise loose scoped)
+
+    2. var variables
+    Hoisted: Yes
+    Initial Value: undefined (Weird but true) -> See example 1
+    Scope: Function
+
+    3. let and const variables
+    Hoisted: No
+    Initial Value: uninitialized <Temporal Dead Zone>
+    Scope: Block
+
+    4. Function expressions
+    Hoisted: Depends on whether they are declared with let or var
+
+ */
 
 // Difference between for of and for in loop
 // How do you check if a variable is an object?

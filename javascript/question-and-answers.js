@@ -288,6 +288,17 @@ Multiline comment in javascript
 
  */
 
+/* Question 20:Temporal Dead Zone
+
+    Temporal Dead Zone is the area of the code where let or const are inaccessible.
+
+    Why TDZ?
+    Makes it easier to avoid and catch errors
+    Makes const variables work as expected
+
+ */
+
+
 // Difference between for of and for in loop
 // How do you check if a variable is an object?
 // -> typeOf(value) === 'object' && value !== null && !Array.isArray(value)

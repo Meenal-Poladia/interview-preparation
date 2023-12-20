@@ -167,7 +167,32 @@ Multiline comment in javascript
     6. Spread Operator
  */
 
-/* Question 14:
+/* Question 14: What are Primitive and Reference Data types
+    1. Primitive Data types
+    - Values once assigned are immutable.
+    - They are stored against an identifier.
+    - To assign a new value means creating a new address and pointing the identifier to the new address. That is why
+    the old variable holds the copied value while the newly assigned variable holds a new value.
+    - Bunns are primitive data types.
+
+    2. Reference Data types
+    - Reference data types are stored in heap memory because objects can be large and will fill up the stack memory
+    quickly if they are stored there.
+    - When a new object is created it is stored in the heap memory and is given an address.
+    - When we change the value of the object in the heap the changes are reflected across all the objects that hold a
+    copy of the referred heap memory address.
+    - That is why these constructs are called reference values.
+    They refer to the address in the Heap memory from the call stack and not from the call stack itself.
+    The copy in the way mentioned in step 2 only copies the reference and not the object.
+ */
+
+/* Question 15: Create a shallow copy of an object
+
+    Object.assign(targetObj, ...sourceObjs) returns the target obj
+
+    This only creates a shallow copy in the sense that it does not copy deeply nested properties.
+    For copying deeply nested properties you need a deep copy which can be done by external libraries
+    like lodash
 
  */
 

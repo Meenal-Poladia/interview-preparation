@@ -365,7 +365,25 @@ Multiline comment in javascript
 
  */
 
+/* Question 25: Enhanced Object Literals
 
+    With enhanced object literals you can now directly add existing properties to objects that share the same name as
+    an existing variable in the same scope.
+
+ */
+
+/* Question 9: Sets
+    Sets can hold values of any data types just like arrays. They can also hold mixed data types.
+    Sets are iterable data structures in JS which store only unique values (no duplicates).
+
+    Some of the functions that can be called on a set are:
+    1. size - to know the length of the set
+    2. has - to know if the value exists
+    3. add - to add a value in the existing set
+    4. delete - to delete a value in the existing set
+    5. for...of - to loop over the set
+    6. ...new Set(setName) - to create an array into a set
+ */
 
 
 // Difference between for of and for in loop

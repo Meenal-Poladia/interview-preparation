@@ -540,7 +540,7 @@ const map = new Map();
 const array = [];
 
 for (let number of numbers) {
-    if (map.has(number)) map.set(number, 1);
+    if (!map.has(number)) map.set(number, 1);
     else map.set(number, map.get(number) + 1);
 }
 

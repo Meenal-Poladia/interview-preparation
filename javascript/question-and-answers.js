@@ -298,14 +298,80 @@ Multiline comment in javascript
 
  */
 
+/* Question 21: This keyword
+    The this keyword is a special variable that is created for every EC (function).
+    This keyword points to the owner of the function.
+
+     The this keyword is dynamic and it changes based on who or where it is used.
+    There are 4 different ways in which this may be used.
+
+    1. Inside methods (Functions attached to objects)
+    this refers to the object from within which the method is called. --> See Example 1
+
+    2. Simple function call
+    this = undefined (only in strict mode)
+    otherwise this points to window object and this can cause bugs.
+
+    3. Arrow functions
+    Do not have their own this. this inside arrow functions refers to the this of surrounding function OR lexical this
+
+    4. Event Listener
+    this refers to the DOM Element the handler function is attached to
+
+    Important to note that:
+    this will never point to the function that we are executing it in AND
+    this will never point to the Variable Environment
+
+
+ */
+
+/* Question 22: Regular and arrow function
+    They differ in:
+    1. Syntax
+    2. this KW - In a object with an arrow function we can this takes the surrounding scope. In a function declaration
+    this refers to the function.
+    3. Writing return inside the function - In an arrow function if there is just one expression that we need to return
+    then we do not need to write the return KW while in function declaration we need to write the return KW.
+
+ */
+
+/* Question 23: Spread and Rest Operator
+
+    Rest Operator: Gathers remaining elements into an array, typically used in function parameters or destructuring.
+    Spread Operator: Expands elements of an iterable into individual elements, commonly used in array literals,
+    object literals, or function arguments.
+
+    While both operators use the same syntax (...), their roles are different: rest collects elements into an array,
+    while spread expands elements from an iterable
+
+ */
+
+/* Question 24: Nullish Coalescing
+    When using the short circuit operator, false values like 0 and '' evaluate to false and hence
+    could lead to potential errors even when they could be valid values in certain scenarios. -> See example 1
+
+    This problem is solved by the nullish coalescing operator which moves to the next value
+    in the chain only if the value on the left is undefined or null.
+
+    // Example 1
+    restaurant.numGuests = 0;
+    const guests = restaurant.numGuests || 10; // this returns 10 even though 0 is a valid value for numGuests
+    console.log(guests); // prints 10
+
+    // Example 2
+    // Nullish: null and undefined (NOT 0 or '')
+    const guestCorrect = restaurant.numGuests ?? 10; // when numGuests is 0 it sets the const to 0, if undefined it will set to 10
+    console.log(guestCorrect);
+
+ */
+
+
+
 
 // Difference between for of and for in loop
 // How do you check if a variable is an object?
 // -> typeOf(value) === 'object' && value !== null && !Array.isArray(value)
 
-//What is hoisting
-
-//What is Temporal Dead Zone
 
 // What is the difference between map and forEach loop
 
@@ -321,15 +387,11 @@ Multiline comment in javascript
 
 // What is callback hell
 
-// Difference between Arrow function and Regular function
-
 // Explain call(), apply() and bind()
 
 // Promises in JS
 
 // Async /Await
-
-// Event loop
 
 // Event bubbling
 
@@ -338,7 +400,3 @@ Multiline comment in javascript
 // Difference between e.preventDefault() and e.stopPropagation()
 
 // Throttling and debouncing
-
-// Shallow copy and deep copy
-
-//

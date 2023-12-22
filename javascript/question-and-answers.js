@@ -372,7 +372,7 @@ Multiline comment in javascript
 
  */
 
-/* Question 9: Sets
+/* Question 26: Sets
     Sets can hold values of any data types just like arrays. They can also hold mixed data types.
     Sets are iterable data structures in JS which store only unique values (no duplicates).
 
@@ -383,6 +383,60 @@ Multiline comment in javascript
     4. delete - to delete a value in the existing set
     5. for...of - to loop over the set
     6. ...new Set(setName) - to create an array into a set
+ */
+
+/* Question 27: Maps
+    A map is a data structure that we can use to map values to keys.
+    So, just like an object data is stored in key value pairs in maps.
+
+    The big difference between objects and maps is that in maps, the keys can have any data type
+    whereas in objects, the keys are basically always strings. It could even be objects, or arrays, or other maps.
+
+    Some of the functions that can be called on a set are:
+    1. set - to add a key value pair on the map
+    2. get - to get the key value pair on the map. If the key does not exist then it returns undefined.
+    3. has - to check if the key value pair exists on the map
+    4. delete - to remove a key value pair from the map
+    5. clear - to delete the map
+    6. forEach - to loop over map or use .entries
+
+ */
+
+/* Question 28: Creating a map from Array
+let map = new Map([
+  ["1", "first element"],
+  [1, "second element"],
+  [true, "hello world"]
+]);
+
+let newIterable = map.entries(map);
+//return iterable with [key,value] pairs
+
+let newArray = Array.from(newIterable);
+
+ */
+
+/* Question 29: Creating a map from Object
+let obj = {
+	"name": "hackinbits",
+	"type": "website"
+}
+let newArray = Object.entries(obj)
+
+let map = new Map(newArray);
+
+ */
+
+/* Question 30: ES2021 features
+
+    1. Logical Assignment Operator
+        &&= – Logical And Assignment
+        ||= – Logical Or Assignment
+        ??= – Nullish coalescing operator.
+    2. ReplaceAll
+    3. Promise.any
+    4. Numeric Separator(_)
+
  */
 
 

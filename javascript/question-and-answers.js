@@ -439,6 +439,79 @@ let map = new Map(newArray);
 
  */
 
+/* Question 31: Functions as First class citizen
+
+    It means that functions can be treated like other variables, object or data types.
+    1. They can be assigned to other variables.
+    2. They can be passed as an argument to other functions.
+    3. Functions can be returned from other functions
+    4. Functions can be stored in data structures, such as arrays or objects.
+
+ */
+
+/* Question 32: Functions as Higher Order Functions
+    A higher-order function is a function that takes one or more functions as arguments or returns a function as its
+    result. Higher-order functions enable the composition of functions, allowing for more modular and reusable code.
+
+ */
+
+/* Question 33: Call, apply and bind
+    In JS, the call, apply, and bind methods are used to manipulate how a function is invoked and to control the value
+    of this within the function. These methods are often referred to as function methods.
+
+    1. Call Method
+    The call method is used to invoke a function with a specified this value and individual arguments provided as
+    separate parameters.
+
+    2. Apply Method
+    The apply method is similar to call, but it takes an array-like object as the second argument, where each element
+    of the array corresponds to an argument passed to the function.
+
+    3. Bind Method
+    The bind method creates a new function with the same body as the original function but a fixed this value and
+    partially applied arguments.
+
+    - call and apply invoke the function immediately, while bind returns a new function that needs to be invoked
+    separately.
+    - call takes individual arguments, while apply takes an array of arguments.
+    - bind allows you to create a partially applied function with a fixed this value.
+
+ */
+
+/* Question 34: IIFE's (Immediately Invoked Function Expression)
+    IIFE's are only executed once in their lifecycle. So basically this function disappears right after it's called
+    once and does not execute again.
+    IIFEs create their own scope and this scope is destroyed when the function executes and finishes.
+
+    Purpose of IIFE:
+    1. Encapsulation: Variables declared inside an IIFE are not accessible from the outside. This helps avoid naming conflicts
+    and keeps the global scope clean.
+    2. Avoiding Global Pollution: By encapsulating code within an IIFE, you reduce the risk of unintentional variable
+    collisions in the global scope.
+
+ */
+
+/* Question 35: Closure
+    A closure makes a function remember all the variables that existed at the function's birthplace.
+    A function always has access to the variable environment of the execution context in which it was created,
+    even after that execution context is gone.
+
+    So in a sense, the scope chain is actually preserved through the closure, even when a scope
+    has already been destroyed because its execution context is gone. This means that even though
+    the execution context has actually been destroyed, the variable environment somehow keeps living
+    somewhere in the engine.
+
+    Example:
+    function init() {
+      const name = "Mozilla";
+      function displayName() {
+        console.log(name);
+      }
+      displayName();
+    }
+    init();
+
+ */
 
 // Difference between for of and for in loop
 // How do you check if a variable is an object?

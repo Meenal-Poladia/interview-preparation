@@ -513,26 +513,39 @@ let map = new Map(newArray);
 
  */
 
-// Difference between for of and for in loop
-// How do you check if a variable is an object?
-// -> typeOf(value) === 'object' && value !== null && !Array.isArray(value)
+/* Question 36: Difference between for...of and forEach loop
 
+    1. Breaking the loop
+    The for...of loop supports the break statement for breaking out of the loop prematurely. The forEach method does
+    not support breaking out of the loop (like using break in a regular for loop).
 
-// What is the difference between map and forEach loop
+    2. Return Value
+    forEach always returns undefined. It is possible to return a value using the for...of loop.
+
+    3. Use Case
+    Use forEach when you specifically want to iterate over the elements of an array. Use for...of when you need more
+    flexibility and want to iterate over values of any iterable object.
+
+ */
+
+/* Question 37: Difference between for..in and for..of loop
+
+    1. Iterating Over:
+        for...in iterates over enumerable properties (keys) of an object.
+        for...of iterates over the values of an iterable.
+    2. Order of Iteration:
+        for...in does not guarantee a specific order of iteration over object properties.
+        for...of guarantees the order of iteration based on the iterable's defined order.
+ */
+
+/* Question 38: How do you check if a variable is an object?
+    typeOf(value) === 'object' && value !== null && !Array.isArray(value)
+*/
+
 
 // Difference between slice and splice
 
-// What is destructuring?
-
-// Difference between spread and rest operator
-
-// What is IIFE
-
-//What is Higher Order Function
-
 // What is callback hell
-
-// Explain call(), apply() and bind()
 
 // Promises in JS
 

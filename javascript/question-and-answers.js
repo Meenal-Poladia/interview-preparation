@@ -542,8 +542,57 @@ let map = new Map(newArray);
     typeOf(value) === 'object' && value !== null && !Array.isArray(value)
 */
 
+/* Question 39: Event Bubbling and event capturing
+    Event bubbling and event capturing are two phases of the event propagation process in the Document Object Model
+    (DOM) in web development.
 
-// Difference between slice and splice
+    1. Event Bubbling:
+    Direction: Bubbling occurs from the target element up to the root of the DOM.
+    Order: The innermost element's handler is executed first, then the handler of its parent, and so on, until the
+    outermost ancestor's handler is executed.
+
+    2. Event Capturing:
+    Direction: Capturing occurs from the root of the DOM down to the target element.
+    Order: The outermost ancestor's handler is executed first, then the handler of its child, and so on, until the
+    innermost element's handler is executed.
+
+ */
+
+/* Question 40: Event Flow
+    Events in the DOM follow a three-phase flow: capturing, target, and bubbling.
+    The capturing phase happens first, then the target phase, and finally the bubbling phase.
+    Not all events have all three phases; some events may skip either the capturing or the bubbling phase.
+
+ */
+
+/* Question 41: What is Event.stopPropagation()?
+    This method can be used to stop the event from propagating further, either up (bubbling) or down (capturing) the
+    DOM.
+
+ */
+
+/* Question 42: Difference between e.preventDefault() and e.stopPropagation()
+    e.preventDefault() and e.stopPropagation() are both methods that can be called on the event object (e) in JS when
+    handling events.
+
+    1. e.preventDefault():
+    Purpose: This method is used to prevent the default action associated with an event. Default actions are the
+    browser's built-in behaviors that occur when certain events take place.
+    For example, clicking a link navigates to a new page, submitting a form sends data, and pressing the spacebar
+    scrolls down.
+
+    2. e.stopPropagation():
+    This method is used to stop the event from propagating further through the DOM hierarchy. It prevents the event
+    from reaching other event listeners on the same element or from propagating up (bubbling) or down (capturing) the
+    DOM.
+
+ */
+
+/* Question 43: OOP in JS
+      A class is like a blueprint which can be used to create instances. This process of creating objects is called
+      instantiation.
+
+ */
 
 // What is callback hell
 
@@ -551,10 +600,6 @@ let map = new Map(newArray);
 
 // Async /Await
 
-// Event bubbling
-
 // What is currying in JS
-
-// Difference between e.preventDefault() and e.stopPropagation()
 
 // Throttling and debouncing

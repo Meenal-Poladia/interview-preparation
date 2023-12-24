@@ -594,7 +594,70 @@ let map = new Map(newArray);
 
  */
 
-// What is callback hell
+/* Question 44: 4 Properties of OOP
+    1. Inheritance
+    2. Encapsulation
+    3. Abstraction
+    4. Polymorphism
+
+ */
+
+/* Question 45: Callback hell
+    Callback hell, also known as "pyramid of doom" or "callback spaghetti," is a situation in asynchronous programming
+    where multiple nested callback functions make the code hard to read, understand, and maintain.
+    Each asynchronous operation is nested within the callback of the previous operation. As more asynchronous
+    operations are added, the code indentation grows deeper, making it difficult to follow the logic.
+
+    Disadvantages of Callback hell
+    1. Readability
+    2. Maintainability
+    3. Error Handling
+    4. Debugging
+
+ */
+
+/* Question 46: Promises and Async/Await
+    These are two techniques introduced by JS to avoid callback hell
+
+    1. Promises
+    Promises provide a more structured way to handle asynchronous operations. We can chain promises using .then() to
+    avoid deep nesting. Promises also have a .catch() method for centralized error handling.
+
+    2. Async/Await
+    Async/await is a syntactic sugar built on top of promises. It allows you to write asynchronous code in a more
+    synchronous style, making it easier to read and understand.
+
+ */
+
+/* Question 47: Read about Event Loop
+
+ */
+
+/* Question 48: Event Loop
+    The event loop is a fundamental concept in JavaScript that enables it to handle asynchronous operations. JS is
+    single-threaded, meaning it can only execute one operation at a time. However, it often needs to deal with
+    asynchronous tasks like user input, network requests, and timers. The event loop helps manage these asynchronous
+    operations efficiently.
+
+    There are few important concepts to understand event loop:
+    1. Call Stack
+    The call stack executes the current EC. Functions are added to the stack when they are called and removed when they
+    complete.
+    2. Callback Queue
+    When an asynchronous task is completed, a callback function is placed in a callback queue.
+    3. Microtask Queue
+    Callbacks related to promises do not go into the callback queue. Instead, they have a special queue which is
+    called the microtasks queue. What is special about the microtasks queue is that it has priority over the callback
+    queue.
+
+    The event loop continuously checks the call stack. If the call stack is empty, the event loop takes the callback
+    from the microtask queue if any. After executing this it goes to the callback queue, if there are any callbacks
+    then pushes it onto the call stack, allowing it to execute. In this way the event loop works as an orchestrator
+    and making sure that EC is never blocked. The EC is never empty as the control goes to the Global Execution COntext
+    once the callbacks are executed.
+    The Global Execution Context is destroyed only once the program is closed.
+
+ */
 
 // Promises in JS
 

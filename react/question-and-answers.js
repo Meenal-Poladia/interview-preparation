@@ -236,6 +236,12 @@
     useRef is a React Hook that lets you reference a value that’s not needed for rendering. useRef can help us to
     manipulate an element which is referenced.
 
+    8. useImperativeHandle
+    It will enable modifying the instance that will be passed with the ref object.
+
+    9. useDebugValue
+    It is used for displaying a label for custom hooks in React DevTools.
+
  */
 
 /* Question 17: Types of Side Effect
@@ -361,6 +367,32 @@
 
         8. componentWillUnmount(): This method will be called when the component removal from the DOM is about to
         happen.
+
+ */
+
+/* Question 26: Differentiate React Hooks vs Classes.
+    React Hooks
+        1. It is used in functional components of React.
+        2. It will not require a declaration of any kind of constructor.
+        3. It does not require the use of this keyword in state declaration or modification.
+        4. It is easier to use because of the useState functionality.
+        5. React Hooks can be helpful in implementing Redux and context API.
+
+    Classes
+        1. It is used in class-based components of React.
+        2. It is necessary to declare the constructor inside the class component.
+        3. Keyword this will be used in state declaration (this.state) and in modification (this.setState()).
+        4. No specific function is available for helping us to access the state and its corresponding setState variable.
+        5. Because of the long setup of state declarations, class states are generally not preferred.
+
+
+ */
+
+/* Question 27: How does the performance of using Hooks will differ in comparison with the classes?
+    React Hooks will avoid a lot of overheads such as the instance creation, binding of events, etc., that are
+    present with classes.
+    Hooks in React will result in smaller component trees since they will be avoiding the nesting that exists in
+    HOCs (Higher Order Components) and will render props which result in less amount of work to be done by React
 
  */
 

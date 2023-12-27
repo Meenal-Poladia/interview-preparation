@@ -238,7 +238,52 @@
 
  */
 
-/* Question 17:
+/* Question 17: Types of Side Effect
+    There are two types of side effects in React component. They are:
+        1. Effects without Cleanup: This side effect will be used in useEffect which does not restrict the browser
+        from screen update. It also improves the responsiveness of an application.
+        A few common examples are network requests, Logging, manual DOM mutations, etc.
+
+        2. Effects with Cleanup: The useEffect hook in React allows you to specify a cleanup function that will be
+        executed before the effect is re-run or when the component is unmounted. This cleanup function can be used to
+        clean up any resources or subscriptions created by the effect.
+        The cleanup function is returned by the effect callback function.
+
+        Example: Let’s look at this scenario: imagine we get a fetch of a particular user through a user’s id, and,
+        before the fetch completes, we change our mind and try to get another user. At this point, the prop, or in
+        this case, the id, updates while the previous fetch request is still in progress.
+        It is then necessary for us to abort the fetch using the cleanup function so we don’t expose our application
+        to a memory leak.
+
+ */
+
+/* Question 18: Prop drilling
+    Prop drilling means passing props from the grandparent to parents to child. Each component in the hierarchy receives
+    the props where or not in use to that it reaches to their children.
+
+      The disadvantage of using prop drilling is that the components that should otherwise be not aware of the data have
+    access to the data.
+
+ */
+
+/* Question 19: Error Boundary and places to detect it
+    Introduced in version 16 of React, Error boundaries provide a way for us to catch errors that occur in the render
+    phase. It is class based as render method is not in functional components.
+
+    Any component which uses one of the following lifecycle methods is considered an error boundary.
+    In what places can an error boundary detect an error?
+        1. Render phase
+        2. Inside a lifecycle method
+        3. Inside the constructor
+
+ */
+
+/* Question 20: Custom Hooks
+    A Custom Hook is a function in Javascript whose name begins with ‘use’ and which calls other hooks.
+    It is a part of React v16.8 hook update and permits you for reusing the stateful logic without any need for
+    component hierarchy restructuring.
+
+    The disadvantage of Custom Hooks is it cannot be used inside of the classes.
 
  */
 

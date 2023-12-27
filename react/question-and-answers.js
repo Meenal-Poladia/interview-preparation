@@ -396,4 +396,45 @@
 
  */
 
+/* Question 28: React Router
+    React Router refers to the standard library used for routing in React. It permits us for building a single-page
+    web application in React with navigation without even refreshing the page when the user navigates.
+
+    The major components of React Router are given below:
+        1. BrowserRouter: It is a router implementation that will make use of the HTML5 history API (pushState,
+        popstate, and event replaceState) for keeping your UI to be in sync with the URL. It is the parent component
+        useful in storing all other components.
+
+        2. Routes: It is a newer component that has been introduced in the React v6 and an upgrade of the component.
+
+        3. Route: It is considered to be a conditionally shown component and some UI will be rendered by this
+        whenever there is a match between its path and the current URL.
+
+        4. Link: It is useful in creating links to various routes and implementing navigation all over the
+        application. It works similarly to the anchor tag in HTML
+
+
+ */
+
+/* Question 29: Conditional rendering in React
+    There are different approaches for implementing conditional rendering in React. Some of them are:
+        1. Using if-else conditional logic which is suitable for smaller as well as for medium-sized applications
+        2. Using ternary operators, which takes away some amount of complication from if-else statements
+        3. Using element variables, which will enable us to write cleaner code
+
+ */
+
+/* Question 30: Pass data between sibling components using React router
+    Passing data between sibling components of React is possible using React Router with the help of history.push and
+    match.params.
+
+    In the code given below, we have a Parent component AppDemo.js and have two Child Components HomePage and AboutPage.
+    Everything is kept inside a Router by using React-router Route. It is also having a route for /about/{params} where
+    we will pass the data.
+    The HomePage is a functional component with a button. On button click, we are using
+    props.history.push(‘/about/’ + data) to programmatically navigate into /about/data.
+    Also, the functional component AboutPage will obtain the data passed by props.match.params.aboutId.
+
+ */
+
 //Difference in react and other frameworks

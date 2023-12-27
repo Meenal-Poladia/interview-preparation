@@ -319,4 +319,49 @@
 
  */
 
+/* Question 24: Different Phases of the component lifecycle
+     There are four different phases in the lifecycle of React component. They are:
+        1. Initialization: During this phase, React component will prepare by setting up the default props and
+        initial state for the upcoming tough journey.
+        2. Mounting: Mounting refers to putting the elements into the browser DOM. Since React uses VirtualDOM,
+        the entire browser DOM which has been currently rendered would not be refreshed. This phase includes the
+        lifecycle methods componentWillMount and componentDidMount.
+        3. Updating: In this phase, a component will be updated when there is a change in the state or props of a
+        component. This phase will have lifecycle methods like componentWillUpdate, shouldComponentUpdate, render,
+        and componentDidUpdate.
+        4. Unmounting: In this last phase of the component lifecycle, the component will be removed from the DOM
+        or will be unmounted from the browser DOM. This phase will have the lifecycle method named
+        componentWillUnmount
+ */
+
+/* Question 25: Lifecycle methods of React
+     The various lifecycle methods are:
+        1. constructor(): This method will be called when the component is initiated before anything has been done.
+        It helps to set up the initial state and initial values.
+
+        2. getDerivedStateFromProps(): This method will be called just before element(s) rendering in the DOM.
+        It helps to set up the state object depending on the initial props. The getDerivedStateFromProps() method
+        will have a state as an argument and it returns an object that made changes to the state. This will be the
+        first method to be called on an updating of a component.
+
+        3. render(): This method will output or re-render the HTML to the DOM with new changes. The render() method
+        is an essential method and will be called always while the remaining methods are optional and will be called
+        only if they are defined.
+
+        4. componentDidMount(): This method will be called after the rendering of the component. Using this method,
+        you can run statements that need the component to be already kept in the DOM.
+
+        5. shouldComponentUpdate(): The Boolean value will be returned by this method which will specify whether
+        React should proceed further with the rendering or not. The default value for this method will be True.
+
+        6. getSnapshotBeforeUpdate(): This method will provide access for the props as well as for the state before
+        the update. It is possible to check the previously present value before the update, even after the update.
+
+        7. componentDidUpdate(): This method will be called after the component has been updated in the DOM.
+
+        8. componentWillUnmount(): This method will be called when the component removal from the DOM is about to
+        happen.
+
+ */
+
 //Difference in react and other frameworks

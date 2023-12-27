@@ -287,5 +287,36 @@
 
  */
 
+/* Question 21: Different ways to style react
+    1. Inline Styling: We can directly style an element using inline style attributes.
+
+    2. Using JavaScript object: We can create a separate JavaScript object and set the desired style properties.
+    This object can be used as the value of the inline style attribute.
+
+    3. CSS Stylesheet: We can create a separate CSS file and write all the styles for the component inside that
+    file. This file needs to be imported inside the component file.
+
+    4. CSS Modules: We can create a separate CSS module and import this module inside our component.
+    Create a file with “.module.css”‘ extension, styles.module.css.
+
+ */
+
+/* Question 22: Data passing in between components
+    1. Parent Component to Child Component (using props)
+        With the help of props, we can send data from a parent to a child component.
+   2. Child Component to Parent Component (using callbacks)
+        This one is a bit tricky. We follow the steps below:
+            1. Create a callback in the parent component which takes in the data needed as a parameter.
+            2. Pass this callback as a prop to the child component.
+            3. Send data from the child component using the callback.
+
+ */
+
+/* Question 23: Higher Order Component
+    Higher Order Components (HOCs) are a pattern in React that involves creating a function that takes a component and
+    returns a new component with additional props, functionality, or behavior. HOCs allow you to reuse component logic,
+    share code between components, and apply cross-cutting concerns.
+
+ */
 
 //Difference in react and other frameworks

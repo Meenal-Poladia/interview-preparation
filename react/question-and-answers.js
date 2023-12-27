@@ -437,4 +437,42 @@
 
  */
 
+/* Question 31: Synthetic events
+    SyntheticEvent is a cross-browser wrapper around the browser's native event. Its API is same as the browser's
+    native event, including stopPropagation() and preventDefault(), except the events work identically across all
+    browsers.
+
+ */
+
+/* Question 32: Difference between Shadow DOM and Virtual DOM?
+    The Shadow DOM is a browser technology designed primarily for scoping variables and CSS in web components.
+    The Virtual DOM is a concept implemented by libraries in JavaScript on top of browser APIs.
+
+ */
+
+/* Question 33: React Fiber
+    Fiber is the new reconciliation engine or reimplementation of core algorithm in React v16.
+    The goal of React Fiber is to increase its suitability for areas like animation, layout, gestures, ability to pause,
+    abort, or reuse work and assign priority to different types of updates; and new concurrency primitives.
+
+ */
+
+/* Question 34: Forwarding Ref
+    Ref forwarding is a technique for automatically passing a ref through a component to one of its children.
+    This is typically not necessary for most components in the application.
+    However, it can be useful for some kinds of components, especially in reusable component libraries.
+    The most common scenarios are described below.
+    example
+    const FancyButton = React.forwardRef((props, ref) => (
+        <button ref={ref} className="FancyButton">
+            {props.children}
+        </button>
+    ));
+
+    // You can now get a ref directly to the DOM button:
+    const ref = React.createRef();
+    <FancyButton ref={ref}>Click me!</FancyButton>;
+
+ */
+
 //Difference in react and other frameworks

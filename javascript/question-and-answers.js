@@ -659,6 +659,60 @@ let map = new Map(newArray);
 
  */
 
+/* Question 49: Try and Catch
+    To catch errors when using async/await we can use try and catch block. When using fetch and async/await it does not
+    consider 404 as error so we have to write a if statement where we capture if the response is ok and accordingly
+    respond.
+
+ */
+
+/* Question 50: Static methods on Promise constructor
+    1. Promise.all()
+    - Promise.all() waits for all promises to settle (either fulfill or reject).
+    - If any of the input promises is rejected, the returned promise will be immediately rejected with the reason of
+    the first rejected promise encountered.
+    - The promises in the iterable are executed in parallel, not sequentially.
+    - Useful when you have multiple asynchronous tasks that can be performed concurrently, and you want to wait for all
+    of them to complete before proceeding.
+
+    2. Promise.allSettled()
+    - Unlike Promise.all(), Promise.allSettled() never rejects. It waits for all promises to settle, regardless of
+    whether they fulfill or reject.
+    - Each result object in the array has a status property with a value of "fulfilled" or "rejected".
+    - If the promise was fulfilled, there is a value property containing the fulfillment value.
+    - If the promise was rejected, there is a reason property containing the rejection reason.
+    - Useful when you want to wait for all promises to complete, whether they are fulfilled or rejected, and gather
+    information about their outcomes.
+
+    3. Promise.any()
+    - Promise.any() returns the value of the first promise in the iterable that fulfills, regardless of the order in
+    which promises are specified.
+    - If all promises are rejected, Promise.any() rejects with an AggregateError containing an array of rejection
+    reasons. If any promise is fulfilled, the result is the fulfillment value of that promise.
+    - Useful when you want to wait for the first promise to fulfill among a set of promises.
+
+    4. Promise.race()
+    - The order in which promises are specified in the iterable does not affect the result. The first promise to settle
+    (either fulfill or reject) determines the result.
+    - It is called "race" because it races to fulfill or reject based on the first settled promise.
+    - It's commonly used for scenarios where you want the fastest response among multiple asynchronous operations.
+
+    5. Promise.catch()
+    - The catch() method of Promise instances schedules a function to be called when the promise is rejected. It
+    immediately returns an equivalent Promise object, allowing you to chain calls to other promise methods.
+
+    6. Promise.finally()
+    - The finally() method of Promise instances schedules a function to be called when the promise is settled (either
+    fulfilled or rejected). It immediately returns an equivalent Promise object, allowing you to chain calls to other
+    promise methods.
+    - This lets you avoid duplicating code in both the promise's then() and catch() handlers.
+
+    7. Promise.resolve()
+
+    8. Promise.reject()
+
+ */
+
 // Promises in JS
 
 // Async /Await

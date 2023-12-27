@@ -208,5 +208,39 @@
 
  */
 
+/* Question 16: Different types of hook
+    1. useState:
+    It is the most commonly used React Hook. It allows functional components to have state variables. It takes an
+    initial state value as the argument and returns an array with two elements — the current state value and a function
+    to update that state.
+
+    2. useEffect:
+    ‘useEffect’: It enables performing side effects, such as data fetching, subscriptions, or DOM manipulations after
+    the component has been rendered.
+
+    3. useReducer
+    Provides an alternative to ‘useState’ for managing complex state logic involving multiple sub-values or when the
+    next state depends on the previous one.
+
+    4. useLayoutEffect
+    useLayoutEffect is a version of useEffect that fires before the browser repaints the screen.
+
+    5. useContext
+    useContext is a React Hook that lets you read and subscribe to context from your component.
+
+    6. useCallback and useMemo
+    - useCallback is used to memoize functions, preventing unnecessary re-renders.
+    - useMemo is used to memoize values, preventing unnecessary re-computations.
+
+    7. useRef
+    useRef is a React Hook that lets you reference a value that’s not needed for rendering. useRef can help us to
+    manipulate an element which is referenced.
+
+ */
+
+/* Question 17:
+
+ */
+
 
 //Difference in react and other frameworks

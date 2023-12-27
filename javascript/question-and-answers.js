@@ -868,10 +868,177 @@ let map = new Map(newArray);
 
  */
 
-// Promises in JS
+/* Question 56: Useful Number methods
 
-// Async /Await
+    // constructor
+    Number() -                                  Number is a primitive wrapper object  used to represent and manipulate
+    Params - value                              numbers like 37 or -9.25. Values of other types can be converted to
+                                                numbers using the Number() function. It is a double-precision 64-bit
+                                                binary format IEEE 754  value. This means it can represent fractional
+                                                values, but there are some limits to what it can store.
 
-// What is currying in JS
+    parseInt() -                                Parses a string argument and returns an integer of the specified
+    Params - valueInString, radix               radix or base. The value must start with a number else the result is
+                                                NaN. The default radix is 10. Passing a string with floating point
+                                                number in it will result in an integer without the fractional part.
 
-// Throttling and debouncing
+    parseFloat() -                              Parses an argument and returns a floating point number. If a number
+    Params - valueInString                      cannot be parsed from the argument, it returns NaN.
+
+    toFixed() -                                 Formats a number such that it becomes a floating point number.
+    Params - digits                             Rounds of the newly created number to the number of digits mentioned
+                                                in the argument. 0 represents no decimal values. Returns a string
+                                                instead of number
+
+    isNaN() -                                   Determines whether the passed value is NaN and its type is Number.
+    Params - valueToTest                        It is a more robust version of the original, global isNaN().
+
+    isFinite() -                                Determines whether the passed value is a finite number — that is,
+    Params - valueToTest                        it checks that the type of a given value is Number, and the number
+                                                is neither positive Infinity, negative Infinity, nor NaN. This is
+                                                a better check than isNaN to check if a value is an Number or not.
+
+    isInteger() -                               Determines whether the passed value is an integer.
+    Params - valueToTest
+
+ */
+
+/* Question 57: Useful Math methods
+
+    sqrt() -                                    Returns the square root of the passed number.
+    Params - number
+
+    max() -                                     Returns the largest of the zero or more numbers given as input
+    Params - value0, value1, ...                parameters, or NaN if any parameter isn't a number and can't be
+                                                converted into one.
+
+    min() -                                     Returns the lowest-valued number passed into it, or NaN if any
+    Params - value0, value1, ...                parameter isn't a number and can't be converted into one.
+
+
+    random() -                                  Returns a floating-point, pseudo-random number in the range 0 to less
+                                                than 1 (inclusive of 0, but not 1)
+
+    trunc() -                                   Returns the integer part of a number by removing any fractional digits.
+    Params - number
+
+    round() -                                   Returns the value of a number rounded to the nearest integer.
+    Params - number                             It performs type coercion.
+
+    ceil() -                                    Always rounds a number up to the next largest integer. It performs
+    Params - number                             type coercion
+
+    floor() -                                   Returns the largest integer less than or equal to a given number.
+    Params - number                             It performs type coercion.
+
+ */
+
+/* Question 58: ES updates
+
+    Additions to JS as per new updates
+
+    ES6 (ES2015)
+    1. let, const
+    2. Arrow functions
+    3. Template literals
+    4. Object and array destructuring
+    5. Promises
+    6. Default function parameters
+    7. Class syntax
+    8. Rest parameter and spread operator
+    9. Modules import and export
+    10. for...of loop syntax
+
+
+    ES7 (ES2016)
+    1.  Exponentiation operator - 10 ** 3
+    2.  Array.prototype.includes method - [1,2,3].includes(1)
+
+
+    ES8 (ES2017)
+    1. async/await
+    2. Object.entries and Object.values static methods
+    3. String padding myString.padStart(2) or myString.padEnd(2);
+    4. Trailing comma function test(a,b,c, )
+
+
+    ES9 (ES2018)
+    1. Asynchronous iteration - for await (const line of readlines(filePath)) {}
+    2. Rest operators can be used as last items in function params - function restParamsEx(p1, p2, ...p3)
+    3. Promise.prototype.finally method
+    4. Spread operators on objects
+
+
+    ES10 (ES2019)
+    1. Array.prototype.flat and Array.prototype.flatMap methods
+    2. Object.fromEntries static method - reverse operation from Object.entries (see here)
+    3. String.prototype.trimStart and String.prototype.trimEnd methods- Remove extra spaces in a string
+    4. Optional Catch binding: remove the need to add a param to the catch (Now you can do } catch {instead of }
+    catch(e) {}
+    5. Function.prototype.toString method - returns string representation of function source code
+
+
+    ES11 (ES2020)
+    1. Private class variables class Person { #dateOfBirth = '1980-05-27' }
+    2. Promise.prototype.allSettled method - runs all promises regardless of rejection of any promises
+    3. String.prototype.matchAll method
+    4. Optional Chaining operator - myobject?.possibleExistingProperty
+    5. Dynamic Imports - Lazy loading imports for better performance
+    1. BigInt datatype - 9007199254740992n
+
+
+    ES12 (ES2021)
+    1. Numeric separators - (_) 100_000_000_000
+    2. Promise.prototype.any - returns first fulfilled promise
+    3. Private class methods - class Person { #age() {return 10} }
+    4. Logical assignment operators - ??=, &&=, ||=
+    5. String.prototype.replaceAll method - 'hotdog dog'.replaceAll('dog', 'cat');
+
+
+    ES13 (ES2022)
+    1. Top level await
+    2. Class field declarations - class User { name = "Tom" }
+    3. Class Static Block - class Words { static { const words = []; } }
+    4. Array.prototype.at method - [1,2,3].at(1)
+    5. Array.prototype.findLast and findLastIndex methods - array1.findLast((element) => element > 45);
+
+ */
+
+/* Question 59: Currying in JS
+    Currying is a technique in functional programming where a function is transformed into a sequence of functions,
+    each taking a single argument. The curried function returns a new function for each argument until it receives
+    all the necessary arguments and finally produces the result.
+
+    Example -
+    function curryAdd(x) {
+      return function(y) {
+        return function(z) {
+          return x + y + z;
+        };
+      };
+    }
+
+    const curriedAdd = curryAdd(1)(2)(3);
+    console.log(curriedAdd);
+
+*/
+
+/* Question 60: Throttling and debouncing
+    Throttling and debouncing are techniques used in web development to control the frequency of execution of a
+    function in response to events like scrolling, resizing, typing, etc. These techniques are particularly useful to
+    optimize performance and prevent the excessive execution of resource-intensive operations.
+
+    1. Throttling:
+    Throttling ensures that a function (like handling a scroll event on a webpage) is called only at certain intervals,
+    preventing it from being called too frequently.
+    Throttling is like limiting the rate at which a function can be called, making sure it doesn't happen too often.
+
+    2. Debouncing
+    Debouncing ensures that a function (like handling a keypress event while typing) is only called after a certain
+    amount of time has passed since the last invocation. If the function is called frequently, it delays its execution
+    until there's a pause.
+    Debouncing is like waiting for a pause before allowing a function to execute, making sure it doesn't happen too
+    frequently.
+
+ */
+

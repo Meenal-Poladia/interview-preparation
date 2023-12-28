@@ -59,3 +59,94 @@
     laber = "String"
 
  */
+
+/* Question 6: Modules
+    Modules in TypeScript are a collection of related variables, functions, classes, and interfaces.
+    You can think of modules as containers that contain everything needed to execute a task. Modules can be imported to
+    easily share code between projects.
+
+    example -
+    module module_name{
+        class xyz{
+        export sum(x, y){
+        return x+y;
+        }
+    }
+
+ */
+
+/* Question 7: How do you call a base class constructor from a child class in TypeScript
+    We can use the super() function to call the constructor of the base class.
+
+    class Animal {
+      name: string;
+      constructor(theName: string) {
+        this.name = theName;
+      }
+      move(distanceInMeters: number = 0) {
+        console.log(`${this.name} moved ${distanceInMeters}m.`);
+      }
+    }
+
+    class Snake extends Animal {
+      constructor(name: string) {
+        super(name);
+      }
+      move(distanceInMeters = 5) {
+        console.log("Slithering...");
+        super.move(distanceInMeters);
+      }
+    }
+
+ */
+
+/* Question 8: Type aliases
+    To avoid duplication of code we can use type alias.
+    using type alias we can define our own base type in which a more complex type definition is stored and then we can
+    use that type alias instead of repeating the entire type definition.
+
+    Alias can be created using the type keyword which is a reserved typescript word.
+
+    example -
+    type Person = {
+        name: string;
+        age: number;
+    }
+
+    let people = Person[];
+
+    let person = Person
+
+ */
+
+/* Question 9: Understanding Genetics
+    We can assign types to parameter of the functions.
+    Typescript also infers the return value based on the types of value passed as parameter.
+
+    example -
+    function add(a: number, b: number) {
+        return a + b
+    }
+
+    Here, it infers that the return value will also be a number, there is no other value which could be returned.
+    However, we can also explicitly set the return value of the function. But avoid setting the type unless required.
+
+    example -
+    function add(a: number, b: number): number | string {
+        return a + b
+    }
+
+    When a function does not return anything then there is a special return value known as void. Void can be used in
+    conjunction with null or undefined and is used only in context with functions. The function returns void value.
+
+ */
+
+/* Question 10: Interfaces
+    Interfaces are object type definition.
+    We can add properties and methods in interface. While declaring a method we do not declare the actual code that goes
+    into the method but instead just the type of method.
+
+    The key part of interfaces. They don't just act as object types, instead, they also force us to set up a certain
+    structure for our classes.
+
+ */

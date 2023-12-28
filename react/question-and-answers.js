@@ -475,4 +475,61 @@
 
  */
 
-//Difference in react and other frameworks
+/* Question 35: Proptypes in React
+    Proptypes helps to declare the types of the props accepted by your component. These types will be checked during
+    rendering and in development only.
+
+    example:
+    import React from 'react';
+    import PropTypes from 'prop-types';
+
+    const MyComponent = ({ name, age, isStudent, callback }) => {
+      return (
+        <div>
+          <p>Name: {name}</p>
+          <p>Age: {age}</p>
+          <p>Is Student: {isStudent ? 'Yes' : 'No'}</p>
+          <button onClick={callback}>Click me</button>
+        </div>
+      );
+    };
+
+    MyComponent.propTypes = {
+      name: PropTypes.string.isRequired,
+      age: PropTypes.number.isRequired,
+      isStudent: PropTypes.bool,
+      callback: PropTypes.func.isRequired,
+    };
+
+    export default MyComponent;
+
+ */
+
+/* Question 36: React has uni-dimensional flow
+     React follows a unidirectional data flow. This means that when designing a React app, we often nest child
+     components within parent components. And since the data flows in a single direction, it becomes easier to debug
+     errors and know where the problem occurs in an application at the moment.
+
+ */
+
+/* Question 37: Why is React better than other frameworks
+    1. Easy creation of dynamic applications: React makes it easier to create dynamic web applications because it
+    provides less coding and provides more functionality, whereas, with JavaScript applications, code tends to get
+    complex very quickly.
+
+    2. Improved performance: React uses virtual DOM, which makes web applications perform faster. Virtual DOM compares
+    its previous state and updates only those components in the real DOM, whose states have changed, rather than
+    updating all the components — like conventional web applications.
+
+    3. Reusable components: Components are the building blocks of any React application, and a single app usually
+    consists of multiple components. These components have their own logic and controls, and they can be reused through
+    the application, which, in turn, dramatically reduces the development time of an application.
+
+    4. Dedicated tools for easy debugging: Facebook has released a chrome extension that we can use to debug React
+    applications. This makes the process of debugging React to web applications faster and easier.
+
+    5. Unidirectional data flow: React follows a unidirectional data flow. This means that when designing a React app,
+    we often nest child components within parent components. And since the data flows in a single direction, it becomes
+    easier to debug errors and know where the problem occurs in an application at the moment.
+
+ */

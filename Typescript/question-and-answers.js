@@ -150,3 +150,81 @@
     structure for our classes.
 
  */
+
+/* Question 11: Difference in type alias and interface
+    Suitable for creating aliases for complex types, especially when dealing with union types, intersection types, or
+    mapped types.
+    Suitable for describing the structure of objects and defining contracts for classes.
+
+    The choice between type aliases and interfaces often comes down to personal preference and readability.
+    Both type aliases and interfaces are powerful tools in TypeScript, and the decision to use one over the other
+    depends on the specific requirements of your code and your preferred coding style.
+
+ */
+
+/* Question 12: Pros and Cons of Typescript
+    Pros:
+    1. Type safe code
+    2. IntelliSense and rich IDE support
+    3. Readable and maintainable code
+    4. Cross browser compatibility
+
+    Cons:
+    1. Needs an extra build step
+    2. Not suitable for small script
+    3. All the types and extra syntax can result in bloated code
+
+ */
+
+/* Question 13: Enums
+     enum (short for enumeration) is a way to define a set of named constant values, typically representing a set of
+     related, distinct values or states. Enums make it easier to work with a set of values by giving them descriptive names,
+     improving code readability and maintainability.
+
+     example -
+     enum Direction {
+      Up,
+      Down,
+      Left,
+      Right,
+    }
+
+    let myDirection: Direction = Direction.Up;
+
+    if (myDirection === Direction.Up) {
+      console.log("Moving Up");
+    } else if (myDirection === Direction.Down) {
+      console.log("Moving Down");
+    } // and so on
+
+ */
+
+/* Question 14: Intersection types
+    Intersection types let you combine the members of two or more types by using the ‘&’ operator. This allows you to
+    combine existing types to get a single type with all the features you need.
+
+    example -
+    interface Employee {
+    work: () => string;
+    }
+
+    interface Manager {
+    manage: () => string;
+    }
+
+    type Supervisor = Employee & Manager;
+
+    // john can both work and manage
+    let john: Supervisor;
+
+ */
+
+/* Question 15: Tuples
+    Tuples are a special type in TypeScript. They are similar to arrays with a fixed number of elements with a known
+    type. However, the types need not be the same.
+
+    example -
+    // Declare a tuple type and initialize it
+    let values: [string, number] = ["Foo", 15];
+
+ */

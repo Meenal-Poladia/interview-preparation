@@ -238,3 +238,16 @@
     - Elements and pseudo-elements: Elements and pseudo-elements have the lowest priority.
 
  */
+
+/* Question 31: Tweening
+     Tweening is the process in which we create intermediate frames between two images to get the appearance of the
+     first image which develops into the second image.
+    It is mainly used for creating animation.
+
+ */
+
+/* Question 32: How can we calculate Specificity
+    To calculate specificity we will start with 0, then we have to add 1000 for each ID and we have to add 10 to the
+    attributes, classes or pseudo-classes with each element name or pseudo-element and later we have to add 1 to them.
+
+ */

@@ -195,3 +195,46 @@
     - rotateY()
     - rotateZ()
  */
+
+/* Question 26: Counters
+    Counters in CSS are basically variables that can be used for numbering and values of CSS counters may be
+    incremented by CSS rules. For example, CSS counters can be used to increment the numbering of the headings
+    automatically.
+
+ */
+
+/* Question 27: Universal Selector
+    The * selector in CSS is used to select all the elements in an HTML document. It also selects all elements which
+    are inside under another element. It is also called the universal selector.
+
+ */
+
+/* Question 28: RWD
+    Responsive Web Design comprises two words i.e., responsive and web design. Responsive means to respond and web
+    design means to design a website. Therefore, responsive web design generally means the website that responds to or
+    resizes or adjusts itself depending upon the screen size it is being seen through. It automatically adjusts to fit
+    the user’s screen whether it’s desktop, laptop, mobile, tablet, etc. It only uses one layout for a web page and it
+    can be done either using CSS and HTML or CSS3 and HTML5.
+
+ */
+
+/* Question 29: Difference between class and id selector
+    1. Id Selector: The id selector selects the id attribute of an HTML element to select a specific element. An id is
+    always unique within the page so it is chosen to select a single, unique element. It is written with the hash
+    character (#), followed by the id of the element.
+
+    2. Class Selector: The class selector selects HTML elements with a specific class attribute. It is used with a
+    period character “.” (full stop symbol) followed by the class name.
+ */
+
+/* Question 30: Specificity in CSS
+    When more than one set of CSS rules applies to the same element, the browser will have to decide which specific set
+    will be applied to the element. The rules the browser follows are collectively called Specificity.
+
+    Specificity Hierarchy: Every element selector has a position in the Hierarchy.
+    - Inline style: Inline style has the highest priority.
+    - Identifiers(ID): ID has the second-highest priority.
+    - Classes, pseudo-classes, and attributes: Classes, pseudo-classes, and attributes have come next.
+    - Elements and pseudo-elements: Elements and pseudo-elements have the lowest priority.
+
+ */

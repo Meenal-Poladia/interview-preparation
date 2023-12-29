@@ -146,3 +146,52 @@
     CSS outline property allows us to draw a line around the element, outside the border.
 
  */
+
+/* Question 21: Different CSS link states
+    - a:link: This is a normal, unvisited link.
+    - a:visited: This is a link visited by a user at least once
+    - a:hover: This is a link when the mouse hovers over it
+    - a:active: This is a link that is just clicked.
+
+ */
+
+/* Question 22: CSS Combinators
+    CSS combinators are explaining the relationship between two selectors. CSS selectors are the patterns used to
+    select the elements for style purposes.
+
+    - General Sibling selector (~)
+    - Adjacent Sibling selector (+)
+    - Child selector (>)
+    - Descendant selector (space)
+
+ */
+
+/* Question 23: Pseudo-elements
+    Pseudo-element in CSS is used to add style to specified parts of an element.
+
+    - ::before Pseudo-element: It is used to add some CSS property before an element when that element is called.
+    - ::after Pseudo-element: It is used to add some CSS property after an element when that element is called.
+    - ::first-letter Pseudo-element: It is used to make changes to the first letter of an element.
+    - ::first-line Pseudo-element: It is used to make changes to the first line of an element.
+
+ */
+
+/* Question 24: Adding 2D transformation
+    There are six main types of 2D transformations which are listed below:
+    - translate()
+    - rotate()
+    - scale()
+    - skewX()
+    - skewY()
+    - matrix()
+
+ */
+
+/* Question 25: Adding 3D transformation
+     In 3D transformation, the elements are rotated along the X-axis, Y-axis, and Z-axis.
+    There are three main types of transformation which are listed below:
+
+    - rotateX()
+    - rotateY()
+    - rotateZ()
+ */

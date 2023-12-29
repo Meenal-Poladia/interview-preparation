@@ -79,3 +79,38 @@
     padding to give proper height and width to the box without having a border and padding properties.
 
  */
+
+/* Question 11: Z-index
+    The z-index property determines the stacking order of positioned elements along the z-axis. Elements with a higher
+    z-index value appear on top of elements with lower values.
+
+ */
+
+/* Question 12: Positions in CSS
+    1. Relative: Positions an element relative to its normal position.
+    2. Absolute: Positions an element relative to its nearest positioned ancestor.
+    3. Fixed: Positions an element relative to the browser window, staying fixed even during scrolling.
+    4. Static: It is the default positioning of the element with the normal flow of the webpage. If we do not mention
+    any position then it is static by default.
+    5. Sticky: A sticky element toggles between relative and fixed , depending on the scroll position.  It is
+    positioned relative until a given offset position is met in the viewport - then it "sticks" in place
+
+ */
+
+/* Question 13: Difference between margin and padding
+    Margin: Clears an area outside the border. It is the space between the border and surrounding elements.
+    Padding: Clears an area inside the border. It is the space between the content and the border.
+
+ */
+
+/* Question 14: Purpose of media queries
+    Media queries allow you to apply different styles based on device characteristics such as screen width, height,
+    and orientation. They are commonly used in responsive web design.
+
+ */
+
+/* Question 15: Difference between em and rem units.
+    em: Relative to the font-size of its nearest parent or the element itself.
+    rem: Relative to the font-size of the root element (<html>)
+
+ */

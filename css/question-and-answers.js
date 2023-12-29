@@ -114,3 +114,35 @@
     rem: Relative to the font-size of the root element (<html>)
 
  */
+
+/* Question 16: CSS Opacity
+    The CSS opacity property is used to specify the transparency of an element. In simple word, you can say that it
+    specifies the clarity of the image.
+
+ */
+
+/* Question 17: The float property
+    The CSS float property is used to move the image to the right or left along with the texts to be wrapped around it.
+    It doesn't change the property of the elements used before it.
+
+ */
+
+/* Question 18: The difference between visibility: hidden and display: none
+    visibility: hidden hides the element, but it occupies space and affects the layout of the document.
+    display: none also hides the element but not occupy space. It will not affect the layout of the document.
+ */
+
+/* Question 19: Which type of CSS holds the highest priority
+    1. As Inline has the highest priority, any styles that are defined in the internal and external style sheets are
+    overridden by Inline styles.
+    2. Internal or Embedded stands second in the priority list and overrides the styles in the external style sheet.
+    3. External style sheets have the least priority. If there are no styles defined either in the inline or internal
+    style sheet then external style sheet rules are applied for the HTML tags.
+
+ */
+
+/* Question 20: Difference between CSS border and outline
+    CSS border properties allow us to set the style, color, and width of the border.
+    CSS outline property allows us to draw a line around the element, outside the border.
+
+ */

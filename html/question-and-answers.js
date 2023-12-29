@@ -65,3 +65,77 @@
     localStorage can be shared between multiple windows of the browser.
 
  */
+
+/* Question 11: What happens if there is no text between the tags? Does this affect the display of the HTML file?
+    If there is no text present between the tags, there is nothing to format. Therefore, no formatting will appear. Some
+    tags, such as the tags without a closing tag like the <img> tag, do not require any text between them.
+
+ */
+
+/* Question 12: Difference between HTML elements and tags
+    The differences between HTML elements and tags are:
+
+    HTML Elements
+    - The element is an individual component of the HTML web page or document that consists of a start tag, its
+    attributes, an end tag, and everything in between.
+    - They usually contain a start tag, content, and an end tag.
+    - HTML Elements hold the content.
+    - For example, <p>This is an example of a paragraph.</p>
+
+    Tags
+    - HTML tag (either opening or closing) marks the start or end of an element.
+    - They begin with < symbol and end with > symbol. Whatever is written inside < and > are called tags.
+    - HTML Tags hold the HTML element.
+    - For example, <a> is an opening anchor tag and </a> is a closing anchor tag.
+
+ */
+
+/* Question 13: What is HTML5? What are some of its new features that were not present in HTML?
+    HTML5 is the latest version of the Hypertext Markup Language. Some of the new features of HTML5 are:
+
+    1. HTML5 supports SVG, canvas, and other virtual vector graphics. In HTML, vector graphics can only be used with
+    Flash, VML (Vector Markup Language), or Silverlight.
+    2. HTML5 allows JavaScript to run within a web browser. The previous version allowed JavaScript to run in the
+    browser interface thread.
+    3. HTML5 is not based on SGML. It comes with enhanced parsing rules for improved compatibility.
+    4. In HTML5, web SQL databases are used to store data temporarily. Previously, only the browser cache was used.
+    5. Some elements have been removed – applet, isindex, noframes, acronym, dir, font, frame, frameset, and big are
+    removed.
+    6. New elements have been added – time, summary, aside, audio, command, and data.
+
+ */
+
+/* Question 14: Difference between a block-level element and an inline element
+    The differences between block-level elements and inline elements are:
+
+    1. Block-level Elements
+    - They start on a new line.
+    - Stretch to fill the full width available to them.
+    - They have a top and a bottom margin.
+    - Examples of block-level elements in HTML: <div>, <img>, <form>, <main>, <table>, <video>.
+
+    2. Inline Elements
+    - Do not start on a new line and can begin within a line.
+    - Take up as much width as necessary. Its width only extends as far as it is defined by its tags.
+    - Inline elements do not have a top and a bottom margin.
+    - Examples of inline elements: <span>, <img>, <strong>, <code>, <input>, <time>, <i>.
+
+ */
+
+/* Question 15: What are the new input types in HTML5 for forms
+    The following are the new input types in HTML5 for forms:
+
+    INPUT TYPE	    DESCRIPTION	HTML                                                                MARKUP
+    date	        Allows the user to select a date	                                            <input type=”date”>
+    datetime	    Allows the user to select date and time using UTC date and time format	    <input type=”datetime”>
+    datetime-local	To select the date and time as per the local time	                  <input type=”datetime-local”>
+    month	        Select month and year	                                                       <input type=”month”>
+    time	        The time of day	                                                                <input type=”time”>
+    week	        Enables you to select the week and year	                                        <input type=”week”>
+    color	        Enables you to enter a simple color value 	                                  <input type=”color””>
+    email	        Validates the input using the standard email format	                           <input type=”email”>
+    search	        Searches a data set 	                                                      <input type=”search”>
+    number	        Accepts only numbers 	                                                      <input type=”number”>
+    url	            Accepts only URLs 	                                                             <input type=”url”>
+
+ */

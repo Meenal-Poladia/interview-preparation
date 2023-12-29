@@ -139,3 +139,45 @@
     url	            Accepts only URLs 	                                                             <input type=”url”>
 
  */
+
+/* Question 16: Different media types and formats supported by HTML
+    HTML supports a variety of media formats for sound, music, videos, movies, and animations. The different formats
+    supported by HTML are:
+    - Images: jpg, jpeg, png, gif, svg, apng, BMP ico
+    - Audio: RealAudio, WMA, MIDI, AAC, WAV, MP3, MP4
+    - Video: MPEG, AVI, QuickTime, RealVideo, WMV, Flash, WebM, and MP4
+
+ */
+
+/* Question 17: What is an empty element?
+    An empty element is an HTML element that has no content. Example <br>
+
+ */
+
+/* Question 18: Use of Geolocation API in HTML5
+    One of the best HTML5 APIs is Geolocation API which is used to determine the geographical location of the user for
+    a web application. With HTML5, you can now browse to the visitor’s current website’s latitude and longitude
+    coordinates. These coordinates can be recorded by JavaScript and sent to the server, allowing it to display your
+    position on the page. The geolocation API is used with navigation.geolocation object. A Geolocation object that
+    contains the user’s location information and can produce a customized result is returned via the read-only property
+    of the object.
+
+ */
+
+/* Question 19: Use of the MathML element in HTML5
+    Mathematics Markup Language is known as MathML. Like other HTML elements, it is used to display mathematical
+    statements or equations in web browsers.
+
+ */
+
+/* Question 20: How can website assets be optimized?
+Ans. To optimize website assets, we must comprehend a few fundamental optimization principles. First, we need to reduce
+the download size and the number of HTTP queries. We can use the following strategies to optimize website assets:
+    - File compression
+    - File concatenation
+    - CDN Hosting
+    - Offloading assets
+    - Re-organizing
+    - Refining code
+
+ */

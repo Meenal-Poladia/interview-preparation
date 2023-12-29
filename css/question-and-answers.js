@@ -47,3 +47,35 @@
     browsers.
 
  */
+
+/* Question 7: Difference between inline, inline-block, and block
+    1. Block Elements are <div> and <p>. They usually start on a new line and can take space for an entire row or width.
+    2. Inline elements are <a>, <span>, <strong>, and <img> tags. They don't start on a new line. However, they appear
+    on the same line as the content and tags beside them.
+    3. Inline block elements have padding and margins and set height and width values. Though, they are similar to
+    inline elements.
+ */
+
+/* Question 8: Pseudo Classes
+    Pseudo-classes are the type of pseudo-elements that don’t exist in a normal document tree. It allows selecting the
+    regular elements under certain conditions especially when we try to hover over the link; the anchor tags are :link,
+    :visited, :hover, :active, :focus
+ */
+
+/* Question 9: What is the CSS Box model and what are its elements
+    The CSS box model is used to define the design and layout of elements of CSS.
+    The elements are:
+        - Margin - It removes the area around the border. It is transparent.
+        - Border - It represents the area around the padding
+        - Padding - It removes the area around the content. It is transparent.
+        - Content - It represents the content like text, images, etc.
+
+ */
+
+/* Question 10: Border box and Content box
+    Border-box consists of properties such as content, padding, and the border with respect to height and width.
+
+    However, Content-box is a default value property used for the box-sizing as well as it helps to add border and
+    padding to give proper height and width to the box without having a border and padding properties.
+
+ */

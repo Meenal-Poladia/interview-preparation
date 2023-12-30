@@ -115,7 +115,65 @@
 
 */
 
-/* Question : Reading and writing files
+/* Question 11: Role of the package.json file
+    package.json is a metadata file for a Node.js project. It includes project details, dependencies, scripts, and
+    other configuration settings. It is used by npm to manage project dependencies and scripts.
+
+*/
+
+/* Question 12: Define I/O
+    The term I/O is used to describe any program, operation, or device that transfers data to or from a medium and to
+    or from another medium
+    Every transfer is an output from one medium and an input into another. The medium can be a physical device,
+    network, or files within a system
+
+*/
+
+/* Question 13: Explain the difference between frontend and backend development
+    1. Frontend
+    - Frontend refers to the client-side of an application
+    - It is the part of a web application that users can see and interact with
+    - It typically includes everything that attributes to the visual aspects of a web application
+    - HTML, CSS, JavaScript, AngularJS, and ReactJS are some of the essentials of frontend development
+
+    2. Backend
+    - Backend refers to the server-side of an application
+    - It constitutes everything that happens behind the scenes
+    - It generally includes a web server that communicates with a database to serve request
+    - Java, PHP, Python, and Node.js are some of the backend development technologies
+
+*/
+
+/* Question 14: Modules in NodeJs
+    Modules are like JavaScript libraries that can be used in a Node.js application to include a set of functions. To
+    include a module in a Node.js application, use the require() function with the parentheses containing the module's
+    name.
+
+    Node.js has many modules to provide the basic functionality needed for a web application. Some of them include:
+    1. HTTP - Includes classes, methods, and events to create a Node.js HTTP server
+    2. util - Includes utility functions useful for developers
+    3. fs - Includes events, classes, and methods to deal with file I/O operations
+    4. url - Includes methods for URL parsing
+    5. query string - Includes methods to work with query string
+    6. stream - Includes methods to handle streaming data
+    7. zlib - Includes methods to compress or decompress files
+
+*/
+
+/* Question 15: Commonly used libraries in Node.js
+    There are two commonly used libraries in Node.js:
+    1. ExpressJS - Express is a flexible Node.js web application framework that provides a wide set of features to
+    develop web and mobile applications.
+    2. Mongoose - Mongoose is also a Node.js web application framework that makes it easy to connect an application to
+    a database.
+
+*/
+
+/* Question 16:
+
+*/
+
+/* Question : Purpose of the fs module
     To read the data in a particular file we can use the fs module. In fs module we use the readFileSync method which
     processes the file in a asynchronous way.
 

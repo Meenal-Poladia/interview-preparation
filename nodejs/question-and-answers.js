@@ -38,6 +38,11 @@
 /* Question 4: The event-driven architecture in Node.js.
     Node.js is designed to be event-driven, using an event loop to handle asynchronous operations. Callback functions
     are commonly used to handle events.
+
+    An event-driven programming approach uses events to trigger various functions. An event can be anything, such as
+    typing a key or clicking a mouse button. A call-back function is already registered with the element executes
+    whenever an event is triggered.
+
 */
 
 /* Question 5: Blocking and Unblocking Asynchronous nature of NodeJs
@@ -169,8 +174,48 @@
 
 */
 
-/* Question 16:
+/* Question 16: Purpose of the cluster module in Node.js
+    The cluster module in Node.js allows you to create child processes to distribute the load across multiple CPU
+    cores, improving performance and scalability.
 
+ */
+
+/* Question 17: How can you handle environment variables in Node.js?
+    Environment variables can be accessed using process.env. They are commonly used to configure settings or store
+    sensitive information like API keys.
+ */
+
+/* Question 18: What is the difference between require and import in Node.js
+    require is the common way to include external modules in Node.js. import is used with ECMAScript modules (ES6+),
+    and it's supported in more recent versions of Node.js.
+
+ */
+
+/* Question 19: EventEmitter in Node.js
+    EventEmitter is a class that holds all the objects that can emit events.
+    Whenever an object from the EventEmitter class throws an event, all attached functions are called upon
+    synchronously.
+
+ */
+
+/* Question 20: Streams in Node.js
+   Streams are objects that enable you to read data or write data continuously.
+    There are four types of streams:
+    1. Readable – Used for reading operations
+    2. Writable − Used for write operations
+    3. Duplex − Can be used for both reading and write operations
+    4. Transform − A type of duplex stream where the output is computed based on input
+ */
+
+/* Question  difference between process.nextTick() and setImmediate()
+
+ */
+
+/* Question 16: NodeJs Event Loop
+    The event loop is the heart of the NodeJS architecture. The event loop takes care of all the callback function which
+    are in the application code. Some parts which get offloaded to the thread pool are taken care by the event loop.
+    Node is an event triggered architecture so it has many callbacks functions to take care.
+    The event loop does the orchestration.
 */
 
 /* Question : Purpose of the fs module

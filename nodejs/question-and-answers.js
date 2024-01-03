@@ -207,6 +207,41 @@
     4. Transform − A type of duplex stream where the output is computed based on input
  */
 
+/* Question 21: How do you install, update, and delete a dependency
+    1. Install
+    2. Update
+    3. Delete
+ */
+
+/* Question 22: Explain asynchronous and non-blocking APIs in Node.js
+    All Node.js library APIs are asynchronous, which means they are also non-blocking
+    A Node.js-based server never waits for an API to return data. Instead, it moves to the next API after calling it,
+    and a notification mechanism from a Node.js event responds to the server for the previous API call.
+
+ */
+
+/* Question 23: Difference between fork() and spawn() methods in Node.js
+    1. fork()
+    - fork() is a particular case of spawn() that generates a new instance of a V8 engine.
+    - Multiple workers run on a single node code base for multiple tasks.
+
+    2. spawn()
+    - Spawn() launches a new process with the available set of commands.
+    - This method doesn’t generate a new V8 instance, and only a single copy of the node module is active on the
+    processor.
+ */
+
+/* Question 24: Buffer class in Node.js
+    Buffer class stores raw data similar to an array of integers but corresponds to a raw memory allocation outside the
+    V8 heap. Buffer class is used because pure JavaScript is not compatible with binary data
+ */
+
+/* Question 25: Piping in Node.js
+    Piping is a mechanism used to connect the output of one stream to another stream. It is normally used to retrieve
+    data from one stream and pass output to another stream.
+
+ */
+
 /* Question  difference between process.nextTick() and setImmediate()
 
  */

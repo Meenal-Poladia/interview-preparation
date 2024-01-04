@@ -343,6 +343,57 @@
 
  */
 
+/* Question 31: Node, Libuv and V8
+    Node depends on a couple of libraries to work properly. The most important ones are the V8 engine and
+    libuv. V8 engine is a the reason due to which it understands javascript code which we write. V8 engine is what
+    converts JavaScript code into machine code that a computer can actually understand.
+
+    libuv is an open source library with a strong focus on asynchronous IO. This layer is what gives Node access to the
+    underlying computer operating system, file system, networking, and more. libuv also implements two extremely
+    important features of Node.JS which are the event loop and also the thread pool. libuv is written in C++ and V8
+    is also written in C++ and a bit of Javascript. So, NodeJS is also written in C++ and Javascript.
+
+ */
+
+/* Question 32: What is a thread pool, and which library handles it in Node.js
+    A thread pool is a collection of threads that are used to execute tasks in parallel. In Node.js, the thread pool is
+    handled by the libuv library, which is a multi-platform support library that provides asynchronous I/O operations.
+
+ */
+
+/* Question 33: What is the use of the crypto module in Node.js
+    The crypto module is widely used in Node.js applications to generate secure random numbers, create digital
+    signatures, and verify signatures. It also provides support for various encryption algorithms such as AES, DES,
+    and RSA.
+
+ */
+
+/* Question 34: Difference between setImmediate() and setTimeout()
+    The setTimeout() method schedules code execution after a specified delay, measured in milliseconds. On the other
+    hand, the setImmediate() method schedules code execution to occur immediately after the current event loop
+    iteration completes. This means that setImmediate() has a higher priority than setTimeout().
+
+ */
+
+/* Question 35: What is Libuv?
+    Libuv is a widely used library present in Node.js. It is used to complement the asynchronous I/O functionality of
+    Node.js. It was developed in-house and used alongside systems such as Luvit, Julia, and more.
+
+    The following are some of the features of Libuv:
+        1. File system event handling
+        2. Child forking and handling
+        3. Asynchronous UDP and TCP sockets
+        4. Asynchronous file handling and operations
+
+ */
+
+/* Question 36: Why does Google use the V8 engine for Node.js
+    Google makes use of the V8 engine because it can easily convert JavaScript into a low-level language. This is done
+    to provide high performance during the execution of an application and also to provide users with real-time
+    abilities to work with the application.
+
+ */
+
 /* Question : Purpose of the fs module
     To read the data in a particular file we can use the fs module. In fs module we use the readFileSync method which
     processes the file in a asynchronous way.

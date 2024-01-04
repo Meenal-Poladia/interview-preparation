@@ -394,7 +394,25 @@
 
  */
 
-/* Question : Purpose of the fs module
+/* Question 37: What is the use of middleware in Node.js
+    A middleware is a simple function that has the ability to handle incoming requests and outbound response objects.
+    Middleware is used primarily for the following tasks:
+        1. Execution of code (of any type)
+        2. Updating request and response objects
+        3. Completion of request-response iterations
+        4. Calling the next middleware
+
+ */
+
+/* Question 38: What is the use of REPL in Node.js
+    REPL stands for Read-Eval-Print-Loop. It provides users with a virtual environment to test JavaScript code in
+    Node.js.
+    To launch REPL, a simple command called ‘node’ is used. After this, JavaScript commands can be typed directly into
+    the command line.
+
+ */
+
+/* Question 39: Purpose of the fs module
     To read the data in a particular file we can use the fs module. In fs module we use the readFileSync method which
     processes the file in a asynchronous way.
 

@@ -242,16 +242,106 @@
 
  */
 
-/* Question  difference between process.nextTick() and setImmediate()
+/* Question 26: Difference between JavaScript and Node.js
+    Node.js is a runtime environment for executing JavaScript code outside of a web browser, while JavaScript is a
+    programming language that can be executed in both web browsers and Node.js environments.
+ */
+
+/* Question 27: Global objects in Node.js
+    Global objects in Node.js are objects that are available in all modules without the need for an explicit require
+    statement. Some of the most commonly used global objects in Node.js include process, console, and buffer.
+ */
+
+/* Question 28: Ways to avoid blocking the event loop
+     There are a couple of ways to not block the main thread in NodeJS:
+        1. Not using sync versions of functions in fs, crypto and zlib modules in our callback.
+        2. Not performing complex calculations eg: loops inside loops
+        3. Be careful with JSON in very large objects because at some point, it can start to take a long time to parse,
+        or to stringify, JSON.
+        4. Do not use complex regular expressions with nested quantifiers or back references, because they can take
+        longer than expected.
 
  */
 
-/* Question 16: NodeJs Event Loop
+/* Question 29: NodeJs Event Loop
     The event loop is the heart of the NodeJS architecture. The event loop takes care of all the callback function which
     are in the application code. Some parts which get offloaded to the thread pool are taken care by the event loop.
     Node is an event triggered architecture so it has many callbacks functions to take care.
     The event loop does the orchestration.
+
+    When we start our NodeJS program the event loop starts right away. The event loop has multiple phases, and each
+    phase has its own callback queue, which are the callbacks coming from the thread pool that the event loop receives.
+
+    Each phase has a FIFO queue of callbacks to execute. While each phase is special in its own way, generally, when
+    the event loop enters a given phase, it will perform any operations specific to that phase, then execute callbacks
+    in that phase's queue until the queue has been exhausted or the maximum number of callbacks has executed. When the
+    queue has been exhausted or the callback limit is reached, the event loop will move to the next phase, and so on.
+
+    There are 4 most important phases in an event loop. There are one or two other phases that are used internally by
+    Node.
+
+    Phase 1: Expired Timer
+    This phase executes callbacks scheduled by setTimeout() and setInterval(). The first phase takes care of the
+    expired timers from the setTimeout() function. So, if there are callback functions from timers that just expired,
+    these are the first ones to be processed by the event loop. If a timer expires later during the time when one of
+    the other phases are being processed, well, then the callback of that timer will only be called as soon as the
+    event loop comes back to this first phase.
+    So, callbacks in each queue are processed one by one until there are no ones left in the queue, and only then, the
+    event loop will enter the next phase.
+
+    Phase 2: I/O Polling and callbacks
+    So, polling basically means looking for new I/O events that are ready to be processed and putting them into the
+    callback queue. I/O means mainly stuff like networking and file access, and so, it's in this phase where probably 99%
+    of our code gets executed, simply because in a typical Node app, the bulk of what we need to do is related to
+    networking and also, file accessing.
+
+    The poll phase has two main functions:
+        1. Calculating how long it should block and poll for I/O, then
+        2. Processing events in the poll queue.
+    When the event loop enters the poll phase and there are no timers scheduled, one of two things will happen:
+        1. If the poll queue is not empty, the event loop will iterate through its queue of callbacks executing them
+        synchronously until either the queue has been exhausted, or the system-dependent hard limit is reached.
+        2. If the poll queue is empty, one of two more things will happen:
+            a. If scripts have been scheduled by setImmediate(), the event loop will end the poll phase and continue to
+            the check phase to execute those scheduled scripts.
+            b. If scripts have not been scheduled by setImmediate(), the event loop will wait for callbacks to be
+            added to the queue, then execute them immediately.
+
+    Once the poll queue is empty the event loop will check for timers whose time thresholds have been reached. If one
+    or more timers are ready, the event loop will wrap back to the timers phase to execute those timers' callbacks.
+
+    Phase 3: SetImmediate Callbacks
+    setImmediate is a special kind of timer that we can use if we want to process callbacks immediately after the I/O
+    polling and execution phase, which can be important in some more advanced use cases.
+
+    Phase 4:Close Callbacks
+    Basically, in this phase, all close events are processed, for example, for when a web server or a WebSocket shut
+    down.
+
+    Besides these four callback queues, there are actually also two other queues, the nextTick() queue and the other
+    microtasks queue, which is mainly for resolved promises. If there are any callbacks in one of these two queues to be
+    processed, they will be executed right after the current phase of the event loop finishes instead of waiting
+    for the entire loop to finish. So, in other words, after each of these four phases, if there are any callbacks in
+    these two special queues, they will be executed right away. For example, imagine that a promise resolves and
+    returns some data from an API call while the callback of an expired timer is running. So, in this case, the promise
+    callback will be executed right after the one from the timer finishes and the same logic also applies to the
+    nextTick() queue. This is how we finished one tick of the event loop, and a tick is basically just one cycle
+    in this loop.
+
+    Event loop is what makes asynchronous programming possible in Node.js, making it the most important feature in
+    Node's design and making Node.js completely different from other platforms. We need the event loop because in
+    Node.js everything works in one single thread, and so, we can have thousands or millions of users accessing the
+    same thread at the same time. This makes Node so lightweight and scalable.
+
 */
+
+/* Question 30: Difference between process.nextTick() and setImmediate()
+    Both process.nextTick() and setImmediate() are used to execute a callback function asynchronously in the next
+    iteration of the event loop. However, process.nextTick() is designed to be called recursively after completing a
+    particular phase while setImmediate() is called after I/O polling phase. process.nextTick() has a higher priority
+    than setImmediate().
+
+ */
 
 /* Question : Purpose of the fs module
     To read the data in a particular file we can use the fs module. In fs module we use the readFileSync method which

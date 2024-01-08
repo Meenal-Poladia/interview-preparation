@@ -120,3 +120,46 @@
     There are several popular alternatives to Express.js which includes: Koa.js, Hapi.js, Sails.js, Fastify etc.
 
  */
+
+/* Question 11: What is .env file used for
+    The .env file is used for storing sensitive information in a web application which we don’t want to expose to
+    others like password, database connection string etc. It is a simple text file where each line represents a
+    key-value pair, and these pairs are used to configure various aspects of the application.
+
+ */
+
+/* Question 12: What are JWT
+    Json Web Tokens are mainly a token which is used for authentication and information exchange. When a user signs in
+    to an application, the application then assigns JWT to that user. Subsequent requests by the user will include the
+    assigned JWT. This token tells the server what routes, services, and resources the user is allowed to access.
+
+    Json Web Token includes 3 part namely- Header, Payload and Signature.
+
+ */
+
+/* Question 13: What do you understand about ESLint
+    EsLint is a JavaScript linting tool which is used for automatically detecting incorrect patterns found in
+    ECMAScript/JavaScript code. It is used with the purpose of improving code quality, making code more consistent,
+    and avoiding bugs.
+
+    ESLint is written using Node.js to provide a fast runtime environment and easy installation via npm.
+
+ */
+
+/* Question 14: Differentiate between res.send() and res.json()
+    Both res.send() and res.json() serves similar purposes with some difference. So it depends on the data type which
+    we are working with.
+
+    Choose res.json() when you are specifically working with JSON data.
+
+    Use res.send() when you need versatility and control over the content type or when dealing with various data types
+    in your responses.
+
+ */
+
+/* Question 15: What is meant by Scaffolding in Express JS
+    Scaffolding in Express.js refers to the process of generating a basic project structure automatically. This can
+    speed up the initial setup and help maintain consistency in the way projects are structured, especially in large
+    teams.
+
+ */

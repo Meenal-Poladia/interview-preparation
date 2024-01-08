@@ -52,3 +52,17 @@
     files, and JavaScript files.
 
  */
+
+/* Question 6: Major tools that can be integrated with Express JS
+    There are many tools and libraries that can be integrated with Express.js such as:
+    - Database tools: MongoDB, MySQL, PostgreSQL.
+    - Template Engines: EJS, Pug, Mustache.
+    - Authentication libraries: Passport.js.
+    - Logging libraries: Morgan, Winston.
+    - Validation libraries: Joi, express-validator.
+    - ORM libraries: Sequelize, Mongoose.
+ */
+
+/* Question 7:
+
+ */

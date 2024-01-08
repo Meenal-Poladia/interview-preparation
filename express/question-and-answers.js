@@ -274,3 +274,9 @@
     name.
 
  */
+
+/* Question 26: The difference between req.query and req.params in Express.js
+    req.query is used to access the query parameters in a URL. While req.params is used to access route parameters in a
+    URL.
+
+ */

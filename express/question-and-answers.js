@@ -63,6 +63,60 @@
     - ORM libraries: Sequelize, Mongoose.
  */
 
-/* Question 7:
+/* Question 7: Which are the arguments available to an Express JS route handler function
+    Following are the arguments that are available to an Express.js route handler-function:
+    Req: the request object
+    Res: the response object
+    Next (optional): It is a function employed to pass management to one of the above route handlers.
+
+ */
+
+/* Question 8: What is Middleware in Express.js
+    Middleware is a function invoked by the Express routing layer before the final request handler.
+    Middleware functions are used to perform the following tasks:
+
+    - It is used to execute any code.
+    - It is also used to make changes to the request and the response objects.
+    - It is responsible for ending the request-response cycle.
+    - It can call the next middleware function in the stack.
+
+    Note: If the current middleware function does not end the request-response cycle, it must call next() to pass
+    control to the next middleware function. Otherwise, the request will be left hanging.
+
+ */
+
+/* Question 9: Different types of Middleware
+    Following are the main types of Middleware:
+
+    - Application-level Middleware: The application-level middleware method is used to bind to the app object using
+    app.use() method. It applies on all routes.
+
+    //This middleware will execute for each route.
+    app.use(function (req, res, next) {
+      console.log('Current Time:', Date.now())
+      next()
+    })
+
+    - Router-level Middleware: The router-level Middleware is used to bind to a specific instance of express.Router().
+    Built-in Middleware: The built-in Middleware was introduced with version 4.x.
+    There are the following built-in middleware functions in Express.js:
+        static: It is used to serve static assets such as HTML files, images, etc.
+        json: It is used to parse the incoming requests with JSON payloads. It is available with Express 4.16.0+
+        urlencoded: It is used to parse the incoming requests with URL-encoded payloads. It is available with Express 4.16.0+
+
+    - Error-handling Middleware
+    - Built-in Middleware
+    - Third-party Middleware
+        - Body-parser
+        - Cookie-parser
+        - Mongoose
+        - Sequelize
+        - Cors
+        - Express-validator
+
+ */
+
+/* Question 10: Some popular alternatives to Express JS
+    There are several popular alternatives to Express.js which includes: Koa.js, Hapi.js, Sails.js, Fastify etc.
 
  */

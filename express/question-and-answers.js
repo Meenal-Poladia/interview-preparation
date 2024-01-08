@@ -163,3 +163,55 @@
     teams.
 
  */
+
+/* Question 16: Explain what CORS is in Express JS
+    CORS (Cross-Origin Resource Sharing) is a security feature implemented by web browsers to control how web pages in
+    one domain can request and interact with resources hosted on another domain.
+
+    In the context of Express.js, CORS refers to a middleware that enables Cross-Origin Resource Sharing for your
+    application. This allows the application to control which domains can access your resources by setting HTTP headers.
+
+ */
+
+/* Question 17: How would you configure properties in Express JS
+    In Express JS, you can configure properties using the app.set() method. This method allows you to set various
+    properties and options which affects the behavior of the Express application.
+
+    app.set(name, value);
+
+    Here, name represents the name of the property you want to configure, and value is the value you want to assign to
+    that property. Express provides a wide range of properties that you can configure based on your application’s
+    requirements.
+
+ */
+
+/* Question 18: Various methods of debugging on both Linux and Windows systems
+    The debugging is the vital need at the time of software development to identifying issues in the application’s
+    logic, handling of HTTP requests, middleware execution, and other aspects specific to web development. Here are
+    some methods commonly used for debugging an Express.js application on both Linux and Windows:
+
+    - Console.log: The simplest way to debug an Express JS application is by using console.log(). You can output
+    messages to the console which can be viewed in the terminal.
+    - Node Inspector: This is a powerful tool that allows you to debug your applications using Chrome Developer Tools.
+    It supports features like setting breakpoints, stepping over functions, and inspecting variables.
+    - Visual Studio Code Debugger: VS Code provides a built-in debugger that works on both Linux and Windows. It
+    supports advanced features like conditional breakpoints, function breakpoints, and logpoints.
+    - Utilizing debug module: The debug module is a small Node.js debugging utility that allows you to create debugging
+    scopes.
+
+ */
+
+/* Question 19: How would you render plain HTML using Express JS
+    In Express.js, you can render plain HTML using the res.send() method or res.sendFile() method.
+
+ */
+
+/* Question 20: What is the use of ‘Response.cookie()’ function
+    The response.cookie() function in Express.js is used to set cookies in the HTTP response. Cookies are small pieces
+    of data sent from a server and stored on the client’s browser. They are commonly used to store information about
+    the user or to maintain session data.
+
+    Basic syntax of response.cookie():
+    res.cookie(name, value, [options]);
+
+ */

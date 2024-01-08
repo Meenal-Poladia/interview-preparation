@@ -215,3 +215,62 @@
     res.cookie(name, value, [options]);
 
  */
+
+/* Question 21: Under what circumstances does a Cross-Origin resource fail in Express JS
+    When a Cross-Origin Resource Sharing request is made, the browser enforces certain security checks, and the request
+    may fail under various circumstances:
+
+    - No CORS Headers: The server doesn’t include the necessary CORS headers in its response.
+    - Mismatched Origin: The requesting origin does not match the origin specified in the Access-Control-Allow-Origin
+    header.
+    - Restricted HTTP Methods: The browser enforces restrictions on which HTTP methods are allowed in cross-origin
+    requests.
+    - No Credentials: The browser makes restrictions on requests that include credentials (such as cookies or HTTP
+    authentication).
+
+ */
+
+/* Question 22: What is meant by the sanitizing input process in Express JS
+    It involves cleaning and validating user input before using it in your application so that it does not contain
+    malicious code or can be a security risk.
+
+ */
+
+/* Question 23: How to secure Express.Js application
+    It is very important to secure your application to protect it against various security threats. We can follow few
+    best practices in our Express.js app to enhance the security of our application.
+
+    - Keep Dependencies Updated: Regularly update your project dependencies, including Express.js and other npm
+    packages.
+    - Use Helmet Middleware: The helmet middleware helps secure your application by setting various HTTP headers. It
+    helps prevent common web vulnerabilities.
+    - Set Secure HTTP Headers: Configure your application to include secure HTTP headers, such as Content Security
+    Policy (CSP), Strict-Transport-Security (HSTS), and others.
+    - Use HTTPS: Always use HTTPS to encrypt data in transit. Obtain an SSL certificate for your domain and configure
+    your server to use HTTPS.
+    - Secure Database Access: Use parameterized queries or prepared statements to prevent SQL injection attacks. Ensure
+    that your database credentials are secure and not exposed in configuration files.
+
+ */
+
+/* Question 24: What are the different types of HTTP requests
+    The primary HTTP methods are commonly referred to as CRUD operations, representing Create, Read, Update, and Delete.
+    Here are the main HTTP methods:
+
+    - GET: The GET method is used to request data from a specified resource.
+    - POST: The POST method is used to submit data to be processed to a specified resource.
+    - PUT: The PUT method is used to update a resource or create a new resource if it does not exist.
+    - PATCH: The PATCH method is used to apply partial modifications to a resource.
+    - DELETE: The DELETE method is used to request that a specified resource be removed.
+
+ */
+
+/* Question 25: Explain what dynamic routing is in Express.js
+    Dynamic routing in Express.js include parameters, which allows you to create flexible and dynamic routes in your
+    web application. This parameters are used in your route handlers to customize the behaviour based on the data
+    provided.
+
+    In Express, dynamic routing is achieved by using route parameters, denoted by a colon (:) followed by the parameter
+    name.
+
+ */

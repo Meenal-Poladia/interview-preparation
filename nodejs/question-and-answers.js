@@ -1,5 +1,7 @@
 
 /* Question 1: What is NodeJs?
+    Node.js is a JavaScript runtime built on the V8 JavaScript engine. It allows you to run JavaScript code on the
+    server side. Node.js provides a set of APIs for various tasks, such as file system operations, networking, and more.
     Node.js is Server-side scripting which is used to build scalable programs. It is used to create server-side web
     applications.
 

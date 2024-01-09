@@ -125,6 +125,64 @@ form.                                                         column names, and 
     - Atomicity problem
  */
 
+/* Question 11: What is a checkpoint in DBMS? When does checkpoint occur in DBMS?
+    The Checkpoint is a type of mechanism where all the previous logs are removed from the system and permanently
+    stored in the storage disk.
+    A checkpoint is like a snapshot of the DBMS state. Using checkpoints, the DBMS can reduce the amount of work to be
+    done during a restart in the event of subsequent crashes. Checkpoints are used for the recovery of the database
+    after the system crash. Checkpoints are used in the log-based recovery system. When due to a system crash we need
+    to restart the system then at that point we use checkpoints. So that, we don't have to perform the transactions
+    from the very starting.
+
+ */
+
+/* Question 12: What is the purpose of normalization in DBMS?
+    Database normalization is the process of organizing the attributes of the database to reduce or eliminate data
+    redundancy (having the same data but at different places).
+
+    Purpose of normalization:
+    - It is used to remove duplicate data and database anomalies from the relational table.
+    - Normalization helps to reduce redundancy and complexity by examining new data types used in the table.
+    - It is helpful to divide the large database table into smaller tables and link them using relationships.
+    - It avoids duplicate data or no repeating groups into a table.
+    - It reduces the chances for anomalies to occur in a database.
+
+ */
+
+/* Question 13: What is the difference between a database schema and a database state
+    The collection of information stored in a database at a particular moment in time is called database state while
+    the overall design of the database is called the database schema.
+
+ */
+
+/* Question 14: What do you mean by durability in DBMS
+    Once the DBMS informs the user that a transaction has completed successfully, its effect should persist even if the
+    system crashes before all its changes are reflected on disk. This property is called durability. Durability ensures
+    that once the transaction is committed into the database, it will be stored in the non-volatile memory and after
+    that system failure cannot affect that data anymore.
+
+ */
+
+/* Question 15:  Relational Database
+    In relational database we combine two different attributes. In relational database we store data in a table.
+
+    Entity is anything about which we store data and attribute is the thing that we store. For eg: Entity can be a
+    person and attribute can be its name or age.
+
+ */
+
+/* Question 16: Entity and Attribute
+    Entity is anything about which we store data and attribute is the thing that we store. For eg: Entity can be a
+    person and attribute can be its name or age.
+
+    Entity type is the category of the entities that we are storing like Person or Caleb. Attribute type is the property
+    which we are storing of the person.
+
+    Attributes are columns and entities are individual rows. All the attributes and entities together make a table
+    which has a name or is called as entity.
+
+ */
+
 
 
 /* Notes:

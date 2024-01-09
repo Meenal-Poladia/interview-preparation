@@ -63,6 +63,68 @@ form.                                                         column names, and 
 
  */
 
+/* Question 6: Different types of DBMS or Data Model
+    The different types of DBMS are as follows:
+
+    - Relational DBMS (RDBMS): This type of DBMS, uses a structure which allows the users to access data in relation to
+    another piece of data in a database. In this type of DBMS, data is stored in the form of tables.
+    - Hierarchical DBMS:  As the name suggests, this type of DBMS has a structure similar to that of a tree, wherein
+    the nodes represent records and the branches of the tree represent fields.
+    - Network DBMS: This type of DBMS supports many-to-many relations wherein multiple member records can be linked.
+    - Object-oriented DBMS: Uses small individual software called object to store pieces of data and the instructions
+    for the actions to be done with the data.
+
+ */
+
+/* Question 7: Advantages of DBMS
+    The advantages of DBMS are as follows:
+    - Sharing of Data: Multiple users can use data from the same database simultaneously.
+    - Integrity constraints: These constraints allow the data to be stored in a database in a refined manner.
+    - Redundancy control: DBMS supports a mechanism to control the redundancy of data inside the database by integrating
+    all the data into a single database and as data is stored in only one place, the duplicity of data does not happen.
+    - Data Independence: It simply means that you can change the structure of the data without affecting the structure
+    of any of the application programs.
+    - Provide backup and recovery facility: Provides a feature of ‘backup and recovery’ to automatically create the
+    data backup and restore the data as and when required.
+
+ */
+
+/* Question 8: Differences between DDL, DML, TCL and DCL in SQL
+    Following are some details :
+    - DDL stands for Data Definition Language. SQL queries like CREATE, ALTER, DROP, TRUNCATE and RENAME come under
+    this. All these commands are used for updating the data that's why they are known as Data Definition Language.
+
+    - DML stands for Data Manipulation Language. SQL queries like SELECT, INSERT, DELETE and UPDATE come under this.
+    These commands are used for the manipulation of already updated data that's why they are the part of Data
+    Manipulation Language.
+
+    - DCL stands for Data Control Language. SQL queries like GRANT and REVOKE come under this. These commands are used
+    for giving and removing the user access on the database. So, they are the part of Data Control Language.
+
+    - Transaction Control Language (TCL) e.g., COMMIT, ROLLBACK, and SAVEPOINT. These are the commands used for
+
+    managing transactions in the database. TCL is used for managing the changes made by DML.
+
+ */
+
+/* Question 9: Explain ACID properties in the context of a DBMS
+    ACID stands for Atomicity, Consistency, Isolation, and Durability—properties that ensure the reliability of
+    database transactions.
+
+ */
+
+/* Question 10: Disadvantages of file processing systems
+    - Inconsistent
+    - Not secure
+    - Data redundancy
+    - Difficult in accessing data
+    - Data isolation
+    - Data integrity
+    - Concurrent access is not possible
+    - Limited data sharing
+    - Atomicity problem
+ */
+
 
 
 /* Notes:

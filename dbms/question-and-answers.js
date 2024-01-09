@@ -163,7 +163,7 @@ form.                                                         column names, and 
 
  */
 
-/* Question 15:  Relational Database
+/* Question 15: Relational Database
     In relational database we combine two different attributes. In relational database we store data in a table.
 
     Entity is anything about which we store data and attribute is the thing that we store. For eg: Entity can be a
@@ -183,6 +183,59 @@ form.                                                         column names, and 
 
  */
 
+/* Question 17: E-R model
+    E-R model is a short name for the Entity-Relationship model. This model is based on the real world. It contains
+    necessary objects (known as entities) and the relationship among these objects.
+
+ */
+
+/* Question 18: Data Integrity
+   Data Integrity is about having the correct data in your database. When we are storing data we do not want to store
+   incorrect data, repeating values or broken relationships between tables.
+
+   The term relational comes from the mathematical concept of connection of sets and not relationship.
+
+    3 main types of data integrity are:
+    1. Entity integrity
+    Entity is anything about which we store data. Data integrity among entities means having unique id for each user
+    so that we can differentiate between 2 entities.
+
+    2. Referential integrity
+    This refers to having some connection with another tables which helps to get more details about the current tables
+    content. For example - the comment table is a table which also has the userId which helps to know the details
+    about the user who posted the comment.
+
+    3. Domain integrity
+    Domain means the acceptable value in the field in which we are storing the data. For example - for user name we
+    allow the user to store the value just in string with some constraints on the number of characters. All domain
+    integrity allows to store data in a data type. We can classify data as numbers, text or dates.
+    Foreign keys allows us to connect tables. The child cant exist without the parent. Foreign key constraints help to
+    see that if the user gets removed then remove all the tables associated with the parents foreign key.
+
+ */
+
+/* Question 19: SQL
+    SQL stands for Structured Query Language whose main purpose is to interact with the relational databases in the
+    form of inserting, deleting and updating/modifying the data in the database.
+
+ */
+
+/* Question 20: Database Design
+    When we are designing database it is important to have data integrity which means all tables have the correct and
+    the latest data and there is no scope of disconnected data. If there is a disconnect then if one table updates then
+    the other table will not update and so the data in the other table will be not be up to date.
+
+    There are 2-3 ways in which database design can be broken down. These are also called as schemas:
+        1. Conceptual
+        2. Logical
+        3. Physical
+
+    From phase 1-3 the schemas goes from being general to specific.
+
+    Database design is a method to separate information over multiple tables rather than having one huge table where we
+    store all the information.
+
+ */
 
 
 /* Notes:
@@ -192,5 +245,61 @@ form.                                                         column names, and 
     - Normalisation: Normalization is the process of organizing data in a database. It includes creating tables and
     establishing relationships between those tables according to rules designed both to protect the data and to make
     the database more flexible by eliminating redundancy and inconsistent dependency.
+
+    - Data is anything which we store in the database.
+
+    - Database is the place where we store our data.
+
+    - Relational database is the way in which we store data in tables.
+
+    - DBMS is how we manage our database in the code.
+
+    - RDBMS is a way in which we control our database using relational database.
+
+    - Null is when someone does not enter a value within a column. Null means there is no data into the field.
+
+    - Anomalies are errors within our data integrity. For example We wanted to update one column but by mistake we
+    updated 10 columns.
+
+    - Integrity, we implement integrity to protect against anomaly. we have 3 ways to keep integrity:
+        1. Entity integrity -  having just one entity with a unique name
+        2. Referential integrity - building connections across tables
+        3. Domain integrity - a column within a table has all of the expected values.
+
+    - Entity is something about which we are storing information.
+
+    - Attributes are the things we store about the entity.
+
+    - Relation is a connection between two sets of data.
+
+    - Tuple/ Row are all the attributes about the entity.
+
+    - Table is a physical representation of a relation. Within a table we have rows and columns.
+
+    - File is another name for a table.
+
+    - Record is another name for a row.
+
+    - Field is another name for a column.
+
+    - Value is the information we put into a specific column.
+
+    - Database design is the process of designing your table to remove anomalies and have data integrity.
+
+    - Schema is the structure of our database.
+
+    - Normalisation are the bunch of steps we will use to get the database design.
+
+    - Naming Convention is just a consistency used to make things consistent. We name our database, schema, rows, columns
+    and values in a certain way.
+
+    - Key is something to make everything unique within a table. This is how we connect tables. For example we connect
+    2 tables using ids.
+
+    - Relation. table and file are all talking about the structure of the table.
+
+    - Tuple, rows, entry and record are all talking about rows within a table.
+
+    - Columns, attributes and field are all talking about the column within a table.
 
  */

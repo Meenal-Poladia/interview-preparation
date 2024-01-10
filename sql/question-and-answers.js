@@ -155,3 +155,15 @@
      which do not match hold null values.
 
  */
+
+/* Question 11: What is Self Join
+    If we have a table which has an employee.id, employee.age, employee.name and manager.id in one table. We want to
+    now get the manager name for the employee.id, in such a scenario the manager.id will also be an employee.id so
+    we can join the table by itself and get the employee name.
+
+    Here we get the information by joining it to itself than any other table.
+
+    A SELF JOIN is required when we want to combine data with other data in the same table itself. It is often very
+    useful to convert a hierarchical structure to a flat structure.
+
+ */

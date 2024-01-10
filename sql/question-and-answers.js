@@ -111,3 +111,47 @@
     knows them except for the people working with them.
 
  */
+
+/* Question 7: What are tables and fields in the database
+    A table is a set of organized data in the form of rows and columns. It enables users to store and display records
+    in the structure format. It is similar to worksheets in the spreadsheet application. Columns can categorize as
+    vertical, and Rows are horizontal.
+    A table contains a fixed number of columns but can have any number of rows known as the record.
+
+ */
+
+/* Question 8: Normalization in a Database
+    Normalization is used to minimize redundancy and dependency by organizing fields and table of a database.
+    There are some rules of database normalization, which is commonly known as Normal From, and they are:
+
+    - First normal form(1NF)
+    - Second normal form(2NF)
+    - Third normal form(3NF)
+    - Boyce-Codd normal form(BCNF)
+    Using these steps, the redundancy, anomalies, inconsistency of the data in the database can be removed.
+
+ */
+
+/* Question 9: What is a view
+    Creating a view is like creating a complex query for which we do not want to write the logic again and again. In
+    such a scenario we create a view and store the query in order to run it everytime we want to see the results. It
+    helps to reduce time in creating the query again and again and just running the view show the results.
+
+    Its similar to writing a reusable function.
+
+ */
+
+/* Question 10: Which are joins in SQL? Name the most commonly used SQL joins
+    A Join is one of the SQL statements which is used to join the data or the rows from 2 or more tables on the basis
+    of a common field/column among them.
+
+    There are 4 types of SQL Joins:
+     - Inner Join: This type of join is used to fetch the data among the tables which are common in both tables.
+     - Left Join: This returns all the rows from the table which is on the left side of the join but only the matching
+     rows from the table which is on the right side of the join.
+     - Right Join: This returns all the rows from the table which is on the right side of the join but only the
+     matching rows from the table which is on the left side of the join.
+     - Full Join: This returns the rows from all the tables on which the join condition has been put and the rows
+     which do not match hold null values.
+
+ */

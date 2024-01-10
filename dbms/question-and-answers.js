@@ -102,7 +102,6 @@ form.                                                         column names, and 
     for giving and removing the user access on the database. So, they are the part of Data Control Language.
 
     - Transaction Control Language (TCL) e.g., COMMIT, ROLLBACK, and SAVEPOINT. These are the commands used for
-
     managing transactions in the database. TCL is used for managing the changes made by DML.
 
  */
@@ -236,7 +235,6 @@ form.                                                         column names, and 
     store all the information.
 
  */
-
 
 /* Notes:
     - Data Redundancy: Data redundancy is when multiple copies of the same information are stored in more than one place

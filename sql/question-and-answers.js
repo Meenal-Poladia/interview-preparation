@@ -224,3 +224,74 @@
         WHERE column_name IN ('value1','value 2');
 
  */
+
+/* Question 16: What is Constraint
+    The constraint is used to specify the rule and regulations that allows or restricts what values/data will be stored
+    in the table. It ensures data accuracy and integrity inside the table. It enforces us to store valid data and
+    prevents us from storing irrelevant data.
+
+    Some of the most commonly used constraints are NOT NULL, PRIMARY KEY, FOREIGN KEY, AUTO_INCREMENT, UNIQUE KEY, etc.
+
+    SQL categories the constraints into two levels:
+        1. Column Level Constraints: These constraints are only applied to a single column and limit the type of data
+        that can be stored in that column.
+        2. Table Level Constraints: These constraints are applied to the entire table and limit the type of data that
+        can be entered.
+
+ */
+
+/* Question 17: The difference between DELETE and TRUNCATE statements in SQL
+    Both are DML command
+
+    1. Delete
+    - The delete statement removes single or multiple rows from an existing table depending on the specified condition.
+    - We can use the WHERE clause in the DELETE command.
+    - DELETE is slower because it maintained the log.
+    - You can roll back data after using the DELETE statement.
+
+    2. Truncate
+    - The truncate command deletes the whole contents of an existing table without the table itself. It preserves the
+    table structure or schema.
+    - We cannot use the WHERE clause with TRUNCATE.
+    - TRUNCATE statement is faster than DELETE statement as it deletes entire data at a time without maintaining
+    transaction logs.
+    - It is not possible to roll back after using the TRUNCATE statement.
+
+ */
+
+/* Question 18: Is a blank space or zero the same as a NULL value
+    A NULL value is a value, which is 'unavailable, unassigned, unknown or not applicable.' It would be used in the
+    absence of any value. We can perform arithmetic operations on it. On the other hand, zero is a number, and a blank
+    space is treated as a character.
+
+ */
+
+/* Question 19: What are functions and their usage in SQL
+    SQL functions are simple code snippets that are frequently used and re-used in database systems for data processing
+    and manipulation. Functions are the measured values.
+
+    SQL functions are used for the following purposes:
+        - To perform calculations on data
+        - To modify individual data items
+        - To manipulate the output
+        - To format dates and numbers
+        - To convert data types
+
+ */
+
+/* Question 20: The difference between the WHERE and HAVING clauses
+    1. WHERE
+    - WHERE clause is used to filter records before any groupings are established.
+    - It does not allow to work with aggregate functions.
+    - This clause can be used with the SELECT, UPDATE, and DELETE statements.
+
+    2. HAVING
+    - HAVING clause is used to filter values from a group.
+    - It can work with aggregate functions.
+    - This clause can only be used with the SELECT statement.
+
+ */
+
+/* Question
+
+ */

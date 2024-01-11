@@ -19,12 +19,15 @@
    -> You have to change the root user's password before you can do anything, so run the following command to do that:
     ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'MyNewPass1!';
 
-   -> upload the sql file
+   -> upload the sql file or create the database using the below command
     https://gist.githubusercontent.com/meech-ward/1723b2df87eae8bb6382828fba649d64/raw/ee52637cc953df669d95bb4ab68ac2ad1a96cd9f/lotr.sql
+
+   -> Create Database
+     CREATE DATABASE `mydatabase`y;
 
    -> Create a new user called sam with the password MyNewPass1! that can access the database from localhost:
     CREATE USER 'sam'@'localhost' IDENTIFIED WITH mysql_native_password BY 'MyNewPass1!';
-    GRANT ALL PRIVILEGES ON lotr.* TO 'sam'@'localhost';
+    GRANT ALL PRIVILEGES ON mydatabase.* TO 'sam'@'localhost';
 
    -> Now we can access the database with this user from the ec2 instance. So If I installed a web app on this instance,
       I could use this username and password.

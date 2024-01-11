@@ -167,3 +167,60 @@
     useful to convert a hierarchical structure to a flat structure.
 
  */
+
+/* Question 12: What is normalization? Commonly used normal forms
+    Normalization is used to minimize redundancy and dependency by organizing fields and table of a database.
+    Normalization breaks the table into small partitions and then links them using different relationships to avoid the
+    chances of redundancy.
+
+    There are some rules of database normalization, which is commonly known as Normal From, and they are:
+        - First normal form(1NF)
+        - Second normal form(2NF)
+        - Third normal form(3NF)
+        - Boyce-Codd normal form(BCNF)
+    Using these steps, the redundancy, anomalies, inconsistency of the data in the database can be removed.
+
+ */
+
+/* Question 13: Indexing
+    Indexing is a method that helps to get the requested data very fast.
+
+    1. Clustered Index:
+    - It is like a book with an index. The index helps us to reach the data quickly rather than looking for the concept on
+    each page. The index is a pointer to the actual data but does not have the data itself.
+    - There will be just one result as the index points to only one instance.
+    -Its faster to search for data using clustered indexes.
+
+    2. Non-Clustered Index:
+    - Organises the data. Like a phone book will have the names and the number written in an organised way.
+    - There can be one or more results in a non-clustered index.
+
+ */
+
+/* Question 14: Trigger in SQL
+    It is a special type of stored procedure that is invoked automatically in response to an event. It allows us to
+    execute a batch of code when an insert, update or delete command is run against a specific table because the
+    trigger is the set of activated actions whenever DML commands are given to the system.
+
+    SQL triggers have two main components one is action, and another is an event. When certain actions are taken, an
+    event occurs as a result of those actions.
+
+ */
+
+/* Question 15: The difference between IN and BETWEEN operators
+    1. Between Operator
+    - This operator is used to selects the range of data between two values. The values can be numbers, text, and
+    dates as well.
+    - It returns records whose column value lies in between the defined range.
+    - The following syntax illustrates this operator:
+        SELECT * FROM table_name
+        WHERE column_name BETWEEN 'value1' AND 'value2';
+
+    2. IN Operator
+    - It is a logical operator to determine whether or not a specific value exists within a set of values.
+    - It compares the specified column's value and returns the records when the match exists in the set of values.
+    - The following syntax illustrates this operator:
+        SELECT * FROM table_name
+        WHERE column_name IN ('value1','value 2');
+
+ */

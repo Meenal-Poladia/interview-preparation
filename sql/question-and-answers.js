@@ -292,6 +292,102 @@
 
  */
 
-/* Question
+/* Question 21: What is the default ordering of data using the ORDER BY clause? How could it be changed
+    The ORDER BY clause is used to sort the table data either in ascending or descending order. By default, it will
+    sort the table in ascending order. If we want to change its default behavior, we need to use the DESC keyword after
+    the column name in the ORDER BY clause.
 
+ */
+
+/* Question 22: How do we use the DISTINCT statement? What is its use
+    The DISTINCT keyword is used to ensure that the fetched value always has unique values. It does not allow to have
+    duplicate values. The DISTINCT keyword is used with the SELECT statement and retrieves different values from the
+    table's column.
+
+    We can use it with the help of the following syntax:
+    SELECT DISTINCT column_lists FROM table_name WHERE [condition];
+ */
+
+/* Question 23: What is meant by case manipulation functions
+    Case manipulation functions are part of the character functions. It converts the data from the state in which it is
+    already stored in the table to upper, lower, or mixed case. The conversion performed by this function can be used
+    to format the output. We can use it in almost every part of the SQL statement. Case manipulation functions are
+    mostly used when you need to search for data, and you don't have any idea that the data you are looking for is in
+    lower case or upper case.
+
+    There are three case manipulation functions in SQL, namely:
+
+    - LOWER: This function returns the string in lowercase. It takes a string as an argument and returns it by
+    converting it into lower case.
+    Syntax:  LOWER(‘string’)
+
+    - UPPER: This function returns the string in uppercase. It takes a string as an argument and returns it by
+    converting it into uppercase.
+    Syntax:  UPPER(‘string’)
+
+    - INITCAP: This function returns the string with the first letter in uppercase and the rest of the letters in
+    lowercase.
+    Syntax: INITCAP(‘string’)
+
+ */
+
+/* Question 24: What is Denormalization
+    Denormalization is a database optimization technique in which we add redundant data to one or more tables.
+
+ */
+
+/* Question 25: What is CLAUSE in SQL
+    A clause in SQL is a part of a query that lets you filter or customize how you want your data to be queried to you.
+
+ */
+
+/* Question 26: Union and Union All
+    1. Union
+    - Combines the result of two or more SELECT statements consisting of distinct values.
+    - Has low performance than UNION ALL, as duplicate rows need to be removed.
+
+    2. Union All
+    - Combines the result set of two or more SELECT statements consisting of duplicate values.
+    - Has better performance than UNION, as duplicate rows need not have to be removed.
+
+ */
+
+/* Question 27: How is the pattern matching done in the SQL?
+    With the help of the LIKE operator, pattern matching is possible in the SQL.’%’ is used with the LIKE operator
+    when it matches with the 0 or more characters, and ‘_’ is used to match the one particular character.
+
+ */
+
+/* Question 28: What do you understand by aggregation and atomicity
+    1. Aggregation:
+    This is a feature of the E-R  model which allows a relationship set to participate in another relationship set.
+
+    2. Atomicity
+    This property states that a database modification must either follow all the rules or nothing at all. So, if one
+    part of the transaction fails, then the entire transaction fails.
+
+ */
+
+/* Question 29: What are the ACID properties in DBMS?
+    ACID stands for Atomicity, Consistency, Isolation, Durability. It is used to ensure that the data transactions are
+    processed reliably in a database system.
+
+    - Atomicity: Atomicity refers to those transactions which are completely successful or failed. Here each
+    transaction refers to a single logical operation of a data. So, even if one part of any transaction fails, the
+    entire transaction fails and the database state is left unchanged.
+    - Consistency: Consistency ensures that the data must meet all the validation rules. In simple words, you can say
+    that your transaction never leaves the database without completing its state.
+    - Isolation: The main goal of isolation is concurrency control.
+    - Durability: Durability means that if a transaction has been committed, it will occur whatever may be the scenario.
+
+ */
+
+/* Question 30: Explain Database partitioning and its importance.
+    Data partitioning is the process of dividing a logical database into independent units for the betterment of
+    availability, performance, and manageability.
+
+    The importance of database partitioning is as follows:
+    - Enables you to access large parts of a specific partition
+    - Cheap and slower storage can be used to store data
+    - Improves query performance
  */

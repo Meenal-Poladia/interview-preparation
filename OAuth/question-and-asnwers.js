@@ -118,3 +118,49 @@
     credentials themselves.
 
  */
+
+/* Question 11: How would you deal with a situation where a critical failure causes the loss of active OAuth tokens
+    In the event of a critical failure resulting in loss of active OAuth tokens, immediate action is necessary. First,
+    notify all users about the situation and advise them to reauthenticate their accounts. This will generate new
+    OAuth tokens for each user. Second, investigate the cause of the failure to prevent recurrence. It could be due to
+    system vulnerabilities or bugs that need fixing. Third, consider implementing token persistence by storing tokens
+    securely in a database. This way, even if a similar failure occurs, you can retrieve the stored tokens, minimizing
+    disruption. Lastly, review your disaster recovery plan to ensure it covers such scenarios effectively.
+
+ */
+
+/* Question 12: Can you explain how JSON Web Tokens (JWT) works in OAuth 2.0
+    OAuth 2.0 uses JWT as a means of representing claims securely between two parties. In this process, the client
+    application requests an access token from the authorization server by providing its credentials. The server
+    authenticates these credentials and returns a JWT if successful.
+
+    JWT consists of three parts: header, payload, and signature. The header typically contains the type of token and
+    the algorithm used for encryption. The payload carries the actual data or claims like user information, issuer,
+    expiration time etc. The signature is created by encoding the header and payload using base64url and then applying
+    the specified encryption algorithm on it with a secret key.
+
+    The client sends this JWT in the Authorization header while making API calls. The resource server validates the
+    JWT by decoding it using the same secret key. If valid, it processes the request; otherwise, it rejects it. This
+    way, OAuth 2.0 leverages JWT to ensure secure transmission of information.
+
+ */
+
+/* Question 13: How does OAuth handle permissions for third-party applications looking to access a user’s data
+    OAuth uses tokens to handle permissions for third-party applications. When a user grants access, the authorization
+    server issues an access token to the application. This token represents the granted permissions and is used by the
+    application to access the user’s data from the resource server. The token doesn’t contain sensitive information
+    about the user or their credentials. It only contains scopes and durations of access. OAuth also supports refresh
+    tokens which can be used to obtain new access tokens without requiring the user to grant permission again.
+
+ */
+
+/* Question 14: Discuss a scenario where OAuth wouldn’t be the optimal choice for authorization and suggest an
+   alternative
+    OAuth may not be the optimal choice for authorization in a scenario where an application is standalone, with no
+    third-party access required. OAuth’s strength lies in its ability to provide secure delegated access, which becomes
+    irrelevant in this context. In such cases, Basic Authentication could serve as a simpler and more efficient
+    alternative. It involves direct authentication using encoded username and password credentials. However, it lacks
+    OAuth’s advanced features like token revocation or granular access control. Therefore, while choosing between
+    these two, one must consider the specific requirements of their application.
+
+ */

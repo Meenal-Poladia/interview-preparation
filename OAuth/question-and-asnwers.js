@@ -51,3 +51,70 @@
     tokens to prove an identity between consumers and service providers.
 
  */
+
+/* Question 6: How does OAuth differ from OpenID
+    OAuth and  OpenID  are all protocols for authentication and authorization. However, they differ in their
+    primary use cases and how they function.
+
+    OAuth is primarily an authorization protocol that allows one application to grant another application access to
+    its data without sharing passwords. It’s used extensively for API authorizations.
+
+    OpenID, on the other hand, is purely an authentication protocol. It enables users to authenticate using
+    co-operating sites (like Google, Yahoo) instead of having different usernames and passwords for each site.
+
+ */
+
+/* Question 7: What are some potential security risks involved with using OAuth, and how could you mitigate them
+    OAuth, while beneficial for user convenience and data sharing, presents several security risks.
+
+        1. Phishing attacks are a significant concern as attackers can trick users into granting permissions to
+        malicious applications. To mitigate this, developers should implement strict redirect URI validation and
+        educate users about the dangers of phishing.
+
+        2. Another risk is token leakage where access tokens might be exposed in browser history or logs. This can be
+        mitigated by using short-lived tokens and refresh tokens, which limit the time an attacker has to use a stolen
+        token.
+
+        3. Lastly, there’s the risk of inadequate scope limitation leading to over-privileged applications.
+        Implementing least privilege principle and granular scopes can reduce potential damage if a token is
+        compromised.
+
+ */
+
+/* Question 8: Explain the purpose of the client ID and client secret in the OAuth protocol
+    The client ID and secret in OAuth protocol serve as unique identifiers for the application.
+
+    - The client ID is public, used to build login URLs, or included in Javascript source code. It doesn’t need to be
+    kept confidential.
+    - On the other hand, the client secret must remain confidential. This secret authenticates the identity of the
+    application to the server when the app makes requests. Essentially, these two components work together to ensure
+    secure communication between the application and the server, preventing unauthorized access.
+
+ */
+
+/* Question 9: Explain the concept of scope in OAuth and its significance in ensuring secure access.
+    Scope in OAuth is a mechanism that limits an application’s access to a user’s account. It provides granular
+    permissions, allowing the app to only access what it needs and nothing more. This concept is crucial for secure
+    access as it prevents over-privileged applications from accessing sensitive data they don’t require.
+
+    For instance, if an app only needs to read a user’s email, the scope would be set to “read:email”, preventing it
+    from modifying or deleting emails. By limiting the potential damage in case of a security breach, scope plays a
+    pivotal role in maintaining the integrity and confidentiality of user data in OAuth.
+
+ */
+
+/* Question 10: How does OAuth support single sign-on (SSO) and why is it beneficial
+    OAuth supports single sign-on (SSO) by allowing users to authenticate once and gain access to multiple applications.
+    It does this through a token-based system where the user’s credentials are exchanged for an access token, which is
+    then used to authorize requests without requiring re-authentication.
+
+    The benefit of SSO via OAuth lies in its convenience and security. Users only need to remember one set of login
+    details, reducing the risk of forgotten passwords or insecure password practices. Additionally, since the user’s
+    actual credentials aren’t repeatedly transmitted with each request, there’s less chance of them being intercepted
+    or stolen.
+
+    Moreover, it provides control over data sharing as users can choose what information they want to share with
+    third-party apps. Also, it reduces the workload on developers as they don’t have to manage and secure user
+    credentials themselves.
+
+ */

@@ -136,3 +136,17 @@
     branch.
 
  */
+
+/* Question 21: Difference between git merge and git rebase
+    1. Git merge:
+    The git merge command is used to integrate changes from one branch into another. It creates a new commit that
+    combines the changes from the specified branch into the current branch.
+    git merge is suitable for merging feature branches into a stable branch (e.g., merging a feature branch into master.
+
+    2. Git rebase:
+    The git rebase command is used to move or combine a sequence of commits to a new base commit. It is often used to
+    maintain a linear and cleaner project history by incorporating changes from one branch onto another.
+    git rebase is useful for integrating changes from a feature branch into a more stable branch while maintaining a
+    linear history.
+
+ */

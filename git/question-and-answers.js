@@ -66,3 +66,39 @@
     helps organize the development process in larger projects.
 
  */
+
+/* Question 11: Explain the purpose of the '.gitignore' file
+     The .gitignore file is used to specify files and directories that should be ignored by Git. It helps prevent
+     unnecessary or sensitive files from being included in the version control system.
+
+ */
+
+/* Question 12: What does git clone do
+    The command creates a copy (or clone) of an existing git repository. Generally, it is used to get a copy of the
+    remote repository to the local repository.
+
+ */
+
+/* Question 13: What does the command git config do
+    The git config command is a convenient way to set configuration options for defining the behavior of the repository,
+    user information and preferences, git installation-based configurations, and many such things.
+
+    For example:
+    To set up your name and email address before using git commands, we can run the below commands:
+
+    git config --global
+    user.name
+    “<<your_name>>”
+
+ */
+
+/* Question 14: Can you explain head in terms of git
+    A head is nothing but a reference to the last commit object of a branch.
+
+ */
+
+/* Question 15: What does git status command do
+    git status command is used for showing the difference between the working directory and the index which is helpful
+    for understanding git in-depth and also keep track of the tracked and non-tracked changes.
+
+ */

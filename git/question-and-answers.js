@@ -102,3 +102,37 @@
     for understanding git in-depth and also keep track of the tracked and non-tracked changes.
 
  */
+
+/* Question 16: Define “Index”.
+    Before making commits to the changes done, the developer is given provision to format and review the files and make
+    innovations to them. All these are done in the common area which is known as ‘Index’ or ‘Staging Area’.
+
+ */
+
+/* Question 17: What does git add command do
+    This command adds files and changes to the index of the existing directory.
+
+ */
+
+/* Question 18: Why is it considered to be easy to work on Git
+    1. Branching Capabilities
+    2. Distributed manner of development
+    3. Pull requests feature
+    4. Effective release cycle
+
+ */
+
+/* Question 19: What is the difference between git stash apply vs git stash pop command
+    git stash apply: This will apply the changes from the most recent stash to your working directory, but the stash
+    will still exist in the stash list.
+
+    git stash pop: This will apply the changes from the most recent stash and remove it from the stash list.
+
+ */
+
+/* Question 20: What is the functionality of “git cherry-pick” command
+    This command is used to introduce certain commits from one branch onto another branch within the repository. The
+    most common use case is when we want to forward- or back-port commits from the maintenance branch to the development
+    branch.
+
+ */

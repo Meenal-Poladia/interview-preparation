@@ -75,3 +75,57 @@
      User.destroy({ where: { username: 'john_doe' } });
 
  */
+
+/* Question 6: What is Sequelize migration
+    Sequelize migrations are a way to version-control database schema changes. Migrations are JavaScript files that
+    describe changes to be made to the database, such as creating or modifying tables. The sequelize-cli provides
+    commands to generate and run migrations.
+
+    How to do Migration:
+    Sequelize, a Node.js ORM, can be used for data migration by leveraging its migrations feature. To start, install
+    Sequelize CLI and initialize it to create necessary folders. Create a new migration file using the
+    “migration:generate” command with a name describing the change. In this file, define ‘up’ and ‘down’ methods
+    detailing what happens during migration and rollback respectively. The ‘up’ method might include creating tables or
+    adding columns, while ‘down’ reverses these actions. Execute the migration using the “db:migrate” command. If
+    errors occur, use “db:migrate:undo” to revert changes. Remember to keep migrations atomic, each representing a
+    single change in your database schema.
+
+ */
+
+/* Question 7: What are hooks in Sequelize, and how are they used
+    Hooks, also known as lifecycle events, are functions that Sequelize calls before or after certain operations. They
+    allow developers to control the behavior of models during different stages of their lifecycle.
+
+    For instance, a ‘beforeCreate’ hook can be used to hash a user’s password before it is stored in the database.
+
+ */
+
+/* Question 8: How do you enable logging in Sequelize
+    Sequelize allows you to enable logging to see the SQL queries it generates. You can enable logging globally for
+    all queries or for specific instances.
+
+    For example:
+    const sequelize = new Sequelize('database', 'username', 'password', {
+      logging: console.log, // To log all queries
+    });
+ */
+
+/* Question 9: Sequelize transaction
+    Sequelize transactions allow you to perform multiple database operations as a single unit. Transactions ensure that
+    either all the operations are committed, or none of them are. Transactions can be used to maintain data consistency
+    and integrity.
+
+ */
+
+/* Question 10: What are the key differences between raw queries and Sequelize methods in querying a database
+    Raw queries and Sequelize methods differ in syntax, abstraction level, and security. Raw queries involve writing
+    SQL code directly, providing more control but requiring extensive knowledge of SQL. They are less abstracted,
+    making them potentially faster for complex operations. However, they expose the database to injection attacks if
+    not properly sanitized.
+
+    Sequelize methods, on the other hand, use JavaScript functions that generate SQL commands. This provides a higher
+    level of abstraction, simplifying interaction with the database by hiding SQL complexity. It also automatically
+    sanitizes inputs, reducing the risk of injection attacks. However, this abstraction can lead to slower performance
+    for complex queries due to extra processing overhead.
+
+ */

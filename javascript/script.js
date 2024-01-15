@@ -51,7 +51,7 @@ prints: My cats are called Pete, Biggles and Jasmine.
 console.log(myFavoriteCats); //
  */
 
-/* Problem 4:Search the name and find out the number from the array
+/* Problem 4: Search the name and find out the number from the array
 const contacts = ['Chris:2232322', 'Sarah:3453456', 'Bill:7654322', 'Mary:9998769', 'Dianne:9384975'];
 const para = document.querySelector('p');
 const input = document.querySelector('input');
@@ -142,6 +142,23 @@ for (let i = 2; i <= 500; i++) {
     }
 }
 console.log(primeNumbers);
+
+//Prime numbers from 2-500
+const primeNumbers = [];
+
+const checkForPrimeNumbers = (number) => {
+    for (let i = 2; i < number ; i++) {
+        if (number % i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+for (let i = 2; i <= 500 ; i++) {
+    const isPrime = checkForPrimeNumbers(i);
+    if (isPrime) primeNumbers.push(i)
+}
 
  */
 
@@ -1149,5 +1166,57 @@ function removeDuplicates(arr) {
 function ascendingSort(numbers) {
   return numbers.sort((a, b) => a – b);
 }
+
+ */
+
+/* Problem 53: Find Missing Number in Array:
+    const input = [3, 0, 1, 4, 5];
+    const sortedArray = input.sort();
+    let missingNumber;
+
+    for (let i = 0, count = sortedArray[0]; i < sortedArray.length; i++, count++) {
+        if (sortedArray[i] !== count) {
+            missingNumber = count;
+            break;
+        }
+    }
+
+    console.log(missingNumber)
+ */
+
+/* Problem 54: Capitalise the first letter of the word
+Solution 1:
+const input = 'this is the title of the book';
+
+const inputArray = input.split(' ');
+const output = inputArray.map(item => item.replace(item[0], item[0].toUpperCase()));
+const result = output.join(' ');
+
+//Output: This Is The Title Of The Book
+
+Solution 2:
+function titleCase(sentence) {
+    return sentence.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+}
+
+console.log(titleCase('this is a title')); // Output: 'This Is A Title'
+
+ */
+
+/* Problem 55: Find the missing numbers in an array below the specified number
+const a = [9];
+const count = 9;
+const missingNumbers = [];
+
+for (let i = 1; i <= count; i++) {
+    if (a.indexOf(i) == -1) {
+        missingNumbers.push(i);
+    }
+}
+console.log(missingNumbers);  // [1, 2, 3, 4, 5, 6, 7, 8];
+
+ */
+
+/* Problem
 
  */

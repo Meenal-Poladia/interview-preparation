@@ -207,3 +207,81 @@
     manual writing of complex queries and is more prone to SQL injection attacks if not properly sanitized.
 
  */
+
+/* Question 16: How would you handle errors in Sequelize
+    In Sequelize, error handling is done using promises or async/await. When a database operation fails, Sequelize
+    throws an error that can be caught and handled.
+
+    For promise-based operations, use the .catch() method after your query. This will catch any errors thrown during the
+    execution of the promise chain:
+    Model.findAll()
+      .then(data => {
+        // handle data
+      })
+      .catch(err => {
+        // handle error
+      });
+
+ */
+
+/* Question 17: How would you use Sequelize to handle database schema updates
+    Sequelize.js provides a feature called “migrations” to handle database schema updates. Migrations are like version
+    control for your database, allowing you to update the database schema in a structured and organized manner.
+
+    To use migrations, first install the Sequelize CLI and initialize it. This creates a ‘migrations’ folder where
+    migration files will be stored. Each file represents a specific update to the database schema.
+
+    Create a new migration using the command ‘sequelize migration:create’. This generates a new file with methods ‘up’
+    and ‘down’. The ‘up’ method describes the changes to apply to the database, while the ‘down’ method reverts them.
+
+    Next, define the changes inside these methods using Sequelize’s API. For example, to add a column, use ‘addColumn’
+    function on queryInterface object, passing table name, column name, and its properties.
+
+    Finally, run the migration using ‘sequelize db:migrate’. If something goes wrong, use ‘sequelize db:migrate:undo’ to
+    revert the last migration. Remember to commit each migration file to your version control system to keep track of
+    schema changes.
+
+ */
+
+/* Question 18: How do you handle cascading deletions in Sequelize
+    In Sequelize, cascading deletions are handled through the ‘onDelete’ property in model associations. When defining
+    an association between models, you can specify ‘onDelete: “CASCADE”‘ to enable this feature. This means that when a
+    parent record is deleted, all associated child records will also be deleted automatically by Sequelize.
+    For example, if we have two models, User and Task, and each user has many tasks, we could define the association
+    like so:
+
+    User.hasMany(Task, { onDelete: 'CASCADE' });
+    This code tells Sequelize to delete all tasks associated with a user when that user is deleted. It’s important to
+    note that this only works if foreign key constraints are enabled in your database.
+
+ */
+
+/* Question 19: How would you use Sequelize to ensure data consistency in a distributed database scenario
+    Sequelize can ensure data consistency in a distributed database scenario through its transaction feature.
+    Transactions are crucial for maintaining integrity, especially when performing multiple related operations.
+    Sequelize supports transactions by wrapping your queries within sequelize.transaction method.
+
+    Here’s an example:
+
+    const { sequelize } = require('your-sequelize-setup-file');
+    try {
+      const result = await sequelize.transaction(async (t) => {
+        const user = await User.create({
+          firstName: 'John',
+          lastName: 'Doe'
+        }, { transaction: t });
+        await user.setShooter({
+          firstName: 'Jane',
+          lastName: 'Doe'
+        }, { transaction: t });
+        return user;
+      });
+    } catch (error) {
+      // If the execution reaches this line, an error occurred.
+      // The transaction has been rolled back automatically!
+    }
+
+    In this code snippet, if any operation fails, all changes will be rolled back, ensuring data consistency across the
+    distributed system.
+
+ */

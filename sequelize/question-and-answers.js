@@ -129,3 +129,81 @@
     for complex queries due to extra processing overhead.
 
  */
+
+/* Question 11: What is the purpose of Sequelize.sync() and how does it work
+    It synchronizes the defined model with the database by creating tables if they do not exist and updating them if
+    they have changed.
+
+    The sync() function works by comparing the current state of the models with the corresponding tables in the
+    database. If discrepancies are found, it modifies the database to match the models. This includes creating new
+    tables or altering existing ones based on changes made in the models.
+
+    There are options that can be passed to the sync() method to control its behavior. For instance, passing
+    {force: true} will drop tables before recreating them, effectively resetting the database. However, this should be
+    used cautiously as it leads to data loss.
+
+ */
+
+/* Question 12: How do you validate data in Sequelize
+    In Sequelize, data validation is achieved through the ‘validate’ property in model definition. This property
+    contains various built-in validators like ‘is’, ‘len’, ‘isEmail’, etc., and also allows custom validators.
+
+    Here’s an example of a User model with email and password fields:
+    const User = sequelize.define('user', {
+      email: {
+        type: Sequelize.STRING,
+        validate: {
+          isEmail: true
+        }
+      },
+      password: {
+        type: Sequelize.STRING,
+        validate: {
+          len: [7,42]
+        }
+      }
+    });
+
+ */
+
+/* Question 13: How do you handle data pagination in Sequelize
+    In Sequelize, data pagination is handled using the ‘limit’ and ‘offset’ properties in the query object. The ‘limit’
+    property specifies the maximum number of records to return, while the ‘offset’ property determines where to start
+    from in the dataset. For example:
+
+    Model.findAll({
+      offset: 10,
+      limit: 5
+    });
+
+    This code will skip the first 10 records and then fetch the next 5. This approach can be used for paginating
+    through large datasets by incrementing the ‘offset’ value based on the page number and ‘limit’. However, it’s
+    important to note that this method may not perform well with very large offsets due to database design.
+
+ */
+
+/* Question 14: What is the role of Sequelize CLI in a development environment
+    Sequelize CLI is a command-line interface tool that aids in managing Sequelize-related tasks within a development
+    environment. It automates repetitive tasks such as database migration, seeding, and configuration, thus enhancing
+    productivity. The CLI allows developers to generate models, migrations, and seeders with ease, reducing the need
+    for manual creation of these files. Additionally, it provides commands for executing migrations and seeds, which
+    are essential for maintaining database consistency across different environments.
+
+ */
+
+/* Question 15: What are the advantages and disadvantages of using raw SQL queries versus Sequelize in a Node.js
+   application
+    Sequelize offers advantages like Object-Relational Mapping (ORM), which simplifies data manipulation using
+    JavaScript objects. It supports multiple SQL dialects, transactions, and relations. Sequelize also provides
+    migrations for database versioning.
+
+    However, Sequelize has a learning curve and may overcomplicate simple queries. Performance can be slower than raw
+    SQL due to abstraction overhead.
+
+    Raw SQL gives full control over queries, potentially leading to better performance. It’s simpler for basic
+    operations and doesn’t require learning an additional library.
+
+    On the downside, raw SQL lacks Sequelize’s features like ORM, transaction support, and migrations. It requires
+    manual writing of complex queries and is more prone to SQL injection attacks if not properly sanitized.
+
+ */

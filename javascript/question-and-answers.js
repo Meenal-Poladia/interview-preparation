@@ -19,7 +19,7 @@
     using NodeJs allowing developers to create full-stack applications using a single language.
 */
 
-/* Question 2: Types of operators in javascript?
+/* Question 2: Types of operators in javascript? BAC LAS
     1. Arithmetic Operators
     2. Comparison (Relational) Operators
     3. Bitwise Operators
@@ -50,7 +50,7 @@
     that are not provided with a value default to undefined. The typeOf undefined is undefined.
 
     Null is often explicitly assigned to variables or object properties to signify that they intentionally have no
-    value. The typeOf undefined is object.
+    value. The typeOf null is object.
 
     If we don’t assign any value to variable javascript automatically assigns it undefined value and if we assign
     a variable as null it means that we are setting the variable empty.
@@ -218,7 +218,7 @@ Multiline comment in javascript
 
  */
 
-/* Question 17: Compilation, Interpretation and Just In Time compilation
+/* Question 17R: Compilation, Interpretation and Just In Time compilation
     1. Compilation
     Compilation is the process of translating the entire source code of a program into machine code or an intermediate
     code (e.g., bytecode) all at once.
@@ -233,7 +233,7 @@ Multiline comment in javascript
 
  */
 
-/* Question 18: Execution Context
+/* Question 18R: Execution Context
     The JS EC(Execution Context) is the area that is created when the JS program starts execution. Every EC goes
     through a creation phase where it looks for variables for hoisting.
 
@@ -298,11 +298,11 @@ Multiline comment in javascript
 
  */
 
-/* Question 21: This keyword
+/* Question 21R: This keyword
     The this keyword is a special variable that is created for every EC (function).
     This keyword points to the owner of the function.
 
-     The this keyword is dynamic and it changes based on who or where it is used.
+    The this keyword is dynamic and it changes based on who or where it is used.
     There are 4 different ways in which this may be used.
 
     1. Inside methods (Functions attached to objects)
@@ -325,7 +325,7 @@ Multiline comment in javascript
 
  */
 
-/* Question 22: Regular and arrow function
+/* Question 22R: Regular and arrow function
     They differ in:
     1. Syntax
     2. this KW - In a object with an arrow function we can this takes the surrounding scope. In a function declaration
@@ -365,8 +365,7 @@ Multiline comment in javascript
 
  */
 
-/* Question 25: Enhanced Object Literals
-
+/* Question 25R: Enhanced Object Literals
     With enhanced object literals you can now directly add existing properties to objects that share the same name as
     an existing variable in the same scope.
 
@@ -513,7 +512,7 @@ let map = new Map(newArray);
 
  */
 
-/* Question 36: Difference between for...of and forEach loop
+/* Question 36R: Difference between for...of and forEach loop
 
     1. Breaking the loop
     The for...of loop supports the break statement for breaking out of the loop prematurely. The forEach method does
@@ -538,7 +537,7 @@ let map = new Map(newArray);
         for...of guarantees the order of iteration based on the iterable's defined order.
  */
 
-/* Question 38: How do you check if a variable is an object?
+/* Question 38R: How do you check if a variable is an object?
     typeOf(value) === 'object' && value !== null && !Array.isArray(value)
 */
 
@@ -558,7 +557,7 @@ let map = new Map(newArray);
 
  */
 
-/* Question 40: Event Flow
+/* Question 40R: Event Flow
     Events in the DOM follow a three-phase flow: capturing, target, and bubbling.
     The capturing phase happens first, then the target phase, and finally the bubbling phase.
     Not all events have all three phases; some events may skip either the capturing or the bubbling phase.
@@ -1042,3 +1041,36 @@ let map = new Map(newArray);
 
  */
 
+/* Question 61: Generator Function
+    A Generator is a special type of function in JavaScript that can be paused and resumed during execution.
+    Generators are defined using the function* syntax and use the yield keyword to pause their execution. When a
+    generator is called, it returns a generator object, which can be used to control the generator's execution using
+    the next() method.
+
+    For example:
+    function* idGenerator() {
+      let id = 1;
+      while (true) {
+        yield id++;
+      }
+    }
+
+    const gen = idGenerator();
+    console.log(gen.next().value); // Output: 1
+    console.log(gen.next().value); // Output: 2
+    console.log(gen.next().value); // Output: 3
+
+ */
+
+/* Question 62: Javascript Modules
+    JavaScript Modules are a way to organize and encapsulate code into reusable pieces. They allow developers to create,
+    export, and import code between different files and namespaces. Modules help to keep the global scope clean,
+    promote code reuse and separation of concerns, and make it easier to manage large codebases.
+
+    In JavaScript, there are two module systems:
+
+    - CommonJS (used in Node.js): Uses require() to import modules and module.exports or exports to export modules.
+    - ES6 Modules (used in modern browsers): Uses the import keyword to import modules and the export keyword to export
+    modules.
+
+ */

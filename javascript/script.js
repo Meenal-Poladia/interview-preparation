@@ -1169,7 +1169,7 @@ function ascendingSort(numbers) {
 
  */
 
-/* Problem 53: Find Missing Number in Array:
+/* Problem 53: Find Missing Number in Array starting from 0:
     const input = [3, 0, 1, 4, 5];
     const sortedArray = input.sort();
     let missingNumber;
@@ -1253,5 +1253,56 @@ If we do not get the value then we return -1;
 
     const middleValue2 = Math.floor((input[0] + input[middleValue1]) / 2);
     compareValue(input[middleValue2]);
+
+ */
+
+/* Problem 58: Write a function that finds the first longest word in a sentence
+const input = 'The quick brown fox jumps over the lazy dog';
+
+const findLongestWord = (wordArray) => {
+    const inputArray = wordArray.split(' ');
+    let longestWordLength = 0;
+    let word = '';
+
+    for (let i = 0; i < inputArray.length; i++) {
+        if (inputArray[i].length > longestWordLength) {
+            longestWordLength = inputArray[i].length;
+            word = inputArray[i];
+        }
+    }
+
+    console.log(word, longestWordLength);
+}
+
+findLongestWord(input); // quick
+ */
+
+/* Problem 59: Write a function that finds the last longest word in a sentence
+const input = 'The quick brown fox jumps over the lazy dog';
+
+const findLongestWord = (wordArray) => {
+    const inputArray = wordArray.split(' ');
+    let longestWord = '';
+
+    for (let i = 0; i < inputArray.length; i++) {
+        if (inputArray[i].length >= longestWord.length) {
+            longestWord = inputArray[i];
+        }
+    }
+    return longestWord;
+}
+
+const output = findLongestWord(input);
+ */
+
+/* Problem 60: Find Missing Number in Array starting from 0:
+function findMissingNumber(arr) {
+    const n = arr.length + 1;
+    const sum = (n * (n + 1)) / 2;
+    const arrSum = arr.reduce((acc, curr) => acc + curr, 0);
+    return sum - arrSum;
+}
+
+console.log(findMissingNumber([1, 2, 3, 5]));
 
  */

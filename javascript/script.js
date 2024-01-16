@@ -1217,6 +1217,41 @@ console.log(missingNumbers);  // [1, 2, 3, 4, 5, 6, 7, 8];
 
  */
 
-/* Problem
+/* Problem 56: Finding an element in an array using linear search
+This solution reduces time and space complexity as we are trying to find two elements at a time
+
+    const input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+    const number = 10;
+
+    for (let i = 0, j = input.length - 1 ; i < input.length; i++, j--) {
+        if (input[i] === number || input[j] === number) break
+    }
+
+ */
+
+/* Problem 57: Finding the character using binary search.
+Rather than looping over the array we use the below method for reducing time and space complexity. In the below example
+we first try to find the middle number in the array. Once we have found it we compare the value to the number and
+depending on whether it is more or less we move to the right or left of the array.
+
+With every new comparison we move the middle number found to be the new ending point.
+It is important to do Math.floor as we can get integers as well.
+
+If we do not get the value then we return -1;
+
+    const input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+    const number = 5;
+
+    const compareValue = (value) => {
+        if (value === number) console.log('The number is', value);
+        if (value > number) console.log('Go left');
+        if (value < number) console.log('Go right');
+    };
+
+    const middleValue1 = (input[0] + input.length - 1) / 2;
+    compareValue(input[middleValue1]);
+
+    const middleValue2 = Math.floor((input[0] + input[middleValue1]) / 2);
+    compareValue(input[middleValue2]);
 
  */

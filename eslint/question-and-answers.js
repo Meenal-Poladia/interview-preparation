@@ -31,3 +31,33 @@
     eslint --fix file.js
 
  */
+
+/* Question 6: What is the purpose of the --fix-dry-run option in ESLint
+    The --fix-dry-run option in ESLint allows you to preview the changes that would be made by the --fix option without
+    actually modifying the files. It's useful for reviewing potential changes before applying them.
+
+ */
+
+/* Question 7: What is the purpose of ESLint plugins
+    ESLint plugins provide additional rules and functionalities beyond the default ESLint configuration. Plugins are
+    usually specific to certain libraries or frameworks, allowing developers to enforce best practices for those
+    technologies.
+
+ */
+
+/* Question 8: Explain the difference between ESLint's "extends" and "plugins" configurations
+    The "extends" configuration in ESLint is used to inherit rules from a predefined configuration
+    (e.g., "eslint:recommended"), while "plugins" are used to extend ESLint by providing additional rules and
+    configurations for specific technologies or frameworks.
+
+ */
+
+/* Question 9: How do you disable ESLint rules for a specific line or block of code?
+    ESLint rules can be disabled for a specific line or block of code by using comments.
+
+    For example:
+    //eslint-disable no-alert
+    alert('This will not trigger a no-alert error');
+    //eslint-enable no-alert
+
+ */

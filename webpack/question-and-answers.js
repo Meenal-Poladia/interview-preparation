@@ -34,3 +34,35 @@
     manually refreshing the browser.
 
  */
+
+/* Question 6: What is code splitting in Webpack, and how is it achieved
+     Code splitting is a technique in Webpack where the application code is split into smaller chunks that can be
+     loaded on demand. It reduces the initial load time and allows for more efficient use of resources. Code splitting
+     can be achieved using dynamic imports or Webpack's SplitChunksPlugin
+
+ */
+
+/* Question 7: Explain the purpose of the CommonsChunkPlugin in Webpack.
+    The CommonsChunkPlugin is used to extract common code shared between multiple entry points into a separate file,
+    known as the common chunk. This helps in optimizing the bundle size and reducing redundancy.
+
+ */
+
+/* Question 8: What is Tree Shaking in Webpack
+    Tree shaking is a feature in Webpack that eliminates dead code from the final bundle. It identifies and removes
+    unused exports from modules, reducing the size of the bundle.
+
+ */
+
+/* Question 9: How does Webpack handle CSS files
+    Webpack can handle CSS files using style loaders and CSS loaders. Style loaders inject styles into the DOM, while
+    CSS loaders allow importing CSS files into JavaScript files.
+
+ */
+
+/* Question 10: Explain the difference between webpack and webpack-dev-server
+    webpack is the module bundler that bundles and optimizes the code, while webpack-dev-server is a development server
+    that serves the bundled code. webpack-dev-server also provides features like hot module replacement and live
+    reloading during development.
+
+ */

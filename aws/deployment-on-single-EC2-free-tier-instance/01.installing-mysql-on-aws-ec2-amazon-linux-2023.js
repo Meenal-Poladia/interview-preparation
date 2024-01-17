@@ -27,7 +27,7 @@
 
    -> Create a new user called sam with the password MyNewPass1! that can access the database from localhost:
     CREATE USER 'sam'@'localhost' IDENTIFIED WITH mysql_native_password BY 'MyNewPass1!';
-    GRANT ALL PRIVILEGES ON mydatabase.* TO 'sam'@'localhost';
+    GRANT ALL PRIVILEGES ON pomodoro_timer_test1.* TO 'node'@'localhost';
 
    -> Now we can access the database with this user from the ec2 instance. So If I installed a web app on this instance,
       I could use this username and password.

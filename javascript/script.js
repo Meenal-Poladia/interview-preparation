@@ -1306,3 +1306,51 @@ function findMissingNumber(arr) {
 console.log(findMissingNumber([1, 2, 3, 5]));
 
  */
+
+/* Problem 61: Group items on the basis of age of given array of object
+ let people = [
+     {
+         name: 'Alice',
+         age: 21
+     },
+     {
+         name: 'John',
+         age: 20
+     },
+     {
+         name: 'Rogers',
+         age: 21
+     },
+     {
+         name: 'Pickles',
+         age: 23
+     }
+ ];
+
+ const groupBy = (list) => {
+     let data = {};
+
+    list.forEach((item) => {
+        const age = item.age;
+        const name = item.name;
+        if (!data[age]) {
+            console.log('lo')
+            data[age] = [item]
+        } else {
+            console.log('Hwe');
+            console.log(data['20']);
+            data[age].push(item);
+        }
+    })
+     return data
+}
+
+const result = groupBy(people);
+Result:
+{
+  '20': [ { name: 'John', age: 20 } ],
+  '21': [ { name: 'Alice', age: 21 }, { name: 'Rogers', age: 21 } ],
+  '23': [ { name: 'Pickles', age: 23 } ]
+}
+
+ */

@@ -23,7 +23,7 @@
     https://gist.githubusercontent.com/meech-ward/1723b2df87eae8bb6382828fba649d64/raw/ee52637cc953df669d95bb4ab68ac2ad1a96cd9f/lotr.sql
 
    -> Create Database
-     CREATE DATABASE `mydatabase`y;
+     CREATE DATABASE `mydatabase`;
 
    -> Create a new user called sam with the password MyNewPass1! that can access the database from localhost:
     CREATE USER 'sam'@'localhost' IDENTIFIED WITH mysql_native_password BY 'MyNewPass1!';

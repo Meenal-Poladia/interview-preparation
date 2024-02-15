@@ -31,12 +31,28 @@
 
 /* Question 3: Datatypes in Javascript?
     1. Primitive data type - Bunns
+    - These are basic data types provided by the programming language, and they are directly supported by the language
+    itself. Examples include integers, floating-point numbers, characters, booleans, etc.
+    - They store the actual values.
+    - Memory is allocated on the stack.
+    - When assigning a primitive data type to a variable, the actual value is copied.
+    - They have fixed sizes depending on the type.
+
         ■	String - represents sequence of characters e.g. "hello"
         ■	Number - represents numeric values e.g. 100
         ■	Boolean  - represents boolean value either false or true
         ■	Undefined - represents undefined value
         ■	Null - represents null i.e. no value at all
+
     2. Non-primitive (reference) data type
+    - These data types are not predefined by the language but are created by the programmer using classes or structures.
+     Examples include arrays, objects, strings, etc.
+    - They store references (memory addresses) to where the data is stored in memory.
+    - Memory is allocated on the heap.
+    - When assigning a reference data type to a variable, the reference (memory address) is copied, not the actual
+    object.
+    - The size depends on the size of the object they refer to, as well as additional overhead for the reference itself.
+
         ■	Object - represents instance through which we can access members
         ■	Array - represents group of similar values
         ■	RegExp - represents regular expression

@@ -15,6 +15,10 @@
         3. Declarative Syntax
         4. JSX
         5. React Hooks
+
+        Overall, React's component-based architecture, virtual DOM rendering, efficient state management, and routing
+        capabilities make it well-suited for building SPAs where responsiveness, performance, and maintainability are
+        key considerations.
 */
 
 /* Question 2: Advantages of react
@@ -48,11 +52,28 @@
 
 /* Question 5: React Fragment
     Fragments helps us to return multiple elements from the components render method without wrapping them in a
-    parent div element
+    parent div element.
+
+    A React Fragment is a built-in component in React that allows you to group multiple children elements without
+    adding extra nodes to the DOM. It essentially acts as a wrapper that doesn't create an additional DOM element.
+
+    Advantages of using React Fragments include:
+
+    1. Reduced DOM Nodes: Fragments help in keeping the DOM tree lean by not adding unnecessary wrapper elements. This
+    can lead to better performance and improved rendering times, especially in large applications with complex component
+    hierarchies.
+
+    2. Cleaner JSX: Fragments allow you to structure your JSX code in a more concise and readable manner, as you can
+    group multiple elements without introducing unnecessary parent elements.
+
+    3. Avoid Unnecessary Wrappers: Fragments are particularly useful when working with components that expect a single
+    child element. Instead of introducing unnecessary wrapper elements, Fragments allow you to return multiple elements
+    without any additional nesting.
+
 */
 
 /* Question 6: JSX
-    JSX stands for Javascript XML. It allows us to write HTML code inside javascript andplace them in the DOM without
+    JSX stands for Javascript XML. It allows us to write HTML code inside javascript and place them in the DOM without
     using functions like appendchild() or createElement().
 
     JSX provides syntactic sugar for React.createElement( ) function.
@@ -64,7 +85,7 @@
 
  */
 
-/* Question 7: What are Functional and Class-based components
+/* Question 7 & 39: What are Functional and Class-based components
     Functional components and class components are two ways to define React components.
     Function Components: Function components are simply JavaScript functions that receive props as input and return
     React elements. They are also known as stateless components. They are defined using the "function" keyword
@@ -91,6 +112,8 @@
 
     Whenever there is a change in any component the entire code is not rendered again but only the component changed
     and its children are rendered which makes react optimised than other framework.
+
+    Benefits: High Performance, reduces unnecessary re-renders.
 
  */
 
@@ -171,24 +194,43 @@
         Memoisation is an optimization technique used primarily to speed up computer programs by storing the results of
         expensive function calls and returning the cached result when the same inputs occur again.
 
-        Pass a “create” function and an array of dependencies. useMemo will only recompute the memoized value when one
-        of the dependencies has changed. This optimization helps to avoid expensive calculations on every render.
-        If no array is provided, a new value will be computed on every render.
+        useMemo is used to memoize values. It only recomputes the memoized value when one of the dependencies has
+        changed.
+        It is useful for expensive computations or calculations that are needed in the rendering process.
+        Syntax: const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+        Example:
+        import React, { useMemo } from 'react';
 
-        example -
-        const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+        function MyComponent({ a, b }) {
+          const result = useMemo(() => {
+            // Expensive computation
+            return a + b;
+          }, [a, b]);
+
+          return <div>{result}</div>;
+        }
 
         2. useCallback
-        useCallback is a hook that allows us to basically store a function across component executions.
-        So it allows us to tell React that we wanna save a function and that this function should not be recreated
-        with every execution.
-        useCallback saves a function of our choice basically somewhere in React's internal storage
-        and we'll always reuse that same function object then when this component function executes.
+        useCallback is used to memoize functions. It returns a memoized version of the callback function that only
+        changes if one of the dependencies has changed.
 
-        useCallback then returns that stored function and when the app function reruns useCallback will look for
-        that stored function which React stored for us and reuse that same function object.
+        It is useful when passing callbacks to child components to prevent unnecessary re-renders.
 
-        useCallback also accepts dependency array.
+        Syntax: const memoizedCallback = useCallback(() => callback(), [dependencies]);
+        Example:
+
+        import React, { useCallback } from 'react';
+
+        function MyComponent({ onClick }) {
+          const handleClick = useCallback(() => {
+            onClick('Hello, world!');
+          }, [onClick]);
+
+          return <button onClick={handleClick}>Click Me</button>;
+        }
+
+        The useCallback and useMemo Hooks are similar. The main difference is that useMemo returns a memoized value and
+        useCallback returns a memoized function.
 
         3. Using React.PureComponent
         React.PureComponent is similar to React.Component. The difference between them is that React.Component doesn’t
@@ -205,6 +247,41 @@
         4. React.lazy()
         lets you define a component that is loaded dynamically. This helps reduce the bundle size to delay loading
         components that aren’t used during the initial render.
+
+        React.lazy() is a function provided by React that allows you to dynamically import components. It is typically
+        used with React's code-splitting feature to improve the performance of your application by splitting it into
+        smaller bundles that are loaded on-demand.
+
+        You can use React.lazy() to import a component dynamically. This means that the component is not loaded until
+        it is actually needed, which can reduce the initial bundle size and improve load times.
+
+        React.lazy() accepts a function that should import the component using dynamic import syntax, typically using
+        import().
+
+        You then use the resulting component just like you would any other React component.
+
+        Here's an example of how you might use React.lazy():
+        import React, { Suspense } from 'react';
+
+        const MyLazyComponent = React.lazy(() => import('./MyLazyComponent'));
+
+        function MyComponent() {
+          return (
+            <div>
+              <Suspense fallback={<div>Loading...</div>}>
+                <MyLazyComponent />
+              </Suspense>
+            </div>
+          );
+        }
+
+    In this example:
+
+    We use React.lazy() to dynamically import the MyLazyComponent.
+    We wrap the MyLazyComponent with a Suspense component, providing a fallback component to display while the lazy
+    component is loading.
+    Using React.lazy() with code-splitting allows you to split your application into smaller bundles, improving initial
+    load times and overall performance by only loading the code needed for the current view.
 
  */
 
@@ -223,18 +300,103 @@
     next state depends on the previous one.
 
     4. useLayoutEffect
-    useLayoutEffect is a version of useEffect that fires before the browser repaints the screen.
+    The useLayoutEffect hook in React is similar to the useEffect hook, but it runs synchronously after all DOM
+    mutations. It is typically used when you need to perform DOM measurements or operations that require synchronous
+    updates, such as updating the layout based on DOM dimensions or positions.
+
+    useLayoutEffect is invoked synchronously after all DOM mutations, but before the browser paints the updated screen.
+    This makes it suitable for operations that require immediate access to the updated DOM.
+
+    The syntax for useLayoutEffect is similar to useEffect, where you provide a callback function that performs the
+    desired side effects. The difference is that useLayoutEffect runs synchronously instead of asynchronously like
+    useEffect.
+
+    Just like useEffect, you can also specify dependencies for useLayoutEffect, which will cause the effect to re-run
+    whenever any of the dependencies change.
+
+    Here's an example of how you might use useLayoutEffect:
+    import React, { useLayoutEffect, useState } from 'react';
+
+    function MyComponent() {
+      const [width, setWidth] = useState(null);
+
+      useLayoutEffect(() => {
+        const handleResize = () => {
+          setWidth(window.innerWidth);
+        };
+
+        // Initial measurement
+        handleResize();
+
+        // Listen for window resize events
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []); // Empty dependency array to run only once on mount
+
+      return (
+        <div>
+          Window width: {width}
+        </div>
+      );
+    }
 
     5. useContext
-    useContext is a React Hook that lets you read and subscribe to context from your component.
+    The useContext hook in React provides a way to consume context values created by the React.createContext() function.
+    Context allows you to pass data through the component tree without having to pass props down manually at every level.
+
+    You first create a context using React.createContext(), which returns an object with Provider and Consumer
+    components.
+
+    You then wrap the parts of your component tree that need access to the context with the Provider component,
+    passing the context value as a prop.
+
+    Components that need access to the context can then use the useContext hook to consume the context value.
+
+    import React, { createContext, useContext } from 'react';
+
+    // Create a context
+    const MyContext = createContext();
+
+    // Create a provider component
+    function MyProvider({ children }) {
+      const value = 'Hello from Context';
+      return <MyContext.Provider value={value}>{children}</MyContext.Provider>;
+    }
+
+    // Component consuming the context
+    function MyComponent() {
+      const contextValue = useContext(MyContext);
+      return <div>{contextValue}</div>;
+    }
+
+    // Usage in the app
+    function App() {
+      return (
+        <MyProvider>
+          <MyComponent />
+        </MyProvider>
+      );
+    }
 
     6. useCallback and useMemo
     - useCallback is used to memoize functions, preventing unnecessary re-renders.
     - useMemo is used to memoize values, preventing unnecessary re-computations.
 
     7. useRef
+    useRef is a hook which provides us with reference of the DOM Node and lets us mutate and maintain its value
+    across re-renders.
+
     useRef is a React Hook that lets you reference a value that’s not needed for rendering. useRef can help us to
     manipulate an element which is referenced.
+
+    The useRef hook in React provides a way to create mutable references that persist across renders. Unlike regular
+    JavaScript references (created with let or const), useRef maintains the same reference across re-renders, making it
+    useful for accessing and managing DOM elements, storing mutable values, or persisting values across renders without
+    causing re-renders.
 
     8. useImperativeHandle
     It will enable modifying the instance that will be passed with the ref object.
@@ -246,14 +408,26 @@
 
 /* Question 17: Types of Side Effect
     There are two types of side effects in React component. They are:
-        1. Effects without Cleanup: This side effect will be used in useEffect which does not restrict the browser
-        from screen update. It also improves the responsiveness of an application.
-        A few common examples are network requests, Logging, manual DOM mutations, etc.
+        1. Effects without Cleanup: These effects don't require any cleanup, meaning they run when the component mounts
+        and may perform actions such as fetching data from an API or subscribing to events.
+        They are typically defined using the useEffect hook.
 
-        2. Effects with Cleanup: The useEffect hook in React allows you to specify a cleanup function that will be
-        executed before the effect is re-run or when the component is unmounted. This cleanup function can be used to
-        clean up any resources or subscriptions created by the effect.
-        The cleanup function is returned by the effect callback function.
+        2. Effects with Cleanup: These effects may require cleanup to avoid memory leaks or resource leaks when the
+        component unmounts or when dependencies change. They are typically defined using the useEffect hook, and the
+        cleanup function is returned from the effect callback.
+        Example:
+        useEffect(() => {
+          console.log('Component mounted');
+          // Subscribe to event
+          window.addEventListener('resize', handleResize);
+
+          // Cleanup function
+          return () => {
+            console.log('Component unmounted');
+            // Unsubscribe from event
+            window.removeEventListener('resize', handleResize);
+          };
+        }, []);
 
         Example: Let’s look at this scenario: imagine we get a fetch of a particular user through a user’s id, and,
         before the fetch completes, we change our mind and try to get another user. At this point, the prop, or in
@@ -273,10 +447,12 @@
  */
 
 /* Question 19: Error Boundary and places to detect it
-    Introduced in version 16 of React, Error boundaries provide a way for us to catch errors that occur in the render
-    phase. It is class based as render method is not in functional components.
+    In React, an Error Boundary is a component that catches JavaScript errors anywhere in its child component tree,
+    logs those errors, and displays a fallback UI instead of crashing the entire application. It is used to gracefully
+    handle errors that occur during rendering, in lifecycle methods, or in constructors of the components it wraps.
 
-    Any component which uses one of the following lifecycle methods is considered an error boundary.
+    Used in Class Based Components. Any component which uses one of the following lifecycle methods is considered an
+    error boundary.
     In what places can an error boundary detect an error?
         1. Render phase
         2. Inside a lifecycle method
@@ -531,5 +707,51 @@
     5. Unidirectional data flow: React follows a unidirectional data flow. This means that when designing a React app,
     we often nest child components within parent components. And since the data flows in a single direction, it becomes
     easier to debug errors and know where the problem occurs in an application at the moment.
+
+ */
+
+/* Question 38: How is React useful for creating Single Page Applications
+    A Single Page Application (SPA) is a type of web application that loads a single HTML page and dynamically updates
+    the content of that page as the user interacts with the application. Unlike traditional web applications, where
+    navigating to different pages involves full page reloads, SPAs use JavaScript to fetch data from the server and
+    update the content of the page without needing to reload the entire page.
+
+    Key characteristics of SPAs include:
+
+    1. Dynamic Updates: SPAs update the content of the page dynamically in response to user actions, such as clicking
+    buttons or submitting forms, without requiring a full page reload.
+
+    2. Client-Side Routing: SPAs often use client-side routing to handle navigation within the application. This allows
+    for changes in the URL without triggering a server request, enabling a smoother user experience.
+
+    3. Rich User Interactions: SPAs can provide rich and interactive user experiences, with features like animations,
+    real-time updates, and seamless transitions between different views.
+
+    4. Efficient Resource Usage: SPAs only load the necessary resources (HTML, CSS, JavaScript, and data) when needed,
+    reducing server requests and improving performance.
+
+    5. Back-End API: SPAs typically rely on a back-end API (Application Programming Interface) to interact with the
+    server and fetch data asynchronously. This decoupling of the front-end and back-end allows for greater flexibility
+    and scalability in development.
+
+ */
+
+/* Question 39: Why are functional components called as Stateless and class based components called Stateful
+components in React
+
+    Functional components in React are often referred to as stateless components because they don't have their own
+    internal state. They are pure functions that take props as input and return JSX elements as output. Since they don't
+    manage any state, their behavior is entirely determined by their input props, making them stateless.
+
+    On the other hand, class-based components in React are often called stateful components because they have the
+    ability to hold and manage their own internal state using the state property. These components can change their
+    behavior and appearance over time by updating their state in response to user interactions, data fetching, or other
+    events.
+
+    The terms "stateless" and "stateful" highlight the distinction between components that solely rely on their input
+    props for rendering (stateless) and components that manage their own internal state (stateful). This differentiation
+    is important in understanding how components behave and interact within a React application. However, with the
+    introduction of React Hooks, functional components can now also manage state using the useState hook, blurring the
+    line between stateless and stateful components to some extent.
 
  */

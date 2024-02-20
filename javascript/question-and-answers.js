@@ -37,6 +37,7 @@
     - Memory is allocated on the stack.
     - When assigning a primitive data type to a variable, the actual value is copied.
     - They have fixed sizes depending on the type.
+    - Pass by value
 
         ■	String - represents sequence of characters e.g. "hello"
         ■	Number - represents numeric values e.g. 100
@@ -52,6 +53,7 @@
     - When assigning a reference data type to a variable, the reference (memory address) is copied, not the actual
     object.
     - The size depends on the size of the object they refer to, as well as additional overhead for the reference itself.
+    - Pass by reference
 
         ■	Object - represents instance through which we can access members
         ■	Array - represents group of similar values
@@ -86,7 +88,7 @@
 */
 
 /* Question 6: Truthy values and falsy values? Falsy: neun0F
-    In JS there are 5 falsy values 0, '', undefined, null, NaN and of course false itself. These values are not false
+    In JS there are 6 falsy values 0, '', undefined, null, NaN and of course false itself. These values are not false
     initially but will be converted to false when converting them to boolean.
 
     Objects are truthy values.
@@ -246,6 +248,11 @@ Multiline comment in javascript
 
     3. Just-In-Time (JIT) Compilation
     Entire code is converted into machine code at once, then executed immediately.
+
+    Summary:
+    Compilation is the process of translating source code into machine code before execution, interpretation involves
+    directly executing the source code without prior translation, and Just-in-Time compilation dynamically translates
+    code into machine code during execution for improved performance.
 
  */
 
@@ -614,6 +621,23 @@ let map = new Map(newArray);
     2. Encapsulation
     3. Abstraction
     4. Polymorphism
+
+    The 4 fundamental principles of OOP are Abstraction, Encapsulation, Inheritance and Polymorphism.
+
+    Abstraction means to ignore or to hide details that don't matter. This allows us to get an overview perspective
+    of whatever it is that we're implementing instead of messing with details that don't really matter to our
+    implementation.
+
+    Encapsulation means keeping some properties and method private inside the class so they are not accessible from
+    outside the class. Some methods can be exposed as a public interface(API).
+
+    Inheritance makes all properties and methods of a class accessible to all child classes. It thus, creates a
+    hierarchical relationship between classes. This allows us to reuse common logic.
+
+    Polymorphism means a child class can overwrite a method inherited from a parent class.
+
+    Note: Javascript does not support real classes. It does have the syntax that looks like it is creating
+    real classes, however that is not the case.
 
  */
 
@@ -1035,6 +1059,9 @@ let map = new Map(newArray);
 
     const curriedAdd = curryAdd(1)(2)(3);
     console.log(curriedAdd);
+
+    Currying is a technique in functional programming where a function with multiple arguments is transformed into a
+    sequence of nested functions, each taking a single argument.
 
 */
 

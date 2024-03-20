@@ -12,10 +12,10 @@
     -> pwd
 
     Then we need to go in our project directory pomodoro-timer-be and create a .env file using the command
-    -> sudo touch app.env
+    -> sudo touch .env
 
     To edit the file using the nano text editor and for adding the variables we use the command
-    -> sudo nano app.env
+    -> sudo nano .env
 
     Once all the variables have been listed, to save them we use the command
     -> CTL + O
@@ -43,7 +43,7 @@
     StandardError=syslog
     SyslogIdentifier=pomodoro-timer
     User=ec2-user
-    EnvironmentFile=/home/ec2-user/pomodoro-timer-be/app.env
+    EnvironmentFile=/home/ec2-user/pomodoro-timer-be/.env
 
     [Install]
     WantedBy=multi-user.target
@@ -67,11 +67,21 @@
 
     If we made any changes on the .env or the .service file we need to restart the service again using the command
     sudo systemctl daemon-reload
-    sudo systemctl restart pomodoro-timer
+    sudo systemctl restart pomodoro-timer.service
     sudo systemctl status pomodoro-timer.service
 
-    Note:
-    - While checking if the service is up and running we need to use the http://publicIp and not https
-    - We also need to make sure that the security group has been enabled for us to connect to the service.
+    Test if the service is running using curl
+    curl http://localhost:8080
+
+    You should get a 401 like so
+    {"status":"fail","error":{"message":"Access Denied","statusCode":401,"status":"fail","isOperational":true}}
+
+    At this point you can also test from your local machine by adding a port 8080 to the inbound rules and
+    allowing traffic from you IP
+    After adding the inbound rule, go to a browser and hit  http://localhost:8080
+    You should see the same 401 response as above
+
+    Remember to remove the inbound rule after this Test.
+
 
  */

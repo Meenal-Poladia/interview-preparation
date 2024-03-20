@@ -9,6 +9,8 @@
 
     To install nginx we use the command
     sudo amazon-linux-extras install nginx1 -y
+    ----------------------------------------
+    sudo yum install nginx -y
 
     To enable and start the service we use the command
     sudo systemctl enable nginx
@@ -20,16 +22,15 @@
     To make changes to the config file we use the command
     sudo nano /etc/nginx/nginx.conf
 
-    Changes in the file:
-        server {
+    First for running on port 80 (We will remove this after SSL is setup is complete)
+    Add this to to nginx.conf file
+    server {
         listen       80;
         listen       [::]:80;
         server_name  _;                     -> Delete all the lines below it
         location / {                        -> We need to add this location object with the port we are using
           proxy_pass http://localhost:8080;
-        }
     }
-
 
     Once all the variables have been set to save them we use the command
     -> CTL + O
@@ -47,4 +48,8 @@
     To check the status of the service we use the following commands
     sudo systemctl status nginx
 
+    Note:
+    - While checking if the service is up and running we need to use the http://publicIp and not https
+    - We also need to make sure that the security group has inbound rules for HTTP(port 80) on all traffic
+    for us to be able to connect to the service.
  */

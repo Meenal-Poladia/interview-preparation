@@ -9,4 +9,8 @@
     rm --fileName.txt
     yes
 
+    Delete a .env File
+    rm .env
+    yes
+
  */

@@ -83,7 +83,7 @@
 
     005. On Server, After taking the latest pull from git
         git pull origin
-        npm i
+        npm i --production
         add variables to .env file
         sudo systemctl daemon-reload
         sudo systemctl restart pomodoro-timer

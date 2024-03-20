@@ -73,10 +73,13 @@
  */
 
 /* Question 10: Border box and Content box
-    Border-box consists of properties such as content, padding, and the border with respect to height and width.
+    Border-box consists of properties such as content, padding, and the border with respect to height and width. But
+    it does not consist of the margin.
+    Border Box = content + padding + border
 
     However, Content-box is a default value property used for the box-sizing as well as it helps to add border and
     padding to give proper height and width to the box without having a border and padding properties.
+    Content Box = content
 
  */
 

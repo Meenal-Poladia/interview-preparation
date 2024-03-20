@@ -70,3 +70,30 @@
     O! -> Factorial, like 8*7*6*5*4*3*2*1
 
  */
+
+/* Question 4: What is DOM
+    DOM stands for Document Object Model. It is a programming interface for web documents. The DOM provides a
+    structured way to access, manipulate, and change the content, structure, and style of web documents. It allows
+    developers to write scripts that dynamically interact with the web page, making it possible to create interactive
+    and responsive web applications.
+
+ */
+
+/* Question 5: What is the difference between Session Cookies and LocalStorage
+
+    1. Size Limit: Cookies have a smaller size limit compared to localStorage (around 4KB per cookie vs. 5-10MB per origin
+    for localStorage).
+    2. Expiration: Cookies can be set with an expiration date, while localStorage data persists indefinitely until
+    explicitly removed.
+    3. Scope: Cookies are sent with every HTTP request to the server, while localStorage data is stored locally on the
+    user's device and not sent to the server automatically.
+    4. Security: localStorage data is isolated by origin and cannot be accessed by other origins, providing better
+    security compared to cookies.
+
+    Use Cases:
+    - Cookies: Used for session management, authentication tokens, and data that needs to be sent to the server with
+    each request.
+    - localStorage: Used for storing user preferences, cached data, and application-specific data that needs to persist
+    locally on the user's device.
+
+ */

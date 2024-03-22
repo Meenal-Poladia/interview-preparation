@@ -755,3 +755,21 @@ components in React
     line between stateless and stateful components to some extent.
 
  */
+
+
+
+
+/* Notes:
+    1. We can forward props from parent component to child component using destructuring (...props)
+    See: React Maxmilian course Section 4: 65: Working with multiple JSX slots
+
+    2. It is possible to have multiple slots in just one component. The first slot will be children and the 2nd one can
+    be a name of our choice.
+    See: React Maxmilian course Section 4: 66: Working with multiple JSX slots
+
+    3. We can pass a component or element as a props to a child component.
+    See: React Maxmilian course Section 4: 67: Setting Component Types Dynamically
+
+    4.
+
+ */

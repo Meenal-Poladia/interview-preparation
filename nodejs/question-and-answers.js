@@ -339,7 +339,7 @@
 
 /* Question 30: Difference between process.nextTick() and setImmediate()
     Both process.nextTick() and setImmediate() are used to execute a callback function asynchronously in the next
-    iteration of the event loop. However, process.nextTick() is designed to be called recursively after completing a
+    iteration of the event loop. However, process.nextTick() is designed to be called repeatedly after completing a
     particular phase while setImmediate() is called after I/O polling phase. process.nextTick() has a higher priority
     than setImmediate().
 

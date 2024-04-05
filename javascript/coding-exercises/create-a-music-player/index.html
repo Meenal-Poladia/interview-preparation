@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="./styles.css" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <div class="music-player">
+            <nav>
+
+                <div class="circle">
+                    <img src="./assets/images/back-icon.jpg"
+                         width="20px"
+                         height="20px"
+                         alt="back-icon"
+                    >
+                </div>
+                <div class="circle">
+                    <img src="./assets/images/hamburger_icon.png"
+                         width="20px"
+                         height="20px"
+                         alt="hamburger-icon"
+                    >
+                </div>
+            </nav>
+            <img src="./assets/images/singer.png" alt="singer" class="song-img">
+            <h1>Despacito</h1>
+            <p>Louis Fonsi Ft. Puerto Rican</p>
+            <audio controls id="song">
+                <source src="./assets/media/despacito.mp3" type="audio/mp3">
+            </audio>
+            <input type="range" value="0" id="progress">
+            <div class="controls">
+                <div>
+                    <img src="./assets/images/next-icon.png"
+                         alt="previous-icon"
+                         width="40px"
+                         height="40px"
+                         class="rotate-image"
+                    >
+                    <img src="./assets/images/pause-play.png"
+                         alt="pause-play-icon"
+                         id="control-icon"
+                         width="40px"
+                         height="40px"
+                         onclick="onPlayPause()"
+                    >
+                    <img src="./assets/images/next-icon.png"
+                         alt="next-icon"
+                         width="40px"
+                         height="40px"
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

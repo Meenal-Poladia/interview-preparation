@@ -1355,7 +1355,7 @@ Result:
 
  */
 
-/* Problem 62: Given an integer n, return a counter function. This counter function initially returns n and then
+/* Problem 62: LeetCode: Given an integer n, return a counter function. This counter function initially returns n and then
 returns 1 more than the previous value every subsequent time it is called (n, n + 1, n + 2, etc).
 
 var createCounter = function(n) {
@@ -1372,7 +1372,7 @@ counter() // 12
 
  */
 
-/* Problem 63: Write a function expect that helps developers test their code. It should take in any value val and
+/* Problem 63: LeetCode: Write a function expect that helps developers test their code. It should take in any value val and
     return an object with the following two functions.
 
     toBe(val) accepts another value and returns true if the two values === each other. If they are not equal, it should
@@ -1422,8 +1422,8 @@ counter() // 12
 
  */
 
-/* Problem 64: Write a function createCounter. It should accept an initial integer init. It should return an object
-with three functions.
+/* Problem 64: LeetCode: Write a function createCounter. It should accept an initial integer init. It should return an
+object with three functions.
 
     The three functions are:
 
@@ -1500,7 +1500,7 @@ with three functions.
 
  */
 
-/* Problem 65: Apply Transformation Over Each Element in Array
+/* Problem 65: Apply Transformation Over Each Element in Array: LeetCode
     Given an integer array arr and a mapping function fn, return a new array with a transformation applied to each
     element. The returned array should be created such that returnedArray[i] = fn(arr[i], i).
     Please solve it without the built-in Array.map method.
@@ -1540,7 +1540,7 @@ with three functions.
     };
  */
 
-/* Problem 66: Filter Elements From an Array
+/* Problem 66: Filter Elements From an Array: LeetCode
     Given an integer array arr and a filtering function fn, return a filtered array filteredArr.
 
     The fn function takes one or two arguments:
@@ -1589,7 +1589,7 @@ with three functions.
 
  */
 
-/* Problem 67: Array Reduced Transformation
+/* Problem 67: Array Reduced Transformation: LeetCode
     Given an integer array nums, a reducer function fn, and an initial value init, return the final result obtained by
     executing the fn function on each element of the array, sequentially, passing in the return value from the
     calculation on the preceding element.
@@ -1652,5 +1652,106 @@ with three functions.
         return result;
     };
 
+
+ */
+
+/* Problem 68: Min-Max Sum: HackerRank
+    Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of
+    the five integers. Then print the respective minimum and maximum values as a single line of two space-separated
+    long integers.
+
+    Example
+    The minimum sum is  and the maximum sum is . The function prints
+    16 24
+
+    Function Description
+    Complete the miniMaxSum function in the editor below.
+    miniMaxSum has the following parameter(s):
+    arr: an array of  integers
+
+    Print
+    Print two space-separated integers on one line: the minimum sum and the maximum sum of  of  elements.
+
+    Input Format
+    A single line of five space-separated integers.
+
+    Output Format
+    Print two space-separated long integers denoting the respective minimum and maximum values that can be calculated
+    by summing exactly four of the five integers. (The output can be greater than a 32 bit integer.)
+
+    Sample Input
+    1 2 3 4 5
+
+    Sample Output
+    10 14
+
+    Solution:
+    let result;
+
+    const maximumNumber = Math.max(...arr);
+    const minimumNumber = Math.min(...arr);
+
+    const total = arr[4] + arr[3] + arr[2] + arr[1] + arr[0];
+
+    const maximumValuesResult= total - minimumNumber;
+    const minimumValuesResult = total - maximumNumber;
+
+    result = `${minimumValuesResult} ${maximumValuesResult}`;
+
+ */
+
+/* Problem 69: Function Composition: LeetCode
+    Given an array of functions [f1, f2, f3, ..., fn], return a new function fn that is the function composition of the
+    array of functions.
+
+    The function composition of [f(x), g(x), h(x)] is fn(x) = f(g(h(x))).
+    The function composition of an empty list of functions is the identity function f(x) = x.
+    You may assume each function in the array accepts one integer as input and returns one integer as output.
+
+    Example 1:
+    Input: functions = [x => x + 1, x => x * x, x => 2 * x], x = 4
+    Output: 65
+    Explanation:
+    Evaluating from right to left ...
+    Starting with x = 4.
+    2 * (4) = 8
+    (8) * (8) = 64
+    (64) + 1 = 65
+
+    Example 2:
+    Input: functions = [x => 10 * x, x => 10 * x, x => 10 * x], x = 1
+    Output: 1000
+    Explanation:
+    Evaluating from right to left ...
+    10 * (1) = 10
+    10 * (10) = 100
+    10 * (100) = 1000
+
+    Example 3:
+    Input: functions = [], x = 42
+    Output: 42
+    Explanation:
+    The composition of zero functions is the identity function
+
+
+    Constraints:
+    -1000 <= x <= 1000
+    0 <= functions.length <= 1000
+    all functions accept and return a single integer
+
+    Solution:
+    const compose = function(functions) {
+        let value;
+        return function(x) {
+            value = x;
+            for (let i = functions.length - 1; i >= 0; i--) {
+                value = functions[i](value);
+            }
+            return value;
+        }
+    };
+
+    const fn = compose([x => x + 1, x => 2 * x])
+    fn(4) // 9
 
  */

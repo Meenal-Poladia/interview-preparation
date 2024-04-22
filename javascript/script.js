@@ -1755,3 +1755,259 @@ object with three functions.
     fn(4) // 9
 
  */
+
+/* Problem 70: LeetCode: Allow One Function Call
+    Given a function fn, return a new function that is identical to the original function except that it ensures fn is
+    called at most once.
+    The first time the returned function is called, it should return the same result as fn.
+    Every subsequent time it is called, it should return undefined.
+
+    Example 1:
+    Input: fn = (a,b,c) => (a + b + c), calls = [[1,2,3],[2,3,6]]
+    Output: [{"calls":1,"value":6}]
+    Explanation:
+    const onceFn = once(fn);
+    onceFn(1, 2, 3); // 6
+    onceFn(2, 3, 6); // undefined, fn was not called
+
+    Example 2:
+    Input: fn = (a,b,c) => (a * b * c), calls = [[5,7,4],[2,3,6],[4,6,8]]
+    Output: [{"calls":1,"value":140}]
+    Explanation:
+    const onceFn = once(fn);
+    onceFn(5, 7, 4); // 140
+    onceFn(2, 3, 6); // undefined, fn was not called
+    onceFn(4, 6, 8); // undefined, fn was not called
+
+    Constraints:
+    calls is a valid JSON array
+    1 <= calls.length <= 10
+    1 <= calls[i].length <= 100
+    2 <= JSON.stringify(calls).length <= 1000
+
+    Solution:
+    const once = function(fn) {
+        let counter = 0;
+
+        return function(...args){
+            counter++;
+            if (counter === 1) {
+                const result = fn(...args);
+                return {
+                    "calls": "1",
+                    "value": result
+                }
+            }
+        }
+    };
+
+    let fn = (a,b,c) => (a + b + c)
+
+    let onceFn = once(fn)
+    onceFn(1,2,3); // 6
+    onceFn(2,3,6); // returns undefined without calling fn
+
+ */
+
+/* Problem 71: HackerRank: Time Converion
+    Given a time in -hour AM/PM format, convert it to military (24-hour) time.
+    Note: - 12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock.
+    - 12:00:00PM on a 12-hour clock is 12:00:00 on a 24-hour clock.
+
+    Example
+    Return '12:01:00'.
+    Return '00:01:00'.
+
+    Function Description
+    Complete the timeConversion function in the editor below. It should return a new string representing the input time
+    in 24 hour format.
+
+    timeConversion has the following parameter(s):
+    string s: a time in  hour format
+
+    Returns
+    string: the time in  hour format
+
+    Input Format
+    A single string  that represents a time in -hour clock format (i.e.:  or ).
+
+    Constraints
+    All input times are valid
+
+    Sample Input
+    07:05:45PM
+
+    Sample Output
+    19:05:45
+
+    Solution:
+    function timeConversion(s) {
+        // Write your code here
+        const isItAm = s.includes('AM');
+        const timeArray = s.split(':');
+        const removeHours = timeArray.splice(0, 1);
+        const hours = removeHours[0];
+
+        if(isItAm) {
+            if (hours === '12') {
+                timeArray.unshift('00');
+            } else {
+                timeArray.unshift(hours);
+            }
+        } else if (!isItAm) {
+            const hours = removeHours[0];
+            if (hours < 12) {
+                let timeInPm = Number(hours) + 12;
+                timeInPm < 10 ? timeInPm = `0${timeInPm}` : timeInPm;
+                timeArray.unshift(`${timeInPm}`);
+            } else {
+                timeArray.unshift(...removeHours);
+            }
+        }
+        return timeArray.join(":").substring(0, 8);
+    }
+
+    Solution 2:
+    if(s.toLowerCase().endsWith('am') && s.startsWith('12')) {
+        s = s.replace('12', '00');
+    } else if(+s.substring(0,2) < 12) {
+        s = (+s.substring(0,2) + 12).toString() + s.substring(2)
+    }
+
+    return s.substring(0,8);
+
+ */
+
+/* Problem 72: LeetCode: Memoize
+    Given a function fn, return a memoized version of that function.
+
+    A memoized function is a function that will never be called twice with the same inputs. Instead it will return a
+    cached value.
+
+    You can assume there are 3 possible input functions: sum, fib, and factorial.
+
+    - sum accepts two integers a and b and returns a + b. Assume that if a value has already been cached for the
+    arguments (b, a) where a != b, it cannot be used for the arguments (a, b). For example, if the arguments are (3, 2)
+    and (2, 3), two separate calls should be made.
+    - fib accepts a single integer n and returns 1 if n <= 1 or fib(n - 1) + fib(n - 2) otherwise.
+    - factorial accepts a single integer n and returns 1 if n <= 1 or factorial(n - 1) * n otherwise.
+
+    Example 1:
+    Input:
+    fnName = "sum"
+    actions = ["call","call","getCallCount","call","getCallCount"]
+    values = [[2,2],[2,2],[],[1,2],[]]
+    Output: [4,4,1,3,2]
+    Explanation:
+    const sum = (a, b) => a + b;
+    const memoizedSum = memoize(sum);
+    memoizedSum(2, 2); // "call" - returns 4. sum() was called as (2, 2) was not seen before.
+    memoizedSum(2, 2); // "call" - returns 4. However sum() was not called because the same inputs were seen before.
+    // "getCallCount" - total call count: 1
+    memoizedSum(1, 2); // "call" - returns 3. sum() was called as (1, 2) was not seen before.
+    // "getCallCount" - total call count: 2
+
+    Example 2:
+    Input:
+    fnName = "factorial"
+    actions = ["call","call","call","getCallCount","call","getCallCount"]
+    values = [[2],[3],[2],[],[3],[]]
+    Output: [2,6,2,2,6,2]
+    Explanation:
+    const factorial = (n) => (n <= 1) ? 1 : (n * factorial(n - 1));
+    const memoFactorial = memoize(factorial);
+    memoFactorial(2); // "call" - returns 2.
+    memoFactorial(3); // "call" - returns 6.
+    memoFactorial(2); // "call" - returns 2. However factorial was not called because 2 was seen before.
+    // "getCallCount" - total call count: 2
+    memoFactorial(3); // "call" - returns 6. However factorial was not called because 3 was seen before.
+    // "getCallCount" - total call count: 2
+
+    Example 3:
+    Input:
+    fnName = "fib"
+    actions = ["call","getCallCount"]
+    values = [[5],[]]
+    Output: [8,1]
+    Explanation:
+    fib(5) = 8 // "call"
+    // "getCallCount" - total call count: 1
+
+    Solution:
+    function memoize(fn) {
+        const storeValues = new Map();
+        return function(...args) {
+            if (storeValues.has(args.toString())) {
+                return storeValues.get(args.toString());
+            } else {
+                const result = fn(...args);
+                storeValues.set(args.toString(), result);
+                return result;
+            }
+        }
+    }
+
+ */
+
+/* Problem 73: LeetCode: Add Two Promises
+    Given two promises promise1 and promise2, return a new promise. promise1 and promise2 will both resolve with a
+    number. The returned promise should resolve with the sum of the two numbers.
+
+    Example 1:
+    Input:
+    promise1 = new Promise(resolve => setTimeout(() => resolve(2), 20)),
+    promise2 = new Promise(resolve => setTimeout(() => resolve(5), 60))
+    Output: 7
+    Explanation: The two input promises resolve with the values of 2 and 5 respectively. The returned promise should
+    resolve with a value of 2 + 5 = 7. The time the returned promise resolves is not judged for this problem.
+
+    Example 2:
+    Input:
+    promise1 = new Promise(resolve => setTimeout(() => resolve(10), 50)),
+    promise2 = new Promise(resolve => setTimeout(() => resolve(-12), 30))
+    Output: -2
+    Explanation: The two input promises resolve with the values of 10 and -12 respectively. The returned promise should
+    resolve with a value of 10 + -12 = -2.
+
+    Solution:
+    const addTwoPromises = async function(promise1, promise2) {
+        return await promise1 + await promise2;
+    };
+
+    addTwoPromises(Promise.resolve(2), Promise.resolve(2))
+       .then(console.log); // 4
+
+ */
+
+/* Problem 74: LeetCode: Sleep
+    Given a positive integer millis, write an asynchronous function that sleeps for millis milliseconds. It can
+    resolve any value.
+
+    Example 1:
+    Input: millis = 100
+    Output: 100
+    Explanation: It should return a promise that resolves after 100ms.
+    let t = Date.now();
+    sleep(100).then(() => {
+      console.log(Date.now() - t); // 100
+    });
+
+    Example 2:
+    Input: millis = 200
+    Output: 200
+    Explanation: It should return a promise that resolves after 200ms.
+
+    Solution:
+    async function sleep(millis) {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve()
+            }, millis)
+        })
+    }
+
+    let t = Date.now();
+    sleep(100)
+        .then(() => console.log(Date.now() - t))
+
+ */

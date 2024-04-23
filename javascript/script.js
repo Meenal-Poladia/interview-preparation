@@ -2011,3 +2011,82 @@ object with three functions.
         .then(() => console.log(Date.now() - t))
 
  */
+
+/* Problem 75: HackerRank: Sparse Array
+
+    There is a collection of input strings and a collection of query strings. For each query string, determine how many
+    times it occurs in the list of input strings. Return an array of the results.
+
+    Example
+    strings = ['ab', 'ab', 'abc'];
+    queries = ['ab', 'abc', 'bc'];
+    There are 2 instances of 'ab', 1 of 'abc' and 0 of 'bc'. For each query, add an element to the return array,
+    results = [2, 1, 0].
+
+    Function Description
+    Complete the function matchingStrings in the editor below. The function must return an array of integers
+    representing the frequency of occurrence of each query string in strings.
+
+    matchingStrings has the following parameters:
+    string strings[n] - an array of strings to search
+    string queries[q] - an array of query strings
+
+    Returns
+    int[q]: an array of results for each query
+
+    Input Format
+    The first line contains and integer n, the size of strings[n].
+    Each of the next n lines contains a string strings[i].
+    The next line contains q, the size of queries[n].
+    Each of the next q lines contains a string queries[i].
+
+    Solution 1:
+    function matchingStrings(strings, queries) {
+        // Write your code here
+        const result = [];
+        for (let i = 0; i < queries.length; i++) {
+            let numberOfValues = 0;
+            for (let j = 0; j < strings.length; j++) {
+                if (queries[i] === strings[j]) {
+                    numberOfValues += 1;
+                }
+            }
+            result.push(numberOfValues);
+        }
+        return result;
+    }
+    //Output results = [2, 1, 0];
+
+    Solution 2: Without n2
+    function matchingStrings(strings, queries) {
+        // Write your code here
+        let stringsLength = strings.length - 1;
+        let queriesLength = queries.length - 1;
+
+        let s = 0;
+        let q = 0;
+        let count = 0;
+        const result = [];
+
+        while (s <= stringsLength && q <= queriesLength) {
+            if (strings[s] === queries[q]) {
+                count = count + 1;
+            }
+
+            if (s === stringsLength && q === queriesLength) {
+                 result.push(count);
+                 return result;
+            } else {
+                if (s === stringsLength) {
+                    result.push(count);
+                    count = 0;
+                    q++;
+                    s = 0;
+                } else {
+                    s++;
+                }
+            }
+        }
+    }
+
+ */

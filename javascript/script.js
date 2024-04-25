@@ -2090,3 +2090,264 @@ object with three functions.
     }
 
  */
+
+/* Problem 76: LeetCode: Timeout Cancellation
+    Given a function fn, an array of arguments args, and a timeout t in milliseconds, return a cancel function cancelFn.
+
+    After a delay of cancelTimeMs, the returned cancel function cancelFn will be invoked.
+    setTimeout(cancelFn, cancelTimeMs)
+    Initially, the execution of the function fn should be delayed by t milliseconds.
+
+    If, before the delay of t milliseconds, the function cancelFn is invoked, it should cancel the delayed execution of
+    fn. Otherwise, if cancelFn is not invoked within the specified delay t, fn should be executed with the provided
+    args as arguments.
+
+    Example 1:
+    Input: fn = (x) => x * 5, args = [2], t = 20
+    Output: [{"time": 20, "returned": 10}]
+    Explanation:
+    const cancelTimeMs = 50;
+    const cancelFn = cancellable((x) => x * 5, [2], 20);
+    setTimeout(cancelFn, cancelTimeMs);
+
+    The cancellation was scheduled to occur after a delay of cancelTimeMs (50ms), which happened after the execution of
+    fn(2) at 20ms.
+
+    Example 2:
+    Input: fn = (x) => x**2, args = [2], t = 100
+    Output: []
+    Explanation:
+    const cancelTimeMs = 50;
+    const cancelFn = cancellable((x) => x**2, [2], 100);
+    setTimeout(cancelFn, cancelTimeMs);
+
+    The cancellation was scheduled to occur after a delay of cancelTimeMs (50ms), which happened before the execution
+    of fn(2) at 100ms, resulting in fn(2) never being called.
+
+    Example 3:
+    Input: fn = (x1, x2) => x1 * x2, args = [2,4], t = 30
+    Output: [{"time": 30, "returned": 8}]
+    Explanation:
+    const cancelTimeMs = 100;
+    const cancelFn = cancellable((x1, x2) => x1 * x2, [2,4], 30);
+    setTimeout(cancelFn, cancelTimeMs);
+
+    The cancellation was scheduled to occur after a delay of cancelTimeMs (100ms), which happened after the execution
+    of fn(2,4) at 30ms.
+
+    Solution:
+    const cancellable = function(fn, args, t) {
+        const interval = setTimeout(() => {
+            fn(...args);
+        }, t)
+        return () => {
+            clearInterval(interval);
+        }
+    };
+
+    //Test result from using below code
+    const result = [];
+    const fn = (x1, x2) => {
+        console.log(x1, x2);
+        return x1 * x2
+    };
+    const args = [2,4], t = 30, cancelTimeMs = 100;
+    const start = performance.now();
+    const log = (...argsArr) => {
+         const diff = Math.floor(performance.now() - start);
+         result.push({"time": diff, "returned": fn(...argsArr)});
+    }
+
+    const cancel = cancellable(log, args, t);
+    const maxT = Math.max(t, cancelTimeMs);
+
+    setTimeout(cancel, cancelTimeMs);
+
+    setTimeout(() => {
+         console.log('Hello', result); // [{"time":20,"returned":10}]
+    }, maxT + 15)
+
+ */
+
+/* Problem 77: LeetCode: Interval Cancellation
+
+ */
+
+/* Problem 78: LeetCode: Promise Time Limit
+    Given an asynchronous function fn and a time t in milliseconds, return a new time limited version of the input
+    function. fn takes arguments provided to the time limited function.
+
+    The time limited function should follow these rules:
+
+    If the fn completes within the time limit of t milliseconds, the time limited function should resolve with the
+    result.
+    If the execution of the fn exceeds the time limit, the time limited function should reject with the string "Time
+    Limit Exceeded".
+
+    Example 1:
+    Input:
+    fn = async (n) => {
+      await new Promise(res => setTimeout(res, 100));
+      return n * n;
+    }
+    inputs = [5]
+    t = 50
+    Output: {"rejected":"Time Limit Exceeded","time":50}
+    Explanation:
+    const limited = timeLimit(fn, t)
+    const start = performance.now()
+    let result;
+    try {
+       const res = await limited(...inputs)
+       result = {"resolved": res, "time": Math.floor(performance.now() - start)};
+    } catch (err) {
+       result = {"rejected": err, "time": Math.floor(performance.now() - start)};
+    }
+    console.log(result) // Output
+
+    The provided function is set to resolve after 100ms. However, the time limit is set to 50ms. It rejects at t=50ms
+    because the time limit was reached.
+
+    Example 2:
+    Input:
+    fn = async (n) => {
+      await new Promise(res => setTimeout(res, 100));
+      return n * n;
+    }
+    inputs = [5]
+    t = 150
+    Output: {"resolved":25,"time":100}
+    Explanation:
+    The function resolved 5 * 5 = 25 at t=100ms. The time limit is never reached.
+
+    Example 3:
+    Input:
+    fn = async (a, b) => {
+      await new Promise(res => setTimeout(res, 120));
+      return a + b;
+    }
+    inputs = [5,10]
+    t = 150
+    Output: {"resolved":15,"time":120}
+    Explanation:
+    The function resolved 5 + 10 = 15 at t=120ms. The time limit is never reached.
+
+    Example 4:
+    Input:
+    fn = async () => {
+      throw "Error";
+    }
+    inputs = []
+    t = 1000
+    Output: {"rejected":"Error","time":0}
+    Explanation:
+    The function immediately throws an error.
+
+    Solution:
+    var timeLimit = function(fn, t) {
+        return async function(...args) {
+             const promise = [
+                new Promise(resolve => resolve(fn(...args))), // Promise that resolves with the result of executing fn(...args)
+                new Promise((resolve, reject) => setTimeout(() => reject('Time Limit Exceeded'), t)) //Promise that rejects with 'Time Limit Exceeded' after t milliseconds
+             ]
+            return Promise.race(promise);
+        }
+    };
+
+    const limited = timeLimit((t) => new Promise(res => setTimeout(res, t)), 100);
+    limited(150).catch(console.log) // "Time Limit Exceeded" at t=100ms
+
+ */
+
+/* Problem 79: LeetCode: Debounce
+    Given a function fn and a time in milliseconds t, return a debounced version of that function.
+
+    A debounced function is a function whose execution is delayed by t milliseconds and whose execution is cancelled
+    if it is called again within that window of time. The debounced function should also receive the passed parameters.
+
+    For example, let's say t = 50ms, and the function was called at 30ms, 60ms, and 100ms.
+
+    The first 2 function calls would be cancelled, and the 3rd function call would be executed at 150ms.
+
+    If instead t = 35ms, The 1st call would be cancelled, the 2nd would be executed at 95ms, and the 3rd would be
+    executed at 135ms.
+
+    Example 1:
+    Input:
+    t = 50
+    calls = [
+      {"t": 50, inputs: [1]},
+      {"t": 75, inputs: [2]}
+    ]
+    Output: [{"t": 125, inputs: [2]}]
+    Explanation:
+    let start = Date.now();
+    function log(...inputs) {
+      console.log([Date.now() - start, inputs ])
+    }
+    const dlog = debounce(log, 50);
+    setTimeout(() => dlog(1), 50);
+    setTimeout(() => dlog(2), 75);
+
+    The 1st call is cancelled by the 2nd call because the 2nd call occurred before 100ms
+    The 2nd call is delayed by 50ms and executed at 125ms. The inputs were (2).
+
+    Example 2:
+    Input:
+    t = 20
+    calls = [
+      {"t": 50, inputs: [1]},
+      {"t": 100, inputs: [2]}
+    ]
+    Output: [{"t": 70, inputs: [1]}, {"t": 120, inputs: [2]}]
+    Explanation:
+    The 1st call is delayed until 70ms. The inputs were (1).
+    The 2nd call is delayed until 120ms. The inputs were (2).
+
+    Example 3:
+    Input:
+    t = 150
+    calls = [
+      {"t": 50, inputs: [1, 2]},
+      {"t": 300, inputs: [3, 4]},
+      {"t": 300, inputs: [5, 6]}
+    ]
+    Output: [{"t": 200, inputs: [1,2]}, {"t": 450, inputs: [5, 6]}]
+    Explanation:
+    The 1st call is delayed by 150ms and ran at 200ms. The inputs were (1, 2).
+    The 2nd call is cancelled by the 3rd call
+    The 3rd call is delayed by 150ms and ran at 450ms. The inputs were (5, 6).
+
+    Constraints:
+    0 <= t <= 1000
+    1 <= calls.length <= 10
+    0 <= calls[i].t <= 1000
+    0 <= calls[i].inputs.length <= 10
+
+    Solution:
+    var debounce = function(fn, t) {
+        let timeout;
+        return function(...args) {
+            if (timeout) clearTimeout(timeout);
+            timeout = setTimeout(() => {
+               fn(...args);
+            }, t)
+        }
+    };
+
+    const debounce = function(fn, t) {
+        let timeout;
+        return function(...args) {
+            if (timeout) clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                fn(...args);
+            }, t)
+        }
+    };
+
+    const log = debounce(console.log, 100);
+    log('Hello'); // cancelled
+    log('Hello'); // cancelled
+    log('Hello'); // Logged at t=100ms
+
+ */

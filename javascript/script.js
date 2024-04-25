@@ -2351,3 +2351,126 @@ object with three functions.
     log('Hello'); // Logged at t=100ms
 
  */
+
+/* Problem 80: LeetCode: Execute Asynchronous Functions in Parallel
+    Given an array of asynchronous functions functions, return a new promise promise. Each function in the array
+    accepts no arguments and returns a promise. All the promises should be executed in parallel.
+
+    promise resolves:
+    When all the promises returned from functions were resolved successfully in parallel. The resolved value of promise
+    should be an array of all the resolved values of promises in the same order as they were in the functions.
+    The promise should resolve when all the asynchronous functions in the array have completed execution in parallel.
+
+    promise rejects:
+    When any of the promises returned from functions were rejected. promise should also reject with the reason of the
+    first rejection.
+
+    Please solve it without using the built-in Promise.all function.
+
+    Example 1:
+    Input: functions = [
+      () => new Promise(resolve => setTimeout(() => resolve(5), 200))
+    ]
+    Output: {"t": 200, "resolved": [5]}
+    Explanation:
+    promiseAll(functions).then(console.log); // [5]
+
+    The single function was resolved at 200ms with a value of 5.
+
+    Example 2:
+    Input: functions = [
+        () => new Promise(resolve => setTimeout(() => resolve(1), 200)),
+        () => new Promise((resolve, reject) => setTimeout(() => reject("Error"), 100))
+    ]
+    Output: {"t": 100, "rejected": "Error"}
+    Explanation: Since one of the promises rejected, the returned promise also rejected with the same error at the same
+    time.
+
+    Example 3:
+    Input: functions = [
+        () => new Promise(resolve => setTimeout(() => resolve(4), 50)),
+        () => new Promise(resolve => setTimeout(() => resolve(10), 150)),
+        () => new Promise(resolve => setTimeout(() => resolve(16), 100))
+    ]
+    Output: {"t": 150, "resolved": [4, 10, 16]}
+    Explanation: All the promises resolved with a value. The returned promise resolved when the last promise resolved.
+
+    Constraints:
+    functions is an array of functions that returns promises
+    1 <= functions.length <= 10
+
+    const promiseAll = function(functions) {
+        let results = new Array(functions.length).fill(null);
+
+        return new Promise((resolve, reject) => {
+            functions.forEach((fn, index) => {
+                fn()
+                    .then((result) => {
+                        results[index] = result;
+                        if(!results.includes(null)) {
+                            resolve(results);
+                        }
+                    })
+                    .catch((error) => {
+                        return reject(error);
+                    });
+            })
+        })
+    };
+
+    const promise = promiseAll([() => new Promise(res => res(42))])
+    promise.then(console.log); // [42]
+
+ */
+
+/* Problem 81: HackerRank: Flipping Bits
+        You will be give a list of 32-bit unsigned integers. Flip all the bits (1 -> 0 and 0 -> 1) and return the result as
+    an unsigned integer.
+
+    Example:
+    n = 9(decimals)
+    9(decimals) = 1001(binary)
+
+    00000000000000000000000000001001 = 9(binary)
+    11111111111111111111111111110110 = 4294967286(decimals)
+    Return 4294967286
+
+    Function Description:
+    Complete the flippingBits function in the editor below.
+
+    flippingBits has the following parameter(s):
+    - int n: an integer
+
+    Returns
+    - int: the unsigned decimal integer result
+
+    Input Format
+    The first line of the input contains q. the number of queries.
+    Each of the next q lines contain an integer, n to process.
+
+    Constraints:
+    1 <= q <= 100
+    0 <= n < 2(decimals)
+
+    Sample input
+    3
+    2147483647
+    1
+    0
+
+    Sample Output:
+    2147483648
+    4294967294
+    4294967295
+
+    function flippingBits(n) {
+        // Write your code here
+        const originalBinaryNumber = n.toString(2).padStart(32 , '0');
+        const originalBinaryNumberToString = originalBinaryNumber.toString();
+        const swapNumber = originalBinaryNumberToString.split('').map(item => item === '1' ? '0' : '1').join('')
+        return parseInt(swapNumber, 2);
+    }
+
+    const result = flippingBits(9);
+
+*/

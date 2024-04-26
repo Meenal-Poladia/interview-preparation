@@ -2474,3 +2474,90 @@ object with three functions.
     const result = flippingBits(9);
 
 */
+
+/* Problem 82: LeetCode: Is Object Empty
+    Given an object or an array, return if it is empty.
+
+    An empty object contains no key-value pairs.
+    An empty array contains no elements.
+    You may assume the object or array is the output of JSON.parse.
+
+    Example 1:
+    Input: obj = {"x": 5, "y": 42}
+    Output: false
+    Explanation: The object has 2 key-value pairs so it is not empty.
+
+    Example 2:
+    Input: obj = {}
+    Output: true
+    Explanation: The object doesn't have any key-value pairs so it is empty.
+
+    Example 3:
+    Input: obj = [null, false, 0]
+    Output: false
+    Explanation: The array has 3 elements so it is not empty.
+
+    Constraints:
+    obj is a valid JSON object or array
+    2 <= JSON.stringify(obj).length <= 105
+
+    Solution:
+    const isEmpty = function(obj) {
+        const keyLength = Object.keys(obj).length;
+        return keyLength > 0 ? false : true
+    };
+
+ */
+
+/* Problem 83: LeetCode: Chunk Array
+    Given an array arr and a chunk size size, return a chunked array.
+
+    A chunked array contains the original elements in arr, but consists of subarrays each of length size. The length of
+    the last subarray may be less than size if arr.length is not evenly divisible by size.
+
+    You may assume the array is the output of JSON.parse. In other words, it is valid JSON.
+
+    Please solve it without using lodash's _.chunk function.
+
+    Example 1:
+    Input: arr = [1,2,3,4,5], size = 1
+    Output: [[1],[2],[3],[4],[5]]
+    Explanation: The arr has been split into subarrays each with 1 element.
+
+    Example 2:
+    Input: arr = [1,9,6,3,2], size = 3
+    Output: [[1,9,6],[3,2]]
+    Explanation: The arr has been split into subarrays with 3 elements. However, only two elements are left for the
+    2nd subarray.
+
+    Example 3:
+    Input: arr = [8,5,3,2,6], size = 6
+    Output: [[8,5,3,2,6]]
+    Explanation: Size is greater than arr.length thus all elements are in the first subarray.
+
+    Example 4:
+    Input: arr = [], size = 1
+    Output: []
+    Explanation: There are no elements to be chunked so an empty array is returned.
+
+
+    Constraints:
+    arr is a valid JSON array
+    2 <= JSON.stringify(arr).length <= 105
+    1 <= size <= arr.length + 1
+
+    const chunk = function(arr, size) {
+        const result = [];
+        let newArray = [];
+
+        for (let i = 0; i < arr.length; i++) {
+           newArray.push(arr[i]);
+           if (newArray.length === size || i === arr.length - 1) {
+               result.push(newArray);
+               newArray = [];
+           }
+        }
+        return result;
+    };
+
+ */

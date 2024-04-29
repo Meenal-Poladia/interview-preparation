@@ -2632,3 +2632,218 @@ object with three functions.
     diagonalDifference([[11,2,4], [4,5,6], [10,8, -12]]) //Expected 15
 
  */
+
+/* Problem 85: LeetCode: Array Prototype Last
+    Write code that enhances all arrays such that you can call the array.last() method on any array and it will return
+    the last element. If there are no elements in the array, it should return -1.
+
+    You may assume the array is the output of JSON.parse.
+
+    Example 1:
+    Input: nums = [null, {}, 3]
+    Output: 3
+    Explanation: Calling nums.last() should return the last element: 3.
+
+    Example 2:
+    Input: nums = []
+    Output: -1
+    Explanation: Because there are no elements, return -1.
+
+    Constraints:
+    arr is a valid JSON array
+    0 <= arr.length <= 1000
+
+    Solution:
+    Array.prototype.last = function() {
+        //Write code below
+        if (this.length > 0) {
+            return this.at(-1)
+        }
+        return -1
+    };
+
+    const arr = [1, 2, 3];
+    arr.last(); //  Expected output: 3
+ */
+
+/* Problem 86: LeetCode: Group By
+    Write code that enhances all arrays such that you can call the array.groupBy(fn) method on any array and it will
+    return a grouped version of the array.
+
+    A grouped array is an object where each key is the output of fn(arr[i]) and each value is an array containing all
+    items in the original array with that key.
+    The provided callback fn will accept an item in the array and return a string key.
+    The order of each value list should be the order the items appear in the array. Any order of keys is acceptable.
+
+    Please solve it without lodash's _.groupBy function.
+
+    Example 1:
+    Input:
+    array = [
+      {"id":"1"},
+      {"id":"1"},
+      {"id":"2"}
+    ],
+    fn = function (item) {
+      return item.id;
+    }
+    Output:
+    {
+      "1": [{"id": "1"}, {"id": "1"}],
+      "2": [{"id": "2"}]
+    }
+    Explanation:
+    Output is from array.groupBy(fn).
+    The selector function gets the "id" out of each item in the array.
+    There are two objects with an "id" of 1. Both of those objects are put in the first array.
+    There is one object with an "id" of 2. That object is put in the second array.
+
+    Example 2:
+    Input:
+    array = [
+      [1, 2, 3],
+      [1, 3, 5],
+      [1, 5, 9]
+    ]
+    fn = function (list) {
+      return String(list[0]);
+    }
+    Output:
+    {
+      "1": [[1, 2, 3], [1, 3, 5], [1, 5, 9]]
+    }
+    Explanation:
+    The array can be of any type. In this case, the selector function defines the key as being the first element in the
+    array.
+    All the arrays have 1 as their first element so they are grouped together.
+    {
+      "1": [[1, 2, 3], [1, 3, 5], [1, 5, 9]]
+    }
+
+    Example 3:
+    Input:
+    array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    fn = function (n) {
+      return String(n > 5);
+    }
+    Output:
+    {
+      "true": [6, 7, 8, 9, 10],
+      "false": [1, 2, 3, 4, 5]
+    }
+    Explanation:
+    The selector function splits the array by whether each number is greater than 5.
+
+    Constraints:
+    0 <= array.length <= 105
+    fn returns a string
+
+    Solution 1 :
+
+    Array.prototype.groupBy = function(fn) {
+        const result = {};
+        for(let i = 0; i < this.length; i++) {
+            const res = this[i]
+            let key = fn(res);
+
+            if (result[key]) {
+                result[key].push(res);
+            } else {
+                result[key] = [res];
+            }
+        }
+        return result;
+    };
+
+ */
+
+/* Problem 87: LeetCode: Join two Arrays by ID
+    Given two arrays arr1 and arr2, return a new array joinedArray. All the objects in each of the two inputs arrays
+    will contain an id field that has an integer value.
+
+    joinedArray is an array formed by merging arr1 and arr2 based on their id key. The length of joinedArray should be
+    the length of unique values of id. The returned array should be sorted in ascending order based on the id key.
+
+    If a given id exists in one array but not the other, the single object with that id should be included in the
+    result array without modification.
+
+    If two objects share an id, their properties should be merged into a single object:
+
+    If a key only exists in one object, that single key-value pair should be included in the object.
+    If a key is included in both objects, the value in the object from arr2 should override the value from arr1.
+
+
+    Example 1:
+    Input:
+    arr1 = [
+        {"id": 1, "x": 1},
+        {"id": 2, "x": 9}
+    ],
+    arr2 = [
+        {"id": 3, "x": 5}
+    ]
+    Output:
+    [
+        {"id": 1, "x": 1},
+        {"id": 2, "x": 9},
+        {"id": 3, "x": 5}
+    ]
+    Explanation: There are no duplicate ids so arr1 is simply concatenated with arr2.
+
+    Example 2:
+    Input:
+    arr1 = [
+        {"id": 1, "x": 2, "y": 3},
+        {"id": 2, "x": 3, "y": 6}
+    ],
+    arr2 = [
+        {"id": 2, "x": 10, "y": 20},
+        {"id": 3, "x": 0, "y": 0}
+    ]
+    Output:
+    [
+        {"id": 1, "x": 2, "y": 3},
+        {"id": 2, "x": 10, "y": 20},
+        {"id": 3, "x": 0, "y": 0}
+    ]
+    Explanation: The two objects with id=1 and id=3 are included in the result array without modifiction. The two
+    objects with id=2 are merged together. The keys from arr2 override the values in arr1.
+
+    Example 3:
+    Input:
+    arr1 = [
+        {"id": 1, "b": {"b": 94},"v": [4, 3], "y": 48}
+    ]
+    arr2 = [
+        {"id": 1, "b": {"c": 84}, "v": [1, 3]}
+    ]
+    Output: [
+        {"id": 1, "b": {"c": 84}, "v": [1, 3], "y": 48}
+    ]
+    Explanation: The two objects with id=1 are merged together. For the keys "b" and "v" the values from arr2 are used. Since the key "y" only exists in arr1, that value is taken form arr1.
+
+
+    Constraints:
+
+    arr1 and arr2 are valid JSON arrays
+    Each object in arr1 and arr2 has a unique integer id key
+    2 <= JSON.stringify(arr1).length <= 106
+    2 <= JSON.stringify(arr2).length <= 106
+
+    Solution:
+    const join = function(arr1, arr2) {
+        let res = {};
+        let arr = [...arr1,...arr2];
+        for(let obj of arr){
+            let id = obj.id;
+            if(res[id]){
+                res[id] = {...res[id],...obj}
+            }
+            else{
+                res[id] = obj;
+            }
+        }
+        return Object.values(res)
+    };
+
+ */

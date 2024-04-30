@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Lazy Loading</title>
+    <link rel="stylesheet" href="./styles.css" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <h1>
+            Image Lazy Loading Website
+        </h1>
+        <div class="image-container">
+            <div class="blur-load" style="background-image: url('./images/image-1-small.png')">
+                <img src="./images/image-1.jpg">
+            </div>
+            <div class="blur-load" style="background-image: url('./images/image-2-small.png')">
+                <img src="./images/image-2.jpg">
+            </div>
+            <div class="blur-load" style="background-image: url('./images/image-3-small.png')">
+                <img src="./images/image-3.jpg" >
+            </div>
+            <div class="blur-load" style="background-image: url('./images/image-4-small.png')">
+                <img src="./images/image-4.jpg" >
+            </div>
+            <div class="blur-load" style="background-image: url('./images/image-5-small.png')">
+                <img src="./images/image-5.jpg" >
+            </div>
+            <div class="blur-load" style="background-image: url('./images/image-6-small.png')">
+                <img src="./images/image-6.jpg" >
+            </div>
+            <div class="blur-load" style="background-image: url('./images/image-7-small.png')">
+                <img src="./images/image-7.jpg" >
+            </div>
+            <div class="blur-load" style="background-image: url('./images/image-8-small.png')">
+                <img src="./images/image-8.jpg" >
+            </div>
+            <div class="blur-load" style="background-image: url('./images/image-9-small.png')">
+                <img src="./images/image-9.jpg" >
+            </div>
+            <div class="blur-load" style="background-image: url('./images/image-10-small.png')">
+                <img src="./images/image-10.jpg" >
+            </div>
+            <div class="blur-load" style="background-image: url('./images/image-12-small.png')">
+                <img src="./images/image-12.jpg" >
+            </div>
+            <div class="blur-load" style="background-image: url('./images/image-13-small.png')">
+                <img src="./images/image-13.jpg" >
+            </div>
+            <div class="blur-load" style="background-image: url('./images/image-14-small.png')">
+                <img src="./images/image-14.jpg" >
+            </div>
+            <div class="blur-load" style="background-image: url('./images/image-15-small.png')">
+                <img src="./images/image-15.jpg" >
+            </div>
+            <div class="blur-load" style="background-image: url('./images/image-16-small.png')">
+                <img src="./images/image-16.jpg" >
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const blurDivs = document.querySelectorAll('.blur-load');
+
+        blurDivs.forEach((div) => {
+            const image = document.querySelector('img');
+
+            function loaded() {
+                div.classList.add('loaded');
+            }
+
+            if (image.complete) {
+                loaded();
+            } else {
+                image.addEventListener('load', loaded);
+            }
+        })
+    </script>
+</body>
+</html>

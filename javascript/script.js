@@ -2847,3 +2847,140 @@ object with three functions.
     };
 
  */
+
+/* Problem 88: LeetCode: Sort By
+    Given an array arr and a function fn, return a sorted array sortedArr. You can assume fn only returns numbers and
+    those numbers determine the sort order of sortedArr. sortedArray must be sorted in ascending order by fn output.
+
+    You may assume that fn will never duplicate numbers for a given array.
+
+    Example 1:
+    Input: arr = [5, 4, 1, 2, 3], fn = (x) => x
+    Output: [1, 2, 3, 4, 5]
+    Explanation: fn simply returns the number passed to it so the array is sorted in ascending order.
+
+    Example 2:
+    Input: arr = [{"x": 1}, {"x": 0}, {"x": -1}], fn = (d) => d.x
+    Output: [{"x": -1}, {"x": 0}, {"x": 1}]
+    Explanation: fn returns the value for the "x" key. So the array is sorted based on that value.
+
+    Example 3:
+    Input: arr = [[3, 4], [5, 2], [10, 1]], fn = (x) => x[1]
+    Output: [[10, 1], [5, 2], [3, 4]]
+    Explanation: arr is sorted in ascending order by number at index=1.
+
+    Constraints:
+    arr is a valid JSON array
+    fn is a function that returns a number
+    1 <= arr.length <= 5 * 105
+
+    Solution 1:
+    const sortBy = function(arr, fn) {
+        arr.sort((a, b) => {
+            return fn(a) - fn(b);
+        });
+        return arr;
+    };
+
+    Solution 2:
+    const sortBy = function(arr, fn) {
+        for(let i = 0; i < arr.length - 1; i++) {
+            let min = fn(arr[i]);
+            let index = i;
+            for(let j = 1; j < arr.length; j++) {
+                if(fn(arr[j]) < min) {
+                    min = fn(arr[j]);
+                    index = j;
+                }
+            }
+            const temp = arr[i];
+            arr[i] = min
+            arr[index] = temp;
+        }
+        return arr;
+    };
+
+    const array1 = [5, 4, 1, 2, 3];
+    const fn1 = (x) => x;
+
+    const array2 = [{"x": 1}, {"x": 0}, {"x": -1}]
+    const fn2 = (d) => d.x
+
+    console.log(sortBy(array1, fn1));
+
+ */
+
+/* Problem 89: LeetCode: Flatten Deeply Nested Array
+
+    Given a multi-dimensional array arr and a depth n, return a flattened version of that array.
+
+    A multi-dimensional array is a recursive data structure that contains integers or other multi-dimensional arrays.
+
+    A flattened array is a version of that array with some or all of the sub-arrays removed and replaced with the
+    actual elements in that sub-array. This flattening operation should only be done if the current depth of nesting is
+    less than n. The depth of the elements in the first array are considered to be 0.
+
+    Please solve it without the built-in Array.flat method.
+
+    Example 1:
+    Input
+    arr = [1, 2, 3, [4, 5, 6], [7, 8, [9, 10, 11], 12], [13, 14, 15]]
+    n = 0
+    Output
+    [1, 2, 3, [4, 5, 6], [7, 8, [9, 10, 11], 12], [13, 14, 15]]
+    Explanation
+    Passing a depth of n=0 will always result in the original array. This is because the smallest possible depth of a
+    subarray (0) is not less than n=0. Thus, no subarray should be flattened.
+
+    Example 2:
+    Input
+    arr = [1, 2, 3, [4, 5, 6], [7, 8, [9, 10, 11], 12], [13, 14, 15]]
+    n = 1
+    Output
+    [1, 2, 3, 4, 5, 6, 7, 8, [9, 10, 11], 12, 13, 14, 15]
+    Explanation
+    The subarrays starting with 4, 7, and 13 are all flattened. This is because their depth of 0 is less than 1.
+    However [9, 10, 11] remains unflattened because its depth is 1.
+
+    Example 3:
+    Input
+    arr = [[1, 2, 3], [4, 5, 6], [7, 8, [9, 10, 11], 12], [13, 14, 15]]
+    n = 2
+    Output
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    Explanation
+    The maximum depth of any subarray is 1. Thus, all of them are flattened.
+
+    Constraints:
+    0 <= count of numbers in arr <= 105
+    0 <= count of subarrays in arr <= 105
+    maxDepth <= 1000
+
+    Solution:
+    const flat = (arr, n) => {
+        if (n === 0) return arr;
+
+        let result = [];
+
+        let currentDepth = 0;
+
+        const flattenArray = (arr, n, currentDepth) => {
+            for (let i = 0; i < arr.length; i++) {
+                if (typeof arr[i] === 'object' && currentDepth < n) {
+                    flattenArray(arr[i], n, currentDepth + 1)
+                } else {
+                    result.push(arr[i])
+                }
+            }
+        }
+
+        flattenArray(arr, n, currentDepth);
+        return result;
+    }
+
+    const arr = [1, 2, 3, [4, 5, 6], [7, 8, [9, 10, 11], 12], [13, 14, 15]];
+    const n = 1;
+
+    flat(arr, n);
+
+ */

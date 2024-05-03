@@ -2900,6 +2900,20 @@ object with three functions.
         return arr;
     };
 
+    Solution 3:
+    const sortBy = function(arr, fn) {
+        for (let i = 0; i < arr.length - 1; i++) {
+            for (let j = i + 1; j < arr.length; j++) {
+                let temp = arr[i];
+                if (fn(arr[i]) - fn(arr[j]) > 0) {
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        return arr;
+    };
+
     const array1 = [5, 4, 1, 2, 3];
     const fn1 = (x) => x;
 
@@ -2982,5 +2996,98 @@ object with three functions.
     const n = 1;
 
     flat(arr, n);
+
+ */
+
+/* Problem 90: LeetCode: Compact Object
+    Given an object or array obj, return a compact object.
+
+    A compact object is the same as the original object, except with keys containing falsy values removed. This
+    operation applies to the object and any nested objects. Arrays are considered objects where the indices are keys.
+    A value is considered falsy when Boolean(value) returns false.
+
+    You may assume the obj is the output of JSON.parse. In other words, it is valid JSON.
+
+    Example 1:
+    Input: obj = [null, 0, false, 1]
+    Output: [1]
+    Explanation: All falsy values have been removed from the array.
+
+    Example 2:
+    Input: obj = {"a": null, "b": [false, 1]}
+    Output: {"b": [1]}
+    Explanation: obj["a"] and obj["b"][0] had falsy values and were removed.
+
+    Example 3:
+    Input: obj = [null, 0, 5, [0], [false, 16]]
+    Output: [5, [], [16]]
+    Explanation: obj[0], obj[1], obj[3][0], and obj[4][0] were falsy and removed.
+
+    Constraints:
+    obj is a valid JSON object
+    2 <= JSON.stringify(obj).length <= 106
+
+    Solution 1:
+    const compactObject = function(obj) {
+        // return compactThis(obj);
+
+        if (typeof obj !== 'object' || obj === null) {
+            return obj;
+        }
+
+        if (Array.isArray(obj)) {
+            return obj.filter(Boolean).map(compactObject)
+        }
+
+        const compactedObj = {};
+        for (const key in obj) {
+            const value = obj[key];
+            if (value) {
+                compactedObj[key] = typeof value === 'object' ? compactObject(value) : value;
+            }
+        }
+        return compactedObj;
+    }
+
+    Solution 2:
+    const compactThis = function (obj) {
+        const isArray = Array.isArray(obj);
+        let result = isArray ? [] : {};
+
+        for (const [key, value] of Object.entries(obj)) {
+            if (value) {
+                if (typeof value === 'object') {
+                    // call compact this again
+                    const innerResult = compactThis(value);
+                    if(isArray) {
+                        if (Array.isArray(innerResult)) {
+                            result.push(innerResult);
+                        } else if (typeof innerResult === 'object') {
+                            result.push(innerResult);
+                        } else {
+                            result[key] = innerResult;
+                        }
+                    } else {
+                        result[key] = innerResult;
+                    }
+                } else {
+                    if(isArray) result.push(value);
+                    else result[key] = value;
+                }
+            }
+        }
+        return result;
+    };
+
+    const compactObject = (obj) => {
+        return compactThis(obj);
+    }
+
+    const obj1 = [null, 0, 5, [0], [false, 16]]  ;
+    const obj2 = {"a": null, "C": 10, "b": [false, 1]};
+    const obj3 = [null, 0, false, 1];
+    const obj4 = [[[0]], true, false, {}, [], "", 42, 232, 4242, 942];
+
+    console.log(compactObject(obj1));
 
  */

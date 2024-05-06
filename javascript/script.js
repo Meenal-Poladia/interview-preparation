@@ -3091,3 +3091,116 @@ object with three functions.
     console.log(compactObject(obj1));
 
  */
+
+/* Problem 91: Pangrams
+    A pangram is a string that contains every letter of the alphabet. Given a sentence determine whether it is a
+    pangram in the English alphabet. Ignore case. Return either pangram or not pangram as appropriate.
+
+    Example
+    The string contains all letters in the English alphabet, so return pangram.
+
+    Function Description
+    Complete the function pangrams in the editor below. It should return the string pangram if the input string is a
+    pangram. Otherwise, it should return not pangram.
+
+    pangrams has the following parameter(s):
+    string s: a string to test
+
+    Returns
+    string: either pangram or not pangram
+
+    Input Format
+    A single line with string .
+
+    Constraints
+    Sample Input 0
+    We promptly judged antique ivory buckles for the next prize
+
+    Sample Output 0
+    pangram
+
+    Sample Explanation 0
+    All of the letters of the alphabet are present in the string.
+
+    Sample Input 1
+    We promptly judged antique ivory buckles for the prize
+
+    Sample Output 1
+    not pangram
+
+    Sample Explanation 0
+    The string lacks an x.
+
+    Solution 1:
+    const pangram = (input) => {
+        let result = '';
+        const numberOfAlphabets = 26;
+
+        const sizeOfInput = new Set(input.split('')).size;
+
+        if (sizeOfInput === 26) {
+            return result = 'pangram'
+        } else {
+            return result = 'not pangram';
+        }
+    }
+
+    console.log(pangram(input));
+
+ */
+
+/* Problem 92: Permuting Two Arrays
+    There are two n-element arrays of integers, A and B. Permute them into some A and B such that the relation
+    A[i] + B[i] >= k holds for all i where 0 <= i < n.
+
+    There will be q queries consisting of A, B, and k. For each query, return YES if some permutation A, B satisfying
+    the relation exists. Otherwise, return NO.
+
+    Example:
+    A = [0, 1]
+    B = [0, 2]
+    k = 1
+    A valid A, B is A = [1, 0] and B = [0, 2]; 1 + 0 >= 1 and 0 + 2 >= 1. Returns YES
+
+    Function Description
+    Complete the twoArrays function in the editor below. It should return a string, either YES or NO.
+
+    twoArrays has the following parameter(s):
+
+    int k: an integer
+    int A[n]: an array of integers
+    int B[n]: an array of integers
+    Returns
+    - string: either YES or NO
+
+    Input Format
+    The first line contains an integer q, the number of queries.
+
+    The next q sets of 3 lines are as follows:
+
+    The first line contains two space-separated integers n and k, the size of both arrays A and B, and the relation
+    variable.
+    The second line contains  space-separated integers.
+    The third line contains  space-separated integers.
+
+    Solution 1: This is when at least 1 of the combination is true
+    const sort = (A, B, k) => {
+        const sortA = A.sort((a,b)=> a - b)
+        const sortB = B.sort((a,b)=> b - a)
+        return sortA.some((item,index)=> (item + sortB[index] >= k )) ? "YES" : "NO"
+    }
+
+    Solution 2: This is when one of the combination is false
+    const sort1 = (A, B, k) => {
+        const sortA = A.sort((a,b)=> a - b);
+        const sortB = B.sort((a,b)=> b - a);
+
+        for (let i = 0; i < sortA.length - 1; i++) {
+            if ((sortA[i] + sortB[i]) >= k) {
+                return 'YES'
+            }
+        }
+        return 'NO'
+    }
+
+ */

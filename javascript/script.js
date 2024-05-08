@@ -209,20 +209,45 @@ htmlInputElement.addEventListener("input", (e) => {
  */
 
 /* Problem 10: Solving an anagram
-const string1 = "test";
-const string2 = "tset";
+    Solution 1:
+    const string1 = "test";
+    const string2 = "tset";
 
-function checkIfAnagram(string1, string2) {
-    const length1 = string1.length;
-    const length2 = string2.length;
-    let lengthCheck = length1 === length2;
-    const sort1 = string1.split("").sort().join("").toLowerCase();
-    const sort2 = string2.split("").sort().join("").toLowerCase();
-    const sortedString = sort1 === sort2;
-    const message = lengthCheck && sortedString ? "Is anagram" : "Not an anagram";
-}
+    function checkIfAnagram(string1, string2) {
+        const length1 = string1.length;
+        const length2 = string2.length;
+        let lengthCheck = length1 === length2;
+        const sort1 = string1.split("").sort().join("").toLowerCase();
+        const sort2 = string2.split("").sort().join("").toLowerCase();
+        const sortedString = sort1 === sort2;
+        const message = lengthCheck && sortedString ? "Is anagram" : "Not an anagram";
+    }
 
-checkIfAnagram(string1, string2);
+    checkIfAnagram(string1, string2);
+
+    Solution 2:
+    const checkIfAnagram = (string1, string2) => {
+        if (string1.length !== string2.length) {
+            return 'Not An Anagram';
+        }
+
+        const string1Object = {};
+        const string2Object = {};
+
+        for (let item of string1) {
+          string1Object[item] = string1Object[item] ? string1Object[item] + 1 : 1;
+        }
+
+        for (let letters of string2) {
+            if (!string1Object[letters]) {
+                return false;
+            }
+            string1Object[letters] -= 1
+        }
+        return true;
+    }
+
+    console.log(checkIfAnagram('dangere', 'gardeng'));
 */
 
 /* Problem 11: Solving a palindrome
@@ -1253,6 +1278,30 @@ If we do not get the value then we return -1;
 
     const middleValue2 = Math.floor((input[0] + input[middleValue1]) / 2);
     compareValue(input[middleValue2]);
+
+    Solution 2:
+    function binarySearch(arr, target) {
+        let left = 0;
+        let right = arr.length - 1;
+
+        while (left <= right) {
+            let mid = Math.floor((left + right) / 2);
+            if (arr[mid] === target) {
+                return mid;
+            } else if (arr[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+
+        return -1;
+    }
+
+    // Example usage:
+    let arr = [1, 3, 5, 7, 9, 11, 13, 15];
+    let target = 7;
+    console.log("Index of", target, ":", binarySearch(arr, target));
 
  */
 
@@ -3185,9 +3234,9 @@ object with three functions.
 
     Solution 1: This is when at least 1 of the combination is true
     const sort = (A, B, k) => {
-        const sortA = A.sort((a,b)=> a - b)
-        const sortB = B.sort((a,b)=> b - a)
-        return sortA.some((item,index)=> (item + sortB[index] >= k )) ? "YES" : "NO"
+        const Aaux = A.sort((a,b)=> a-b)
+        const Baux = B.sort((a,b)=> b-a)
+        return Aaux.some((num,index)=>(num + Baux[index] < k )) ? "NO" : "YES"
     }
 
     Solution 2: This is when one of the combination is false
@@ -3202,5 +3251,161 @@ object with three functions.
         }
         return 'NO'
     }
+
+ */
+
+/* Problem 93: Subarray Division 1
+    Two children, Lily and Ron, want to share a chocolate bar. Each of the squares has an integer on it.
+    Lily decides to share a contiguous segment of the bar selected such that:
+    The length of the segment matches Ron's birth month, and,
+    The sum of the integers on the squares is equal to his birth day.
+    Determine how many ways she can divide the chocolate.
+
+    Example
+    s = [2,2,1,3,2]
+    d = 4
+    m = 2
+
+    Lily wants to find segments summing to Ron's birth day, d = 4 with a length equalling his birth month, m = 2. In
+    this case, there are two segments meeting her criteria: [2,2] and [1,3].
+
+    Function Description
+    Complete the birthday function in the editor below.
+
+    birthday has the following parameter(s):
+
+    int s[n]: the numbers on each of the squares of chocolate
+    int d: Ron's birth day
+    int m: Ron's birth month
+    Returns
+
+    int: the number of ways the bar can be divided
+
+    Input Format
+    The first line contains an integer n, the number of squares in the chocolate bar.
+    The second line contains n space-separated integers s[i], the numbers on the chocolate squares where 0 <= i < n.
+    The third line contains two space-separated integers,  and , Ron's birth day and his birth month.
+
+    Solution 1:
+    function birthday (s, d, m) {
+        const result = [];
+        let counter = m;
+
+        if (s.length < 1) return;
+
+        if (s.length === 1) {
+            if (s[0] === d) {
+                return result.push(s[0]);
+            }
+        }
+
+        if (s.length > 1) {
+            for (let i = 0; i < s.length; i++) {
+                const slicedArray = s.slice(i, counter);
+                const sum = slicedArray.reduce((acc, cur) => acc + cur, 0)
+                if (sum === d) result.push(sum);
+                counter = counter + 1;
+            }
+
+            return result.length;
+        }
+
+        return result.length
+    }
+
+    Solution 2:
+    function birthday (s, d, m) {
+        return s.map((_, i) => s.slice(i, i + m))
+        .filter(bar => bar.length === m)
+        .filter(bar => bar.reduce((sum, num) => sum + num, 0) === d)
+        .length;
+    }
+
+    console.log(birthday([1,2,1,3,2], 2, 2));
+    console.log(birthday([4], 4, 1));
+
+ */
+
+/* Problem 94: First and last index in sorted array
+
+Solution 1:
+const findIndexOfTarget = (arr, target) => {
+    let result = [];
+    let firstIndex;
+    let lastIndex;
+
+
+    for (let i = 0, j = arr.length - 1; i < arr.length / 2, j > arr.length / 2; i++, j--) {
+        if (arr[i] === target ) {
+            result.push(i);
+        }
+        if (arr[j] === target) {
+            result.push(j);
+        }
+    }
+
+    if (result.length === 0) {
+        firstIndex = -1;
+        lastIndex = -1
+    } else {
+        firstIndex = result[0];
+        lastIndex = result[result.length - 1];
+    }
+
+    console.log(firstIndex, lastIndex);
+}
+
+findIndexOfTarget([2,4,5,5,5,5,5,7,9,9], 5)
+findIndexOfTarget([2,4,5,5,5,5,5,7,9,9], 8)
+
+Solution 2: Efficient Solution
+    function findFirstIndex(arr, target) {
+        let left = 0;
+        let right = arr.length - 1;
+        let firstIndex = -1;
+
+        while (left <= right) {
+            let mid = Math.floor((left + right) / 2);
+            if (arr[mid] === target) {
+                firstIndex = mid;
+                right = mid - 1; // Continue searching on the left side
+            } else if (arr[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+
+        return firstIndex;
+    }
+
+    function findLastIndex(arr, target) {
+        let left = 0;
+        let right = arr.length - 1;
+        let lastIndex = -1;
+
+        while (left <= right) {
+            let mid = Math.floor((left + right) / 2);
+            if (arr[mid] === target) {
+                lastIndex = mid;
+                left = mid + 1; // Continue searching on the right side
+            } else if (arr[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+
+        return lastIndex;
+    }
+
+    // Example usage:
+    let arr = [1, 3, 5, 5, 5, 7, 9, 11, 13, 15];
+    let target = 5;
+    let firstIndex = findFirstIndex(arr, target);
+    let lastIndex = findLastIndex(arr, target);
+
+    console.log("First index of", target, ":", firstIndex);
+    console.log("Last index of", target, ":", lastIndex);
 
  */
